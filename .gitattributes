@@ -1,1 +1,20 @@
 * text=auto !eol
+/Ability.cs -text
+/Character.cs -text
+/Chunk.cs -text
+/Effect.cs -text
+/Encounter.cs -text
+/Extension.cs -text
+/Forms.cs -text
+/ISXVG.cs -text
+/Item.cs -text
+/ItemModifier.cs -text
+/Loot.cs -text
+/Map.cs -text
+/Minion.cs -text
+/Pawn.cs -text
+Properties/AssemblyInfo.cs -text
+/Radar.cs -text
+/VG.cs -text
+/Vanguard.ISXVG.csproj -text
+/Wrapper.cs -text
