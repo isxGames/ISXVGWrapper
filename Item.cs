@@ -12,14 +12,14 @@ namespace Vanguard.ISXVG
         {
         }
 
-        public Item(string tlo)
+        public Item(string args)
         {
-            TLO = tlo;
+            Args = args;
         }
 
-        public Item(int tlo)
+        public Item(int args)
         {
-            TLO = tlo.ToString();
+            Args = args.ToString();
         }
 
         private float _expertiseCost;
@@ -287,62 +287,62 @@ namespace Vanguard.ISXVG
 
         public ItemModifier Modifier(int modifier)
         {
-            return new ItemModifier(TLO + "[" + modifier + "]");
+            return new ItemModifier(Args + "[" + modifier + "]");
         }
 
         public ItemModifier Modifier(string modifier)
         {
-            return new ItemModifier(TLO + "[" + modifier + "]");
+            return new ItemModifier(Args + "[" + modifier + "]");
         }
 
         public void Loot()
         {
-            LavishScript.ExecuteCommand(TLO + ":Loot");
+            LavishScript.ExecuteCommand(Args + ":Loot");
         }
 
         public void LootNDC()
         {
-            LavishScript.ExecuteCommand(TLO + ":Loot[NDC]");
+            LavishScript.ExecuteCommand(Args + ":Loot[NDC]");
         }
 
         public void Use()
         {
-            LavishScript.ExecuteCommand(TLO + ":Use");
+            LavishScript.ExecuteCommand(Args + ":Use");
         }
 
         public void Delete()
         {
-            LavishScript.ExecuteCommand(TLO + ":Delete");
+            LavishScript.ExecuteCommand(Args + ":Delete");
         }
 
         public void Equip()
         {
-            LavishScript.ExecuteCommand(TLO + ":Equip");
+            LavishScript.ExecuteCommand(Args + ":Equip");
         }
 
         public void EquipNDC()
         {
-            LavishScript.ExecuteCommand(TLO + ":Equip[NDC]");
+            LavishScript.ExecuteCommand(Args + ":Equip[NDC]");
         }
 
         public void Unequip()
         {
-            LavishScript.ExecuteCommand(TLO + ":Unequip");
+            LavishScript.ExecuteCommand(Args + ":Unequip");
         }
 
         public void StartConvert()
         {
-            LavishScript.ExecuteCommand(TLO + ":StartConvert");
+            LavishScript.ExecuteCommand(Args + ":StartConvert");
         }
 
         public void StackWith(int indexnumber)
         {
-            LavishScript.ExecuteCommand(TLO + ":StackWith[" + indexnumber + "]");
+            LavishScript.ExecuteCommand(Args + ":StackWith[" + indexnumber + "]");
         }
 
         public void PutInContainer(int containerindexnumber)
         {
-            LavishScript.ExecuteCommand(TLO + ":PutInContainer[" + containerindexnumber + "]");
+            LavishScript.ExecuteCommand(Args + ":PutInContainer[" + containerindexnumber + "]");
         }
     }
 }

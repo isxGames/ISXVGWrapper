@@ -12,14 +12,14 @@ namespace Vanguard.ISXVG
         {
         }
 
-        public Ability(string tlo)
+        public Ability(string args)
         {
-            TLO = tlo;
+            Args = args;
         }
 
-        public Ability(int tlo)
+        public Ability(int args)
         {
-            TLO = tlo.ToString();
+            Args = args.ToString();
         }
 
         private int _specialPointsCost;
@@ -254,7 +254,7 @@ namespace Vanguard.ISXVG
 
         public void Use()
         {
-            LavishScript.ExecuteCommand(TLO + ":Use");
+            LavishScript.ExecuteCommand(Args + ":Use");
         }
     }
 }

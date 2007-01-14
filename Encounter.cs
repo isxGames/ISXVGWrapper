@@ -12,14 +12,14 @@ namespace Vanguard.ISXVG
         {
         }
 
-        public Encounter(string tlo)
+        public Encounter(string args)
         {
-            TLO = tlo;
+            Args = args;
         }
 
-        public Encounter(int tlo)
+        public Encounter(int args)
         {
-            TLO = tlo.ToString();
+            Args = args.ToString();
         }
 
         private string _name;
@@ -77,7 +77,7 @@ namespace Vanguard.ISXVG
         {
             get
             {
-                _targetOfTarget = new Pawn(TLO + ".TargetOfTarget",1);
+                _targetOfTarget = new Pawn(Args + ".TargetOfTarget",1);
                 return _targetOfTarget;
             }
         }

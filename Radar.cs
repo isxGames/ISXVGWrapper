@@ -12,9 +12,14 @@ namespace Vanguard.ISXVG
         {
         }
 
-        public Radar(string tlo)
+        public Radar(string args)
         {
-            TLO = tlo;
+            Args = "Radar[" + args + "]";
+        }
+
+        public Radar(string args, int unused)
+        {
+            Args = args;
         }
 
         private bool _showingMe;
@@ -283,127 +288,127 @@ namespace Vanguard.ISXVG
 
         public void FilterMe()
         {
-            LavishScript.ExecuteCommand(TLO + ":FilterMe");
+            LavishScript.ExecuteCommand(Args + ":FilterMe");
         }
 
         public void FilterNPCs()
         {
-            LavishScript.ExecuteCommand(TLO + ":FilterNPCs");
+            LavishScript.ExecuteCommand(Args + ":FilterNPCs");
         }
 
         public void FilterPCs()
         {
-            LavishScript.ExecuteCommand(TLO + ":FilterPCs");
+            LavishScript.ExecuteCommand(Args + ":FilterPCs");
         }
 
         public void FilterSpecials()
         {
-            LavishScript.ExecuteCommand(TLO + ":FilterSpecials");
+            LavishScript.ExecuteCommand(Args + ":FilterSpecials");
         }
 
         public void FilterResources()
         {
-            LavishScript.ExecuteCommand(TLO + ":FilterResources");
+            LavishScript.ExecuteCommand(Args + ":FilterResources");
         }
 
         public void FilterMerchants()
         {
-            LavishScript.ExecuteCommand(TLO + ":FilterMerchants");
+            LavishScript.ExecuteCommand(Args + ":FilterMerchants");
         }
 
         public void FilterCorpses()
         {
-            LavishScript.ExecuteCommand(TLO + ":FilterCorpses");
+            LavishScript.ExecuteCommand(Args + ":FilterCorpses");
         }
 
         public void FilterCraftingStations()
         {
-            LavishScript.ExecuteCommand(TLO + ":FilterCraftingStations");
+            LavishScript.ExecuteCommand(Args + ":FilterCraftingStations");
         }
 
         public void FilterTrainers()
         {
-            LavishScript.ExecuteCommand(TLO + ":FilterTrainers");
+            LavishScript.ExecuteCommand(Args + ":FilterTrainers");
         }
 
         public void FilterGroupMembers()
         {
-            LavishScript.ExecuteCommand(TLO + ":FilterGroupMembers");
+            LavishScript.ExecuteCommand(Args + ":FilterGroupMembers");
         }
 
         public void FilterAggroNPCs()
         {
-            LavishScript.ExecuteCommand(TLO + ":FilterAggroNPCs");
+            LavishScript.ExecuteCommand(Args + ":FilterAggroNPCs");
         }
 
         public void FilterNamedNPCs()
         {
-            LavishScript.ExecuteCommand(TLO + ":FilterNamedNPCs");
+            LavishScript.ExecuteCommand(Args + ":FilterNamedNPCs");
         }
 
         public void FilterPets()
         {
-            LavishScript.ExecuteCommand(TLO + ":FilterPets");
+            LavishScript.ExecuteCommand(Args + ":FilterPets");
         }
 
         public void FilterMyPet()
         {
-            LavishScript.ExecuteCommand(TLO + ":FilterMyPet");
+            LavishScript.ExecuteCommand(Args + ":FilterMyPet");
         }
 
         public void SetSize(int size)
         {
-            LavishScript.ExecuteCommand(TLO + ":SetSize[" + size + "]");
+            LavishScript.ExecuteCommand(Args + ":SetSize[" + size + "]");
         }
 
         public void ShowLabels()
         {
-            LavishScript.ExecuteCommand(TLO + ":ShowLabels");
+            LavishScript.ExecuteCommand(Args + ":ShowLabels");
         }
 
         public void ZAxisClipping()
         {
-            LavishScript.ExecuteCommand(TLO + ":ZAxisClipping");
+            LavishScript.ExecuteCommand(Args + ":ZAxisClipping");
         }
 
         public void ClipText()
         {
-            LavishScript.ExecuteCommand(TLO + ":ClipText");
+            LavishScript.ExecuteCommand(Args + ":ClipText");
         }
 
         public void ClipRadius()
         {
-            LavishScript.ExecuteCommand(TLO + ":ClipRadius");
+            LavishScript.ExecuteCommand(Args + ":ClipRadius");
         }
 
         public void Rotation()
         {
-            LavishScript.ExecuteCommand(TLO + ":Rotation");
+            LavishScript.ExecuteCommand(Args + ":Rotation");
         }
 
         public void SetCustomFilter(int args)
         {
-            LavishScript.ExecuteCommand(TLO + ":SetCustomFilter[" + args + "]");
+            LavishScript.ExecuteCommand(Args + ":SetCustomFilter[" + args + "]");
         }
 
         public void ZoomIn()
         {
-            LavishScript.ExecuteCommand(TLO + ":ZoomIn");
+            LavishScript.ExecuteCommand(Args + ":ZoomIn");
         }
 
         public void ZoomOut()
         {
-            LavishScript.ExecuteCommand(TLO + ":ZoomOut");
+            LavishScript.ExecuteCommand(Args + ":ZoomOut");
         }
 
         public void FilterClickables()
         {
-            LavishScript.ExecuteCommand(TLO + ":FilterClickables");
+            LavishScript.ExecuteCommand(Args + ":FilterClickables");
         }
 
         public void FilterQuestNPCs()
         {
-            LavishScript.ExecuteCommand(TLO + ":FilterQuestNPCs");
+            LavishScript.ExecuteCommand(Args + ":FilterQuestNPCs");
         }
     }
 }

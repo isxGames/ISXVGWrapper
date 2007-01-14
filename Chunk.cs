@@ -12,9 +12,9 @@ namespace Vanguard.ISXVG
         {
         }
 
-        public Chunk(string tlo)
+        public Chunk(string args)
         {
-            TLO = tlo;
+            Args = args;
         }
 
         private int _id;

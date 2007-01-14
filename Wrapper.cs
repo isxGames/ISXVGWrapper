@@ -12,16 +12,16 @@ namespace Vanguard.ISXVG
         {
         }
 
-        private string _tlo;
-        protected string TLO
+        private string _args;
+        protected string Args
         {
             get
             {
-                return _tlo;
+                return _args;
             }
             set
             {
-                _tlo = value;
+                _args = value;
             }
         }
 
@@ -29,7 +29,7 @@ namespace Vanguard.ISXVG
         {
             try
             {
-                LavishScript.DataParse<T>("${" + TLO + "." + param + "}", ref obj);
+                LavishScript.DataParse<T>("${" + Args + "." + param + "}", ref obj);
             }
             catch
             {

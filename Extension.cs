@@ -13,7 +13,7 @@ namespace Vanguard.ISXVG
         public delegate uint GetVGEventID(string EventName);
     }
 
-    public class Extension
+    public class Extension : Wrapper
     {
         public static Vanguard.ISXVG.Delegates.GetVGEventID GetVGEventID = Stubs.GetVGEventID;
 
@@ -33,14 +33,19 @@ namespace Vanguard.ISXVG
         {
         }
 
-        public Extension(string tlo)
+        public Extension(string args)
         {
-            TLO = tlo;
+            Args = args;
         }
 
-        public Pawn Pawn(string pawn)
+        public Character Me()
         {
-            return new Pawn("Pawn[" + pawn + "]",1);
+            return new Character();
+        }
+
+        public Pawn Pawn(string args)
+        {
+            return new Pawn("Pawn[" + args + "]", 1);
         }
 
         public Radar Radar()
@@ -48,9 +53,34 @@ namespace Vanguard.ISXVG
             return new Radar();
         }
 
-        public Radar Radar(string radar)
+        public Radar Radar(string args)
         {
-            return new Radar("Radar[" + radar + "]");
+            return new Radar("Radar[" + args + "]", 1);
+        }
+
+        public ISXVG ISXVG()
+        {
+            return new ISXVG();
+        }
+
+        public Loot Loot()
+        {
+            return new Loot();
+        }
+
+        public VG VG()
+        {
+            return new VG();
+        }
+
+        public Map Map()
+        {
+            return new Map();
+        }
+
+        public VGLoc VGLoc(string args)
+        {
+            return new VGLoc("VGLoc[" + args + "]",1);
         }
 
         public void VGExecute(string Command)
@@ -58,9 +88,9 @@ namespace Vanguard.ISXVG
             LavishScript.ExecuteCommand("VGExecute " + Command);
         }
 
-        public void VGEcho(string Args)
+        public void VGEcho(string args)
         {
-            LavishScript.ExecuteCommand("VGEcho " + Args);
+            LavishScript.ExecuteCommand("VGEcho " + args);
         }
 
         public void Target()
@@ -68,9 +98,9 @@ namespace Vanguard.ISXVG
             LavishScript.ExecuteCommand("Target");
         }
 
-        public void Target(string Args)
+        public void Target(string args)
         {
-            LavishScript.ExecuteCommand("Target " + Args);
+            LavishScript.ExecuteCommand("Target " + args);
         }
 
         public void Face()
@@ -78,9 +108,9 @@ namespace Vanguard.ISXVG
             LavishScript.ExecuteCommand("Face");
         }
 
-        public void Face(string Args)
+        public void Face(string args)
         {
-            LavishScript.ExecuteCommand("Face " + Args);
+            LavishScript.ExecuteCommand("Face " + args);
         }
 
         public void Where()
@@ -88,34 +118,9 @@ namespace Vanguard.ISXVG
             LavishScript.ExecuteCommand("Where");
         }
 
-        public void Where(string Args)
+        public void Where(string args)
         {
-            LavishScript.ExecuteCommand("Where " + Args);
-        }
-
-        private string _tlo;
-        protected string TLO
-        {
-            get
-            {
-                return _tlo;
-            }
-            set
-            {
-                _tlo = value;
-            }
-        }
-
-        protected void GetData<T>(ref T obj, string param)
-        {
-            try
-            {
-                LavishScript.DataParse<T>("${" + TLO + "." + param + "}", ref obj);
-            }
-            catch
-            {
-                InnerSpace.Echo("Exception Raised or Object does not Exist or NULL");
-            }
+            LavishScript.ExecuteCommand("Where " + args);
         }
     }
 

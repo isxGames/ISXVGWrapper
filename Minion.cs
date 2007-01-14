@@ -12,9 +12,9 @@ namespace Vanguard.ISXVG
         {
         }
 
-        public Minion(string tlo)
+        public Minion(string args)
         {
-            TLO = tlo;
+            Args = args;
         }
 
         private string _name;

@@ -12,14 +12,14 @@ namespace Vanguard.ISXVG
         {
         }
 
-        public Forms(string tlo)
+        public Forms(string args)
         {
-            TLO = tlo;
+            Args = args;
         }
 
-        public Forms(int tlo)
+        public Forms(int args)
         {
-            TLO = tlo.ToString();
+            Args = args.ToString();
         }
 
         private string _name;
@@ -44,7 +44,7 @@ namespace Vanguard.ISXVG
 
         public void ChangeTo()
         {
-            LavishScript.ExecuteCommand(TLO + ":ChangeTo");
+            LavishScript.ExecuteCommand(Args + ":ChangeTo");
         }
 
         public void ChangeTo(string changeform)

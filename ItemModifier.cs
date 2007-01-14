@@ -12,14 +12,14 @@ namespace Vanguard.ISXVG
         {
         }
 
-        public ItemModifier(string tlo)
+        public ItemModifier(string args)
         {
-            TLO = tlo;
+            Args = args;
         }
 
-        public ItemModifier(int tlo)
+        public ItemModifier(int args)
         {
-            TLO = tlo.ToString();
+            Args = args.ToString();
         }
 
         private string _name;

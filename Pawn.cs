@@ -12,14 +12,14 @@ namespace Vanguard.ISXVG
         {
         }
 
-        public Pawn(string Args)
+        public Pawn(string args)
         {
-            TLO = "Pawn[" + Args + "]";
+            Args = "Pawn[" + args + "]";
         }
 
-        public Pawn(string tlo, int unused)
+        public Pawn(string args, int unused)
         {
-            TLO = tlo;
+            Args = args;
         }
 
         private string _name;
@@ -532,29 +532,29 @@ namespace Vanguard.ISXVG
         {
             get
             {
-                _owner = new Pawn(TLO + ".Owner",1);
+                _owner = new Pawn(Args + ".Owner",1);
                 return _owner;
             }
         }
 
         public void Loot()
         {
-            LavishScript.ExecuteCommand(TLO + ":Loot");
+            LavishScript.ExecuteCommand(Args + ":Loot");
         }
 
         public void Target()
         {
-            LavishScript.ExecuteCommand(TLO + ":Target");
+            LavishScript.ExecuteCommand(Args + ":Target");
         }
 
         public void Face()
         {
-            LavishScript.ExecuteCommand(TLO + ":Face");
+            LavishScript.ExecuteCommand(Args + ":Face");
         }
 
         public void Use()
         {
-            LavishScript.ExecuteCommand(TLO + ":Use");
+            LavishScript.ExecuteCommand(Args + ":Use");
         }
     }
 }

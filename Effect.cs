@@ -12,14 +12,14 @@ namespace Vanguard.ISXVG
         {
         }
 
-        public Effect(string tlo)
+        public Effect(string args)
         {
-            TLO = tlo;
+            Args = args;
         }
 
-        public Effect(int tlo)
+        public Effect(int args)
         {
-            TLO = tlo.ToString();
+            Args = args.ToString();
         }
 
         private string _name;
