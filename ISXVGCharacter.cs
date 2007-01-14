@@ -609,36 +609,6 @@ namespace Vanguard.ISXVG
             }
         }
 
-        private int _numMinions;
-        public int NumMinions
-        {
-            get
-            {
-                GetData<int>(ref _numMinions, "NumMinions");
-                return _numMinions;
-            }
-        }
-
-        private int _numEffects;
-        public int NumEffects
-        {
-            get
-            {
-                GetData<int>(ref _numEffects, "NumEffects");
-                return _numEffects;
-            }
-        }
-
-        private int _numMaintained;
-        public int NumMaintained
-        {
-            get
-            {
-                GetData<int>(ref _numMaintained, "NumMaintained");
-                return _numMaintained;
-            }
-        }
-
         private float _weight;
         public float Weight
         {
@@ -699,16 +669,6 @@ namespace Vanguard.ISXVG
             }
         }
 
-        private int _numTargetEffects;
-        public int NumTargetEffects
-        {
-            get
-            {
-                GetData<int>(ref _numTargetEffects, "NumTargetEffects");
-                return _numTargetEffects;
-            }
-        }
-
         private bool _isLooting;
         public bool IsLooting
         {
@@ -716,6 +676,16 @@ namespace Vanguard.ISXVG
             {
                 GetData<bool>(ref _isLooting, "IsLooting");
                 return _isLooting;
+            }
+        }
+
+        private bool _lootingMyCorpse;
+        public bool LootingMyCorpse
+        {
+            get
+            {
+                GetData<bool>(ref _lootingMyCorpse, "LootingMyCorpse");
+                return _lootingMyCorpse;
             }
         }
 
@@ -779,6 +749,13 @@ namespace Vanguard.ISXVG
             }
         }
 
+        private int _minion;
+        public int Minion()
+        {
+            GetData<int>(ref _minion, "Me.Minion");
+            return _minion;
+        }
+
         public ISXVGMinion Minion(int minion)
         {
             return new ISXVGMinion("Me.Minion[" + minion + "]");
@@ -799,6 +776,13 @@ namespace Vanguard.ISXVG
             return new ISXVGAbility("Me.Ability[" + ability + "]");
         }
 
+        private int _effect;
+        public int Effect()
+        {
+            GetData<int>(ref _effect, "Me.Effect");
+            return _effect;
+        }
+
         public ISXVGEffect Effect(int effect)
         {
             return new ISXVGEffect("Me.Effect[" + effect + "]");
@@ -809,6 +793,13 @@ namespace Vanguard.ISXVG
             return new ISXVGEffect("Me.Effect[" + effect + "]");
         }
 
+        private int _maintained;
+        public int Maintained()
+        {
+            GetData<int>(ref _maintained, "Me.Maintained");
+            return _maintained;
+        }
+
         public ISXVGEffect Maintained(int maintained)
         {
             return new ISXVGEffect("Me.Maintained[" + maintained + "]");
@@ -817,6 +808,13 @@ namespace Vanguard.ISXVG
         public ISXVGEffect Maintained(string maintained)
         {
             return new ISXVGEffect("Me.Maintained[" + maintained + "]");
+        }
+
+        private int _targetEffect;
+        public int TargetEffect()
+        {
+            GetData<int>(ref _targetEffect, "Me.TargetEffect");
+            return _targetEffect;
         }
 
         public ISXVGEffect TargetEffect(int targetEffect)
@@ -844,6 +842,16 @@ namespace Vanguard.ISXVG
         public ISXVGEncounter Encounter(string encounter)
         {
             return new ISXVGEncounter("Me.Encounter[" + encounter + "]");
+        }
+
+        public ISXVGItem Inventory(string inventory)
+        {
+            return new ISXVGItem("Me.Inventory[" + inventory + "]");
+        }
+
+        public ISXVGItem Bank(string bank)
+        {
+            return new ISXVGItem("Me.Bank[" + bank + "]");
         }
 
         private int _form;

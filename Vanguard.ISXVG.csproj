@@ -45,6 +45,7 @@
     <Compile Include="ISXVGForm.cs" />
     <Compile Include="ISXVGISXVG.cs" />
     <Compile Include="ISXVGItem.cs" />
+    <Compile Include="ISXVGItemModifier.cs" />
     <Compile Include="ISXVGLoot.cs" />
     <Compile Include="ISXVGMap.cs" />
     <Compile Include="ISXVGMinion.cs" />
@@ -62,6 +63,6 @@
   </Target>
   -->
   <PropertyGroup>
-    <PostBuildEvent>copy $(TargetFileName) "C:\Games\Innerspace\.Net Programs"</PostBuildEvent>
+    <PostBuildEvent>copy $(TargetFileName) "C:\Innerspace\.Net Programs"</PostBuildEvent>
   </PropertyGroup>
 </Project>

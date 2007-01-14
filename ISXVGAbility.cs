@@ -205,6 +205,66 @@ namespace Vanguard.ISXVG
             }
         }
 
+        private bool _toggled;
+        public bool Toggled
+        {
+            get
+            {
+                GetData<bool>(ref _toggled, "Toggled");
+                return _toggled;
+            }
+        }
+
+        private int _healthCost;
+        public int HealthCost
+        {
+            get
+            {
+                GetData<int>(ref _healthCost, "HealthCost");
+                return _healthCost;
+            }
+        }
+
+        private int _healthCostPerSec;
+        public int HealthCostPerSec
+        {
+            get
+            {
+                GetData<int>(ref _healthCostPerSec, "HealthCostPerSec");
+                return _healthCostPerSec;
+            }
+        }
+
+        private int _energyCostPerSec;
+        public int EnergyCostPerSec
+        {
+            get
+            {
+                GetData<int>(ref _energyCostPerSec, "EnergyCostPerSec");
+                return _energyCostPerSec;
+            }
+        }
+
+        private int _enduranceCost;
+        public int EnduranceCost
+        {
+            get
+            {
+                GetData<int>(ref _enduranceCost, "EnduranceCost");
+                return _enduranceCost;
+            }
+        }
+
+        private int _enduranceCostPerSec;
+        public int EnduranceCostPerSec
+        {
+            get
+            {
+                GetData<int>(ref _enduranceCostPerSec, "EnduranceCostPerSec");
+                return _enduranceCostPerSec;
+            }
+        }
+
         public void Use()
         {
             LavishScript.ExecuteCommand(TLO + ":Use");

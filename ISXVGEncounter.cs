@@ -59,11 +59,11 @@ namespace Vanguard.ISXVG
         {
             try
             {
-                LavishScript.DataParse<T>("${" + param + ".}", ref obj);
+                LavishScript.DataParse<T>("${" + TLO + "." + param + "}", ref obj);
             }
             catch
             {
-                InnerSpace.Echo("Exception Raised/n");
+                InnerSpace.Echo("Exception Raised");
             }
         }
     }
