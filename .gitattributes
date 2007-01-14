@@ -16,5 +16,6 @@
 Properties/AssemblyInfo.cs -text
 /Radar.cs -text
 /VG.cs -text
+/VGLoc.cs -text
 /Vanguard.ISXVG.csproj -text
 /Wrapper.cs -text
