@@ -1,1 +1,20 @@
 * text=auto !eol
+/ISXVGAbility.cs -text
+/ISXVGCharacter.cs -text
+/ISXVGChunk.cs -text
+/ISXVGEffect.cs -text
+/ISXVGEncounter.cs -text
+/ISXVGForm.cs -text
+/ISXVGISXVG.cs -text
+/ISXVGItem.cs -text
+/ISXVGLoot.cs -text
+/ISXVGMap.cs -text
+/ISXVGMinion.cs -text
+/ISXVGPawn.cs -text
+/ISXVGRadar.cs -text
+/ISXVGVG.cs -text
+/MainWrapper.cs -text
+Properties/AssemblyInfo.cs -text
+/Vanguard.ISXVG.csproj -text
+/Vanguard.ISXVG.sln -text
+/Vanguard.ISXVG.suo -text
