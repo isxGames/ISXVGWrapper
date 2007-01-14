@@ -7,6 +7,7 @@
 /ISXVGForm.cs -text
 /ISXVGISXVG.cs -text
 /ISXVGItem.cs -text
+/ISXVGItemModifier.cs -text
 /ISXVGLoot.cs -text
 /ISXVGMap.cs -text
 /ISXVGMinion.cs -text
