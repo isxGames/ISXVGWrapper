@@ -65,6 +65,6 @@
   </Target>
   -->
   <PropertyGroup>
-    <PostBuildEvent>copy $(TargetFileName) "C:\Innerspace\.Net Programs"</PostBuildEvent>
+    <PostBuildEvent>copy $(TargetFileName) "C:\Games\Innerspace\.Net Programs"</PostBuildEvent>
   </PropertyGroup>
 </Project>
