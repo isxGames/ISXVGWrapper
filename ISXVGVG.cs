@@ -1,8 +1,9 @@
 using System;
 using System.Text;
-
+using System.Runtime.InteropServices;
 using InnerSpaceAPI;
 using LavishScriptAPI;
+using LavishVMAPI;
 
 namespace Vanguard.ISXVG
 {

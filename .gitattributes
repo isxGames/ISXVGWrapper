@@ -1,4 +1,5 @@
 * text=auto !eol
+/ISXVG.cs -text
 /ISXVGAbility.cs -text
 /ISXVGCharacter.cs -text
 /ISXVGChunk.cs -text

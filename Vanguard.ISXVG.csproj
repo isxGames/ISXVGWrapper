@@ -37,6 +37,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="ISXVG.cs" />
     <Compile Include="ISXVGAbility.cs" />
     <Compile Include="ISXVGChunk.cs" />
     <Compile Include="ISXVGCharacter.cs" />
@@ -63,6 +64,6 @@
   </Target>
   -->
   <PropertyGroup>
-    <PostBuildEvent>copy $(TargetFileName) "C:\Innerspace\.Net Programs"</PostBuildEvent>
+    <PostBuildEvent>copy $(TargetFileName) "C:\Games\Innerspace\.Net Programs"</PostBuildEvent>
   </PropertyGroup>
 </Project>
