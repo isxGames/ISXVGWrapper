@@ -80,7 +80,7 @@ namespace Vanguard.ISXVG
 
         public VGLoc VGLoc(string args)
         {
-            return new VGLoc("VGLoc[" + args + "]",1);
+            return new VGLoc("VGLoc[" + args + "]", 1);
         }
 
         public void VGExecute(string Command)
@@ -123,5 +123,4 @@ namespace Vanguard.ISXVG
             LavishScript.ExecuteCommand("Where " + args);
         }
     }
-
 }
