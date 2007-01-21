@@ -839,7 +839,7 @@ namespace Vanguard.ISXVG
         private int _effect;
         public int Effect()
         {
-            GetData<int>(ref _effect, "Me.Effect");
+            GetData<int>(ref _effect, "Effect");
             return _effect;
         }
 

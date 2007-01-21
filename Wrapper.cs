@@ -33,7 +33,7 @@ namespace Vanguard.ISXVG
             }
             catch
             {
-                InnerSpace.Echo("Exception Raised or Object does not Exist or NULL");
+                InnerSpace.Echo("[DEBUG]Object does not Exist or returned NULL for: ${" + Args + "." + param + "}");
             }
         }
     }
