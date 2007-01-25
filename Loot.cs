@@ -6,62 +6,48 @@ using LavishScriptAPI;
 
 namespace Vanguard.ISXVG
 {
-    public class Loot
+    public class Loot : LavishScriptObject
     {
         public Loot()
+            :
+            base(LavishScript.Objects.GetObject("Loot"))
         {
         }
 
-        private int _numItems;
+        public Loot(LavishScriptPersistentObject Copy)
+            :
+            base(Copy)
+        {
+        }
+
         public int NumItems
         {
-            get
-            {
-                GetData<int>(ref _numItems, "NumItems");
-                return _numItems;
-            }
+            get { return GetMember<int>("NumItems"); }
         }
 
-        private Pawn _lootingFrom;
         public Pawn LootingFrom
         {
-            get
-            {
-                _lootingFrom = new Pawn("Loot.LootingFrom",1);
-                return _lootingFrom;
-            }
+            get { return GetMember<Pawn>("LootingFrom"); }
         }
 
         public Item Item(int item)
         {
-            return new Item("Loot.Item[" + item + "]");
+            return GetMember<Item>("Item",item.ToString());
         }
 
         public Item Item(string item)
         {
-            return new Item("Loot.Item[" + item + "]");
+            return GetMember<Item>("Item",item);
         }
 
-        public void LootAll()
+        public bool LootAll
         {
-            LavishScript.ExecuteCommand("Loot:LootAll");
+            get { return ExecuteMethod("LootAll"); }
         }
 
-        public void EndLooting()
+        public bool EndLooting
         {
-            LavishScript.ExecuteCommand("Loot:EndLooting");
-        }
-
-        protected void GetData<T>(ref T obj, string param)
-        {
-            try
-            {
-                LavishScript.DataParse<T>("${Loot." + param + "}", ref obj);
-            }
-            catch
-            {
-
-            }
+            get { return ExecuteMethod("EndLooting"); }
         }
     }
 }

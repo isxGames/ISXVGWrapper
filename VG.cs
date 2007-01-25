@@ -1,60 +1,54 @@
 using System;
-using System.Text;
-
+using System.Collections.Generic;
 using InnerSpaceAPI;
+
+using LavishVMAPI; // allows using LavishVMAPI.LavishVM.GetAPI without explicitly specifying LavishVMAPI
 using LavishScriptAPI;
 
 namespace Vanguard.ISXVG
 {
-    public class VG
+    public class VG : LavishScriptPersistentObject
     {
         public VG()
+            :
+            base(LavishScript.Objects.GetPersistentObject("VG"))
         {
         }
 
-        private int _pawnCount;
+        public VG(LavishScriptPersistentObject Copy)
+            :
+            base(Copy)
+        {
+        }
+
+
         public int PawnCount
         {
-            get
-            {
-                GetData<int>(ref _pawnCount, "PawnCount");
-                return _pawnCount;
-            }
+            get { return GetMember<int>("PawnCount"); }
         }
 
-        private bool _isSwimming;
         public bool IsSwimming
         {
-            get
-            {
-                GetData<bool>(ref _isSwimming, "IsSwimming");
-                return _isSwimming;
-            }
+            get { return GetMember<bool>("IsSwimming"); }
         }
 
-        private int _serverID;
         public int ServerID
         {
-            get
-            {
-                GetData<int>(ref _serverID, "ServerID");
-                return _serverID;
-            }
+            get { return GetMember<int>("ServerID"); }
         }
 
-        public void ExecBinding(string Action)
+        public bool ExecBinding(string Action)
         {
-            LavishScript.ExecuteCommand("VG:ExecBinding[" + Action + "]");
+            return ExecuteMethod("ExecBinding", Action);
         }
 
-        public void ExecBinding(string Action, int Release)
+        public bool ExecBinding(string Action, bool Release)
         {
-            LavishScript.ExecuteCommand("VG:ExecBinding[" + Action + ",release]");
+            if (Release)
+                return ExecuteMethod("ExecBinding", Action, "Release");
+            else
+                return ExecuteMethod("ExecBinding", Action);
         }
 
-        protected void GetData<T>(ref T obj, string param)
-        {
-            LavishScript.DataParse<T>("${VG." + param + "}", ref obj);
-        }
     }
 }
