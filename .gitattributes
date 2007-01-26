@@ -22,6 +22,14 @@ ISXVGDotNet[!!-~](Empty[!!-~]with[!!-~]forms)/Properties/Settings.Designer.cs -t
 ISXVGDotNet[!!-~](Empty[!!-~]with[!!-~]forms)/Properties/Settings.settings -text
 ISXVGDotNet[!!-~](Empty[!!-~]with[!!-~]forms)/bin/Debug/PostBuild.bat -text
 ISXVGDotNet[!!-~](Empty[!!-~]with[!!-~]forms)/bin/Release/PostBuild.bat -text
+ISXVGDotNet[!!-~](Empty)/ISXVGDotNet.csproj -text
+ISXVGDotNet[!!-~](Empty)/ISXVGDotNet.sln -text
+ISXVGDotNet[!!-~](Empty)/ISXVGWrapper.dll -text
+ISXVGDotNet[!!-~](Empty)/Lavish.InnerSpace.dll -text
+ISXVGDotNet[!!-~](Empty)/PreBuild.bat -text
+ISXVGDotNet[!!-~](Empty)/Program.cs -text
+ISXVGDotNet[!!-~](Empty)/bin/Debug/PostBuild.bat -text
+ISXVGDotNet[!!-~](Empty)/bin/Release/PostBuild.bat -text
 /Item.cs -text
 /ItemModifier.cs -text
 /Loot.cs -text
