@@ -13,11 +13,11 @@ namespace Vanguard.ISXVG
         {
         }
 
-        public Ability(string AbilityName)
-            : base(LavishScript.Objects.GetObject("Ability",AbilityName))
+        public Ability(string Argument)
+            : base(LavishScript.Objects.GetObject("Ability", Argument))
         {
         }
-        
+
         public string Name
         {
             get
@@ -187,9 +187,10 @@ namespace Vanguard.ISXVG
                 return GetMember<int>("JinCostPerSecond");
             }
         }
-        public void Use(string AbilityName)
+
+        public bool Use
         {
-            LavishScript.ExecuteCommand("Me.Ability[" + AbilityName + "]:Use");
+            get { return ExecuteMethod("Use"); }
         }
     }
 }

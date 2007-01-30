@@ -13,14 +13,11 @@ namespace Vanguard.ISXVG
         {
         }
 
-        public Effect(string EffectName)
-            : base(LavishScript.Objects.GetObject("Effect", EffectName))
+        public Effect()
+            : base(LavishScript.Objects.GetObject("Effect"))
         {
         }
-        public Effect(int EffectNumber)
-            : base(LavishScript.Objects.GetObject("Effect", EffectNumber.ToString()))
-        {
-        }
+
 
         public string Name
         {

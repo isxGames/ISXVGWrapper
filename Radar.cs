@@ -6,16 +6,21 @@ using LavishScriptAPI;
 
 namespace Vanguard.ISXVG
 {
-    public class Radar : LavishScriptObject
+    public class Radar : LavishScriptPersistentObject
     {
 
-        public Radar(LavishScriptObject Obj)
+        public Radar(LavishScriptPersistentObject Obj)
             : base(Obj)
         {
         }
 
-        public Radar(string RadarName)
-            : base(LavishScript.Objects.GetObject("Radar", RadarName))
+        public Radar(string Name)
+            : base(LavishScript.Objects.GetPersistentObject("Radar", Name))
+        {
+        }
+
+        public Radar(int Index)
+            : base(LavishScript.Objects.GetPersistentObject("Radar", Index.ToString()))
         {
         }
 
@@ -298,9 +303,9 @@ namespace Vanguard.ISXVG
            get { return ExecuteMethod("FilterMyPet"); }
         }
 
-        public bool SetSize(string size)
+        public bool SetSize(int Size)
         {
-           return ExecuteMethod("SetSize",size);
+            return ExecuteMethod("SetSize", Size.ToString());
         }
 
         public bool ShowLabels
@@ -318,9 +323,9 @@ namespace Vanguard.ISXVG
            get { return ExecuteMethod("ClipText"); }
         }
 
-        public bool ClipRadius(string ClipRadius)
+        public bool ClipRadius(int ClipRadius)
         {
-           return ExecuteMethod("ClipRadius", ClipRadius);
+            return ExecuteMethod("ClipRadius", ClipRadius.ToString());
         }
 
         public bool Rotation

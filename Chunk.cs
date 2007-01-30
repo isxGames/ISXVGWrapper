@@ -14,8 +14,8 @@ namespace Vanguard.ISXVG
         {
         }
 
-        public Chunk(string ChunkName)
-            : base(LavishScript.Objects.GetObject("Chunk", ChunkName))
+        public Chunk()
+            : base(LavishScript.Objects.GetObject("Chunk"))
         {
         }
 

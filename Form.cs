@@ -13,13 +13,8 @@ namespace Vanguard.ISXVG
         {
         }
 
-        public Form(string FormName)
-            : base(LavishScript.Objects.GetObject("Form", FormName))
-        {
-        }
-
-        public Form(int FormNumber)
-            : base(LavishScript.Objects.GetObject("Form", FormNumber.ToString()))
+        public Form()
+            : base(LavishScript.Objects.GetObject("Form"))
         {
         }
 
@@ -38,9 +33,9 @@ namespace Vanguard.ISXVG
             }
         }
 
-        public void ChangeTo(string FormName)
+        public bool ChangeTo(params string[] Args)
         {
-            LavishScript.ExecuteCommand("Me.Form[" + FormName + "]:ChangeTo");
+            return ExecuteMethod("ChangeTo",Args);
         }
     }
 }

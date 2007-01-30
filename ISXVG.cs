@@ -6,62 +6,47 @@ using LavishScriptAPI;
 
 namespace Vanguard.ISXVG
 {
-    public class ISXVG
+    public class ISXVG : LavishScriptPersistentObject
     {
-        public ISXVG()
+        public ISXVG(LavishScriptPersistentObject Copy)
+            : base(Copy)
         {
         }
 
-        private int _numRadars;
-        public int NumRadars
+        public ISXVG() 
+            : base(LavishScript.Objects.GetPersistentObject("ISXVG"))
         {
-            get
-            {
-                GetData<int>(ref _numRadars, "NumRadars");
-                return _numRadars;
-            }
         }
 
-        private string _version;
+        public int NumItems
+        {
+            get { return GetMember<int>("NumRadars"); }
+        }
+
         public string Version
         {
-            get
-            {
-                GetData<string>(ref _version, "Version");
-                return _version;
-            }
+            get { return GetMember<string>("Version"); }
         }
 
-        private string _connectionState;
         public string ConnectionState
         {
-            get
-            {
-                GetData<string>(ref _connectionState, "ConnectionState");
-                return _connectionState;
-            }
+            get { return GetMember<string>("ConnectionState"); }
         }
 
-        private string _clipBoardText;
         public string ClipBoardText
         {
-            get
-            {
-                GetData<string>(ref _clipBoardText, "ClipBoardText");
-                return _clipBoardText;
-            }
+            get { return GetMember<string>("ClipBoardText"); }
         }
 
-        protected void GetData<T>(ref T obj, string param)
+        public bool AddLoc(string Label)
         {
-            try
-            {
-                LavishScript.DataParse<T>("${ISXVG." + param + "}", ref obj);
-            }
-            catch
-            {
-                InnerSpace.Echo("Exception Raised");
-            }
+            return ExecuteMethod("AddLoc", Label);
         }
+
+        public bool AddLoc(string Label, string Notes)
+        {
+            return ExecuteMethod("AddLoc", Label, Notes);
+        }
+
     }
 }

@@ -13,14 +13,11 @@ namespace Vanguard.ISXVG
         {
         }
 
-        public Encounter(string EncounterName)
-            : base(LavishScript.Objects.GetObject("Encounter", EncounterName))
+        public Encounter()
+            : base(LavishScript.Objects.GetObject("Encounter"))
         {
         }
-        public Encounter(int EncounterNumber)
-            : base(LavishScript.Objects.GetObject("Encounter", EncounterNumber.ToString()))
-        {
-        }
+
 
         public string Name
         {

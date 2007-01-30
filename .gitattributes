@@ -20,4 +20,5 @@ Properties/AssemblyInfo.cs -text
 /VGLoc.cs -text
 /VGLocation.cs -text
 /Vanguard.ISXVG.csproj -text
-/Wrapper.cs -text
+bin/Debug/PostBuild.bat -text
+bin/Release/PostBuild.bat -text

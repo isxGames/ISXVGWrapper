@@ -13,8 +13,8 @@ namespace Vanguard.ISXVG
         {
         }
 
-        public Minion(string MinionName)
-            : base(LavishScript.Objects.GetObject("Minion", MinionName))
+        public Minion()
+            : base(LavishScript.Objects.GetObject("Minion"))
         {
         }
 

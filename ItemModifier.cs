@@ -13,8 +13,8 @@ namespace Vanguard.ISXVG
         {
         }
 
-        public ItemModifier(string ItemModifierName)
-            : base(LavishScript.Objects.GetObject("ItemModifier", ItemModifierName))
+        public ItemModifier()
+            : base(LavishScript.Objects.GetObject("ItemModifier"))
         {
         }
 

@@ -14,11 +14,7 @@ namespace Vanguard.ISXVG
         }
 
         public Item(string ItemName)
-            : base(LavishScript.Objects.GetObject("Item", ItemName))
-        {
-        }
-        public Item(int ItemNumber)
-            : base(LavishScript.Objects.GetObject("Item", ItemNumber.ToString()))
+            : base(LavishScript.Objects.GetObject("Item"))
         {
         }
 
@@ -242,54 +238,59 @@ namespace Vanguard.ISXVG
             return GetMember<ItemModifier>("Modifier", ModifierName.ToString());
         }
 
-        public void Loot(string ItemName)
+        public bool LootNDC
         {
-            LavishScript.ExecuteCommand(ItemName + ":Loot");
+            get { return ExecuteMethod("Loot","NDC"); }
         }
 
-        public void LootNDC(string ItemName)
+        public bool Loot
         {
-            LavishScript.ExecuteCommand(ItemName + ":Loot[NDC]");
+            get { return ExecuteMethod("Loot"); }
         }
 
-        public void Use(string ItemName)
+        public bool Use
         {
-            LavishScript.ExecuteCommand(ItemName + ":Use");
+            get { return ExecuteMethod("Use"); }
         }
 
-        public void Delete(string ItemName)
+        public bool Delete
         {
-            LavishScript.ExecuteCommand(ItemName + ":Delete");
+            get { return ExecuteMethod("Delete"); }
         }
 
-        public void Equip(string ItemName)
+        public bool Equip
         {
-            LavishScript.ExecuteCommand(ItemName + ":Equip");
+            get { return ExecuteMethod("Equip"); }
         }
 
-        public void EquipNDC(string ItemName)
+        public bool EquipNDC
         {
-            LavishScript.ExecuteCommand(ItemName + ":Equip[NDC]");
+            get { return ExecuteMethod("Equip","NDC"); }
         }
 
-        public void Unequip(string ItemName)
+        public bool Unequip
         {
-            LavishScript.ExecuteCommand(ItemName + ":Unequip");
+            get { return ExecuteMethod("Unequip"); }
         }
 
-        public void StartConvert(string ItemName)
+        public bool StartConvert
         {
-            LavishScript.ExecuteCommand(ItemName + ":StartConvert");
+            get { return ExecuteMethod("StartConvert"); }
         }
 
-        public void StackWith(string ItemName,int IndexNumber)
+        public bool StackWith(int StackWith)
         {
-            LavishScript.ExecuteCommand(ItemName + ":StackWith[" + IndexNumber + "]");
+            return ExecuteMethod("StackWith",StackWith.ToString());
         }
 
-        public void PutInContainer(string ItemName,int ContainerIndexNumber)
+        public bool PutInContainer(int ContainerIndex)
         {
-            LavishScript.ExecuteCommand(ItemName + ":PutInContainer[" + ContainerIndexNumber + "]");
+            return ExecuteMethod("PutInContainer", ContainerIndex.ToString());
+        }
+
+        public bool PutIn(int ContainerIndex)
+        {
+            return ExecuteMethod("PutIn", ContainerIndex.ToString());
         }
     }
 }

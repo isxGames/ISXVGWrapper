@@ -415,6 +415,11 @@ namespace Vanguard.ISXVG
             get {return ExecuteMethod("Loot"); }
         }
 
+        public bool LootAll
+        {
+            get { return ExecuteMethod("LootAll"); }
+        }
+
         public bool Target
         {
             get {return ExecuteMethod("Target"); }

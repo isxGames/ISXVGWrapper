@@ -13,7 +13,7 @@ namespace Vanguard.ISXVG
         public delegate uint GetVGEventID(string EventName);
     }
 
-    public class Extension : Wrapper
+    public class Extension
     {
         public static Vanguard.ISXVG.Delegates.GetVGEventID GetVGEventID = Stubs.GetVGEventID;
 
@@ -33,31 +33,39 @@ namespace Vanguard.ISXVG
         {
         }
 
-        public Extension(string args)
-        {
-            Args = args;
-        }
-
         public Character Me()
         {
             return new Character();
         }
 
-        /*
-        public Pawn Pawn(string args)
+        public Pawn Pawn(params string[] Args)
         {
-            return new Pawn("Pawn[" + args + "]", 1);
+            return new Pawn(Args);
         }
-        */
+
+        public Pawn Pawn(string Arg)
+        {
+            return new Pawn(Arg);
+        }
+
+        public Pawn Pawn(int Arg)
+        {
+            return new Pawn(Arg.ToString());
+        }
+
+        public Radar Radar(int Index)
+        {
+            return new Radar(Index);
+        }
+
+        public Radar Radar(string Name)
+        {
+            return new Radar(Name);
+        }
 
         public Radar Radar()
         {
-            return new Radar();
-        }
-
-        public Radar Radar(string args)
-        {
-            return new Radar("Radar[" + args + "]", 1);
+            return new Radar(1);
         }
 
         public ISXVG ISXVG()
@@ -80,9 +88,14 @@ namespace Vanguard.ISXVG
             return new Map();
         }
 
-        public VGLocation VGLoc(string args)
+        public VGLocation VGLoc(string Arg)
         {
-            return new VGLocation("VGLoc[" + args + "]", 1);
+            return new VGLocation(Arg);
+        }
+
+        public VGLocation VGLoc(int Arg)
+        {
+            return new VGLocation(Arg);
         }
 
         public void VGExecute(string Command)
