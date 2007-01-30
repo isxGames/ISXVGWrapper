@@ -72,6 +72,7 @@ namespace Vanguard.ISXVG
             }
         }
 
+        /*
         private Pawn _targetOfTarget;
         public Pawn TargetOfTarget
         {
@@ -81,5 +82,6 @@ namespace Vanguard.ISXVG
                 return _targetOfTarget;
             }
         }
+        */
     }
 }

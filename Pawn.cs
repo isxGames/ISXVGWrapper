@@ -6,21 +6,22 @@ using LavishScriptAPI;
 
 namespace Vanguard.ISXVG
 {
-    public class Pawn : Wrapper
+    public class Pawn : LavishScriptPersistentObject
     {
-        public Pawn()
+        public Pawn(params string[] Args)
+            :
+            base(LavishScript.Objects.GetPersistentObject("Pawn",Args))
         {
         }
 
-        public Pawn(string args)
+        public Pawn(LavishScriptPersistentObject Copy)
+            :
+            base(Copy)
         {
-            Args = "Pawn[" + args + "]";
         }
 
-        public Pawn(string args, int unused)
-        {
-            Args = args;
-        }
+
+        /*
 
         private string _name;
         public string Name
@@ -51,17 +52,6 @@ namespace Vanguard.ISXVG
                 return _type;
             }
         }
-
-/*        private Point3f _location;
-        public Point3f Location
-        {
-            get
-            {
-                GetData<Point3f>(ref _location, "Location");
-                return _location;
-            }
-        }
- */
 
         private float _x;
         public float X
@@ -556,5 +546,6 @@ namespace Vanguard.ISXVG
         {
             LavishScript.ExecuteCommand(Args + ":Use");
         }
+        */
     }
 }

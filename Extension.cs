@@ -43,10 +43,12 @@ namespace Vanguard.ISXVG
             return new Character();
         }
 
+        /*
         public Pawn Pawn(string args)
         {
             return new Pawn("Pawn[" + args + "]", 1);
         }
+        */
 
         public Radar Radar()
         {

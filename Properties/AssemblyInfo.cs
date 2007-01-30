@@ -6,9 +6,9 @@ using System.Runtime.InteropServices;
 // set of attributes. Change these attribute values to modify the information
 // associated with an assembly.
 [assembly: AssemblyTitle("Vanguard.ISXVG")]
-[assembly: AssemblyDescription("")]
+[assembly: AssemblyDescription("ISXVG Wrapper")]
 [assembly: AssemblyConfiguration("")]
-[assembly: AssemblyCompany("")]
+[assembly: AssemblyCompany("isxGames")]
 [assembly: AssemblyProduct("Vanguard.ISXVG")]
 [assembly: AssemblyCopyright("Copyright ©  2007")]
 [assembly: AssemblyTrademark("")]

@@ -749,6 +749,7 @@ namespace Vanguard.ISXVG
             }
         }
 
+        /*
         private Pawn _target;
         public Pawn Target
         {
@@ -758,7 +759,9 @@ namespace Vanguard.ISXVG
                 return _target;
             }
         }
+        */
 
+        /*
         private Pawn _dTarget;
         public Pawn DTarget
         {
@@ -778,7 +781,9 @@ namespace Vanguard.ISXVG
                 return _targetOfTarget;
             }
         }
+        */
 
+        /*
         private Pawn _tot;
         public Pawn ToT
         {
@@ -798,6 +803,7 @@ namespace Vanguard.ISXVG
                 return _currentForm;
             }
         }
+        */
 
         private Encounter _TargetAsEncounter;
         public Encounter TargetAsEncounter
@@ -821,10 +827,12 @@ namespace Vanguard.ISXVG
             return new Minion("Me.Minion[" + minion + "]");
         }
 
+        /*
         public Pawn MinionAsPawn(int minion)
         {
             return new Pawn("Me.MinionAsPawn[" + minion + "]",1);
         }
+        */
 
         public Ability Ability(int ability)
         {
