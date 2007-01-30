@@ -14,13 +14,13 @@ namespace Vanguard.ISXVG
         
         }
 
-        public VGLocation(string LocationName)
-            : base(LavishScript.Objects.GetObject("VGLocation",LocationName))
+        public VGLocation(params string[] Args)
+            : base(LavishScript.Objects.GetObject("VGLocation", Args))
         {
         }
 
-        public VGLocation(int Index)
-            : base(LavishScript.Objects.GetObject("VGLocation", Index.ToString()))
+        public VGLocation()
+            : base(LavishScript.Objects.GetObject("VGLocation", "1"))
         {
         }
 

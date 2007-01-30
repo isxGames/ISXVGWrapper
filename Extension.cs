@@ -55,7 +55,7 @@ namespace Vanguard.ISXVG
 
         public Radar Radar(int Index)
         {
-            return new Radar(Index);
+            return new Radar(Index.ToString());
         }
 
         public Radar Radar(string Name)
@@ -65,7 +65,7 @@ namespace Vanguard.ISXVG
 
         public Radar Radar()
         {
-            return new Radar(1);
+            return new Radar();
         }
 
         public ISXVG ISXVG()
@@ -95,7 +95,7 @@ namespace Vanguard.ISXVG
 
         public VGLocation VGLoc(int Arg)
         {
-            return new VGLocation(Arg);
+            return new VGLocation(Arg.ToString());
         }
 
         public void VGExecute(string Command)

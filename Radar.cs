@@ -14,13 +14,13 @@ namespace Vanguard.ISXVG
         {
         }
 
-        public Radar(string Name)
-            : base(LavishScript.Objects.GetPersistentObject("Radar", Name))
+        public Radar(params string[] Args)
+            : base(LavishScript.Objects.GetPersistentObject("Radar", Args))
         {
         }
 
-        public Radar(int Index)
-            : base(LavishScript.Objects.GetPersistentObject("Radar", Index.ToString()))
+        public Radar()
+            : base(LavishScript.Objects.GetPersistentObject("Radar", "1"))
         {
         }
 
