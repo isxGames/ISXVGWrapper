@@ -55,7 +55,7 @@
     <Compile Include="VG.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="VGEvent.cs" />
-    <Compile Include="VGLoc.cs" />
+    <Compile Include="VGLocation.cs" />
     <Compile Include="Wrapper.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
@@ -67,6 +67,6 @@
   </Target>
   -->
   <PropertyGroup>
-    <PostBuildEvent>copy $(TargetFileName) "C:\Games\Innerspace\.Net Programs"</PostBuildEvent>
+    <PostBuildEvent>copy $(TargetFileName) "C:\Program Files\Innerspace\.Net Programs"</PostBuildEvent>
   </PropertyGroup>
 </Project>
