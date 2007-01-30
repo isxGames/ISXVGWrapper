@@ -20,532 +20,414 @@ namespace Vanguard.ISXVG
         {
         }
 
-
-        /*
-
-        private string _name;
         public string Name
         {
             get
             {
-                GetData<string>(ref _name, "Name");
-                return _name;
+                return GetMember<string>("Name");
             }
         }
 
-        private Int64 _id;
         public Int64 ID
         {
             get
             {
-                GetData<Int64>(ref _id, "ID");
-                return _id;
+                return GetMember<Int64>("ID");
             }
         }
 
-        private string _type;
         public string Type
         {
             get
             {
-                GetData<string>(ref _type, "Type");
-                return _type;
+                return GetMember<string>("Type");
             }
         }
 
-        private float _x;
         public float X
         {
             get
             {
-                GetData<float>(ref _x, "X");
-                return _x;
+                return GetMember<float>("X");
             }
         }
 
-        private float _y;
         public float Y
         {
             get
             {
-                GetData<float>(ref _y, "Y");
-                return _y;
+                return GetMember<float>("Y");
             }
         }
 
-        private float _z;
         public float Z
         {
             get
             {
-                GetData<float>(ref _z, "Z");
-                return _z;
+                return GetMember<float>("Z");
             }
         }
-
-        private int _pitch;
-        public int Pitch
-        {
-            get
-            {
-                GetData<int>(ref _pitch, "Pitch");
-                return _pitch;
-            }
-        }
-
-        private int _yaw;
-        public int Yaw
-        {
-            get
-            {
-                GetData<int>(ref _yaw, "Yaw");
-                return _yaw;
-            }
-        }
-
-        private int _roll;
-        public int Roll
-        {
-            get
-            {
-                GetData<int>(ref _roll, "Roll");
-                return _roll;
-            }
-        }
-
-        private float _distance;
-        public float Distance
-        {
-            get
-            {
-                GetData<float>(ref _distance, "Distance");
-                return _distance;
-            }
-        }
-
-        private float _twoDemDistance;
-        public float TwoDemDistance
-        {
-            get
-            {
-                GetData<float>(ref _twoDemDistance, "TwoDemDistance");
-                return _twoDemDistance;
-            }
-        }
-
-        private float _headingTo;
-        public float HeadingTo
-        {
-            get
-            {
-                GetData<float>(ref _headingTo, "HeadingTo");
-                return _headingTo;
-            }
-        }
-
-        private int _level;
         public int Level
         {
             get
             {
-                GetData<int>(ref _level, "Level");
-                return _level;
+                return GetMember<int>("Level");
+            }
+        }
+        public int Pitch
+        {
+            get
+            {
+                return GetMember<int>("Pitch");
             }
         }
 
-        private string _gender;
+        public int Yaw
+        {
+            get
+            {
+                return GetMember<int>("Yaw");
+            }
+        }
+
+        public int Roll
+        {
+            get
+            {
+                return GetMember<int>("Roll");
+            }
+        }
+
+        public float Distance
+        {
+            get
+            {
+                return GetMember<float>("Distance");
+            }
+        }
+
+        public float TwoDemDistance
+        {
+            get
+            {
+                return GetMember<float>("TwoDemDistance");
+            }
+        }
+
+        public float HeadingTo
+        {
+            get
+            {
+                return GetMember<float>("HeadingTo");
+            }
+        }
+
         public string Gender
         {
             get
             {
-                GetData<string>(ref _gender, "Gender");
-                return _gender;
+                return GetMember<string>("Gender");
             }
         }
 
-        private string _trueGender;
         public string TrueGender
         {
             get
             {
-                GetData<string>(ref _trueGender, "TrueGender");
-                return _trueGender;
+                return GetMember<string>("TrueGender");
             }
         }
 
-        private string _race;
         public string Race
         {
             get
             {
-                GetData<string>(ref _race, "Race");
-                return _race;
+                return GetMember<string>("Race");
             }
         }
 
-        private string _raceAbr;
         public string RaceAbr
         {
             get
             {
-                GetData<string>(ref _raceAbr, "RaceAbr");
-                return _raceAbr;
+                return GetMember<string>("RaceAbr");
             }
         }
 
-        private string _posture;
         public string Posture
         {
             get
             {
-                GetData<string>(ref _posture, "Posture");
-                return _posture;
+                return GetMember<string>("Posture");
             }
         }
 
-        private int _combatState;
         public int CombatState
         {
             get
             {
-                GetData<int>(ref _combatState, "CombatState");
-                return _combatState;
+                return GetMember<int>("CombatState");
             }
         }
 
-        private int _guildID;
         public int GuildID
         {
             get
             {
-                GetData<int>(ref _guildID, "GuildID");
-                return _guildID;
-            }
+                return GetMember<int>("GuildID");
+             }
         }
 
-        private int _factionID;
         public int FactionID
         {
             get
             {
-                GetData<int>(ref _factionID, "FactionID");
-                return _factionID;
+                return GetMember<int>("FactionID");
             }
         }
 
-        private float _speed;
         public float Speed
         {
             get
             {
-                GetData<float>(ref _speed, "Speed");
-                return _speed;
+                return GetMember<float>("Speed");
             }
         }
 
-        private float _maxSpeed;
         public float MaxSpeed
         {
             get
             {
-                GetData<float>(ref _maxSpeed, "MaxSpeed");
-                return _maxSpeed;
+                return GetMember<float>("MaxSpeed");
             }
         }
 
-        private bool _canSeeMeIfInRange;
         public bool CanSeeMeIfInRange
         {
             get
             {
-                GetData<bool>(ref _canSeeMeIfInRange, "CanSeeMeIfInRange");
-                return _canSeeMeIfInRange;
+                return GetMember<bool>("CanSeeMeIfInRange");
             }
         }
 
-        private bool _canSeeIfInRange;
-        public bool CanSeeIfInRange(Int64 actorid)
-        {
-            GetData<bool>(ref _canSeeIfInRange, "CanSeeIfInRange[" + actorid + "]");
-            return _canSeeIfInRange;
-        }
-
-        private bool _canSeeMeIfStealthed;
         public bool CanSeeMeIfStealthed
         {
             get
             {
-                GetData<bool>(ref _canSeeMeIfStealthed, "CanSeeMeIfStealthed");
-                return _canSeeMeIfStealthed;
+                return GetMember<bool>("CanSeeMeIfStealthed");
             }
         }
 
-        private bool _CanSeeIfStealthed;
-        public bool CanSeeIfStealthed(Int64 actorid)
-        {
-            GetData<bool>(ref _CanSeeIfStealthed, "CanSeeIfStealthed[" + actorid + "]");
-            return _CanSeeIfStealthed;
-        }
-
-        private bool _canFly;
         public bool CanFly
         {
             get
             {
-                GetData<bool>(ref _canFly, "CanFly");
-                return _canFly;
+                return GetMember<bool>("CanFly");
             }
         }
 
-        private bool _canSwim;
         public bool CanSwim
         {
             get
             {
-                GetData<bool>(ref _canSwim, "CanSwim");
-                return _canSwim;
+                return GetMember<bool>("CanSwim");
             }
         }
 
-        private bool _isDead;
         public bool IsDead
         {
             get
             {
-                GetData<bool>(ref _isDead, "IsDead");
-                return _isDead;
+                return GetMember<bool>("IsDead");
             }
         }
 
-        private bool _isStealthed;
         public bool IsStealthed
         {
             get
             {
-                GetData<bool>(ref _isStealthed, "IsStealthed");
-                return _isStealthed;
+                return GetMember<bool>("IsStealthed");
             }
         }
 
-        private bool _isLFG;
         public bool IsLFG
         {
             get
             {
-                GetData<bool>(ref _isLFG, "IsLFG");
-                return _isLFG;
+                return GetMember<bool>("IsLFG");
             }
         }
 
-        private bool _isInOffensiveForm;
         public bool IsInOffensiveForm
         {
             get
             {
-                GetData<bool>(ref _isInOffensiveForm, "IsInOffensiveForm");
-                return _isInOffensiveForm;
+                return GetMember<bool>("IsInOffensiveForm");
             }
         }
 
-        private bool _isOutside;
         public bool IsOutside
         {
             get
             {
-                GetData<bool>(ref _isOutside, "IsOutside");
-                return _isOutside;
+                return GetMember<bool>("IsOutside");
             }
         }
 
-        private bool _isIndoors;
         public bool IsIndoors
         {
             get
             {
-                GetData<bool>(ref _isIndoors, "IsIndoors");
-                return _isIndoors;
+                return GetMember<bool>("IsIndoors");
             }
         }
 
-        private bool _isAggro;
         public bool IsAggro
         {
             get
             {
-                GetData<bool>(ref _isAggro, "IsAggro");
-                return _isAggro;
+                return GetMember<bool>("IsAggro");
             }
         }
 
-        private bool _isGroupMember;
         public bool IsGroupMember
         {
             get
             {
-                GetData<bool>(ref _isGroupMember, "IsGroupMember");
-                return _isGroupMember;
+                return GetMember<bool>("IsGroupMember");
             }
         }
 
-        private bool _isAttackable;
         public bool IsAttackable
         {
             get
             {
-                GetData<bool>(ref _isAttackable, "IsAttackable");
-                return _isAttackable;
+                return GetMember<bool>("IsAttackable");
             }
         }
 
-        private bool _isClickable;
         public bool IsClickable
         {
             get
             {
-                GetData<bool>(ref _isClickable, "IsClickable");
-                return _isClickable;
+                return GetMember<bool>("IsClickable");
             }
         }
 
-        private bool _isAPet;
         public bool IsAPet
         {
             get
             {
-                GetData<bool>(ref _isAPet, "IsAPet");
-                return _isAPet;
+                return GetMember<bool>("IsAPet");
             }
         }
 
-        private float _cullDistance;
         public float CullDistance
         {
             get
             {
-                GetData<float>(ref _cullDistance, "CullDistance");
-                return _cullDistance;
+                return GetMember<float>("CullDistance");
             }
         }
 
-        private bool _hasQuestFlag;
         public bool HasQuestFlag
         {
             get
             {
-                GetData<bool>(ref _hasQuestFlag, "HasQuestFlag");
-                return _hasQuestFlag;
+                return GetMember<bool>("HasQuestFlag");
             }
         }
 
-        private string _questFlagColor;
         public string QuestFlagColor
         {
             get
             {
-                GetData<string>(ref _questFlagColor, "QuestFlagColor");
-                return _questFlagColor;
+                return GetMember<string>("QuestFlagColor");
             }
         }
 
-        private bool _containsLoot;
         public bool ContainsLoot
         {
             get
             {
-                GetData<bool>(ref _containsLoot, "ContainsLoot");
-                return _containsLoot;
+                return GetMember<bool>("ContainsLoot");
             }
         }
 
-        private string _title;
         public string Title
         {
             get
             {
-                GetData<string>(ref _title, "Title");
-                return _title;
+                return GetMember<string>("Title");
             }
         }
 
-        private string _titlePre;
         public string TitlePre
         {
             get
             {
-                GetData<string>(ref _titlePre, "TitlePre");
-                return _titlePre;
+                return GetMember<string>("TitlePre");
             }
         }
 
-        private string _titlePost;
         public string TitlePost
         {
             get
             {
-                GetData<string>(ref _titlePost, "TitlePost");
-                return _titlePost;
+                return GetMember<string>("TitlePost");
             }
         }
 
-        private bool _haveLOSTo;
         public bool HaveLOSTo
         {
             get
             {
-                GetData<bool>(ref _haveLOSTo, "HaveLOSTo");
-                return _haveLOSTo;
+                return GetMember<bool>("HaveLOSTo");
             }
         }
 
-        private bool _ownedByMe;
         public bool OwnedByMe
         {
             get
             {
-                GetData<bool>(ref _ownedByMe, "OwnedByMe");
-                return _ownedByMe;
+                return GetMember<bool>("OwnedByMe");
             }
         }
 
-        private bool _ownerIsMe;
         public bool OwnerIsMe
         {
             get
             {
-                GetData<bool>(ref _ownerIsMe, "OwnerIsMe");
-                return _ownerIsMe;
+                return GetMember<bool>("OwnerIsMe");
             }
         }
 
-        private Pawn _owner;
         public Pawn Owner
         {
             get
             {
-                _owner = new Pawn(Args + ".Owner",1);
-                return _owner;
+                return GetMember<Pawn>("Owner");
             }
         }
 
-        public void Loot()
+        public bool Loot
         {
-            LavishScript.ExecuteCommand(Args + ":Loot");
+            get {return ExecuteMethod("Loot"); }
         }
 
-        public void Target()
+        public bool Target
         {
-            LavishScript.ExecuteCommand(Args + ":Target");
+            get {return ExecuteMethod("Target"); }
         }
 
-        public void Face()
+        public bool Face
         {
-            LavishScript.ExecuteCommand(Args + ":Face");
+            get {return ExecuteMethod("Face"); }
         }
 
-        public void Use()
+        public bool Use
         {
-            LavishScript.ExecuteCommand(Args + ":Use");
+            get {return ExecuteMethod("Use"); }
         }
-        */
     }
 }
