@@ -13,7 +13,7 @@ namespace Vanguard.ISXVG
         {
         }
 
-        public Item(string ItemName)
+        public Item()
             : base(LavishScript.Objects.GetObject("Item"))
         {
         }
