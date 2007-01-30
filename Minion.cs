@@ -6,54 +6,47 @@ using LavishScriptAPI;
 
 namespace Vanguard.ISXVG
 {
-    public class Minion : Wrapper
+    public class Minion : LavishScriptObject
     {
-        public Minion()
+        public Minion(LavishScriptObject Obj)
+            : base(Obj)
         {
         }
 
-        public Minion(string args)
+        public Minion(string MinionName)
+            : base(LavishScript.Objects.GetObject("Minion", MinionName))
         {
-            Args = args;
         }
 
-        private string _name;
         public string Name
         {
             get
             {
-                GetData<string>(ref _name, "Name");
-                return _name;
+                return GetMember<string>("Name");
             }
         }
 
-        private float _health;
         public float Health
         {
             get
             {
-                GetData<float>(ref _health, "Health");
-                return _health;
+                return GetMember<float>("Health");
             }
         }
 
-        private float _totalTime;
         public float TotalTime
         {
             get
             {
-                GetData<float>(ref _totalTime, "TotalTime");
-                return _totalTime;
+                return GetMember<float>("TotalTime");
             }
         }
 
-        private float _timeRemaining;
         public float TimeRemaining
         {
             get
             {
-                GetData<float>(ref _timeRemaining, "TimeRemaining");
-                return _timeRemaining;
+                return GetMember<float>("TimeRemaining");
             }
         }
     }
