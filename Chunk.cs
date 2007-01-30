@@ -6,104 +6,88 @@ using LavishScriptAPI;
 
 namespace Vanguard.ISXVG
 {
-    public class Chunk : Wrapper
+    public class Chunk : LavishScriptObject
     {
-        public Chunk()
+
+        public Chunk(LavishScriptObject Obj)
+            : base(Obj)
         {
         }
 
-        public Chunk(string args)
+        public Chunk(string ChunkName)
+            : base(LavishScript.Objects.GetObject("Chunk", ChunkName))
         {
-            Args = args;
         }
 
-        private int _id;
         public int ID
         {
             get
             {
-                GetData<int>(ref _id, "ID");
-                return _id;
+                return GetMember<int>("ID");
             }
         }
 
-        private string _baseName;
         public string BaseName
         {
             get
             {
-                GetData<string>(ref _baseName, "BaseName");
-                return _baseName;
+                return GetMember<string>("BaseName");
             }
         }
 
-        private string _mapName;
         public string MapName
         {
             get
             {
-                GetData<string>(ref _mapName, "MapName");
-                return _mapName;
+                return GetMember<string>("MapName");
             }
         }
 
-        private string _displayName;
         public string DisplayName
         {
             get
             {
-                GetData<string>(ref _displayName, "DisplayName");
-                return _displayName;
+                return GetMember<string>("DisplayName");
             }
         }
 
-        private string _shortName;
         public string ShortName
         {
             get
             {
-                GetData<string>(ref _shortName, "ShortName");
-                return _shortName;
+                return GetMember<string>("ShortName");
             }
         }
 
-        private int _x;
         public int X
         {
             get
             {
-                GetData<int>(ref _x, "X");
-                return _x;
+                return GetMember<int>("X");
             }
         }
 
-        private int _y;
         public int Y
         {
             get
             {
-                GetData<int>(ref _y, "Y");
-                return _y;
+                return GetMember<int>("Y");
             }
         }
 
-        private int _sectorX;
         public int SectorX
         {
             get
             {
-                GetData<int>(ref _sectorX, "SectorX");
-                return _sectorX;
+                return GetMember<int>("SectorX");
             }
         }
 
-        private int _sectorY;
         public int SectorY
         {
             get
             {
-                GetData<int>(ref _sectorY, "SectorY");
-                return _sectorY;
+                return GetMember<int>("SectorY");
             }
         }
     }

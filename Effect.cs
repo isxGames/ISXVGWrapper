@@ -6,59 +6,51 @@ using LavishScriptAPI;
 
 namespace Vanguard.ISXVG
 {
-    public class Effect : Wrapper
+    public class Effect : LavishScriptObject
     {
-        public Effect()
+        public Effect(LavishScriptObject Obj)
+            : base(Obj)
         {
         }
 
-        public Effect(string args)
+        public Effect(string EffectName)
+            : base(LavishScript.Objects.GetObject("Effect", EffectName))
         {
-            Args = args;
+        }
+        public Effect(int EffectNumber)
+            : base(LavishScript.Objects.GetObject("Effect", EffectNumber.ToString()))
+        {
         }
 
-        public Effect(int args)
-        {
-            Args = args.ToString();
-        }
-
-        private string _name;
         public string Name
         {
             get
             {
-                GetData<string>(ref _name, "Name");
-                return _name;
+                return GetMember<string>("Name");
             }
         }
 
-        private string _description;
         public string Description
         {
             get
             {
-                GetData<string>(ref _description, "Description");
-                return _description;
+                return GetMember<string>("Description");
             }
         }
 
-        private string _duration;
         public string Duration
         {
             get
             {
-                GetData<string>(ref _duration, "Duration");
-                return _duration;
+                return GetMember<string>("Duration");
             }
         }
 
-        private string _timeRemaining;
         public string TimeRemaining
         {
             get
             {
-                GetData<string>(ref _timeRemaining, "TimeRemaining");
-                return _timeRemaining;
+                return GetMember<string>("TimeRemaining");
             }
         }
     }

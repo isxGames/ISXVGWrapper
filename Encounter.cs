@@ -6,82 +6,68 @@ using LavishScriptAPI;
 
 namespace Vanguard.ISXVG
 {
-    public class Encounter : Wrapper
+    public class Encounter : LavishScriptObject
     {
-        public Encounter()
+        public Encounter(LavishScriptObject Obj)
+            : base(Obj)
         {
         }
 
-        public Encounter(string args)
+        public Encounter(string EncounterName)
+            : base(LavishScript.Objects.GetObject("Encounter", EncounterName))
         {
-            Args = args;
+        }
+        public Encounter(int EncounterNumber)
+            : base(LavishScript.Objects.GetObject("Encounter", EncounterNumber.ToString()))
+        {
         }
 
-        public Encounter(int args)
-        {
-            Args = args.ToString();
-        }
-
-        private string _name;
         public string Name
         {
             get
             {
-                GetData<string>(ref _name, "Name");
-                return _name;
+                return GetMember<string>("Name");
             }
         }
 
-        private int _pctHealth;
         public int PctHealth
         {
             get
             {
-                GetData<int>(ref _pctHealth, "PctHealth");
-                return _pctHealth;
+                return GetMember<int>("PctHealth");
             }
         }
 
-        private int _distance;
         public int Distance
         {
             get
             {
-                GetData<int>(ref _distance, "Distance");
-                return _distance;
+                return GetMember<int>("Distance");
             }
         }
 
-        private int _level;
         public int Level
         {
             get
             {
-                GetData<int>(ref _level, "Level");
-                return _level;
+                return GetMember<int>("Level");
             }
         }
 
-        private int _difficulty;
         public int Difficulty
         {
             get
             {
-                GetData<int>(ref _difficulty, "Difficulty");
-                return _difficulty;
+                return GetMember<int>("Difficulty");
             }
         }
 
-        /*
-        private Pawn _targetOfTarget;
         public Pawn TargetOfTarget
         {
             get
             {
-                _targetOfTarget = new Pawn(Args + ".TargetOfTarget",1);
-                return _targetOfTarget;
+                return GetMember<Pawn>("TargetOfTarget");
             }
         }
-        */
     }
 }
