@@ -776,14 +776,24 @@ namespace Vanguard.ISXVG
             return GetMember<Encounter>("Encounter", EncounterName);
         }
 
-        public Item Inventory(string SearchParams)
+        public Item Inventory(params string[] Parameters)
         {
-            return GetMember<Item>("Inventory", SearchParams);
+            return GetMember<Item>("Inventory", Parameters);
         }
 
-        public Item Bank(string SearchParams)
+        public Item Inventory(int Index)
         {
-            return GetMember<Item>("Bank", SearchParams);
+            return GetMember<Item>("Inventory", Index.ToString());
+        }
+
+        public Item Bank(params string[] Parameters)
+        {
+            return GetMember<Item>("Bank", Parameters);
+        }
+
+        public Item Bank(int Index)
+        {
+            return GetMember<Item>("Bank", Index.ToString());
         }
 
         /// <summary>
