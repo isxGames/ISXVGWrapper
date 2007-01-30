@@ -6,409 +6,351 @@ using LavishScriptAPI;
 
 namespace Vanguard.ISXVG
 {
-    public class Radar : Wrapper
+    public class Radar : LavishScriptObject
     {
-        public Radar()
+
+        public Radar(LavishScriptObject Obj)
+            : base(Obj)
         {
         }
 
-        public Radar(string args)
+        public Radar(string RadarName)
+            : base(LavishScript.Objects.GetObject("Radar", RadarName))
         {
-            Args = "Radar[" + args + "]";
         }
 
-        public Radar(string args, int unused)
-        {
-            Args = args;
-        }
-
-        private bool _showingMe;
         public bool ShowingMe
         {
             get
             {
-                GetData<bool>(ref _showingMe, "ShowingMe");
-                return _showingMe;
+                return GetMember<bool>("ShowingMe");
             }
         }
 
-        private bool _showingNPCs;
         public bool ShowingNPCs
         {
             get
             {
-                GetData<bool>(ref _showingNPCs, "ShowingNPCs");
-                return _showingNPCs;
+                return GetMember<bool>("ShowingNPCs");
             }
         }
 
-        private bool _showingPCs;
         public bool ShowingPCs
         {
             get
             {
-                GetData<bool>(ref _showingPCs, "ShowingPCs");
-                return _showingPCs;
+                return GetMember<bool>("ShowingPCs");
             }
         }
 
-        private bool _showingSpecials;
         public bool ShowingSpecials
         {
             get
             {
-                GetData<bool>(ref _showingSpecials, "ShowingSpecials");
-                return _showingSpecials;
+                return GetMember<bool>("ShowingSpecials");
             }
         }
 
-        private bool _showingResources;
         public bool ShowingResources
         {
             get
             {
-                GetData<bool>(ref _showingResources, "ShowingResources");
-                return _showingResources;
+                return GetMember<bool>("ShowingResources");
             }
         }
 
-        private bool _showingMerchants;
         public bool ShowingMerchants
         {
             get
             {
-                GetData<bool>(ref _showingMerchants, "ShowingMerchants");
-                return _showingMerchants;
+                return GetMember<bool>("ShowingMerchants");
             }
         }
 
-        private bool _showingCorpses;
         public bool ShowingCorpses
         {
             get
             {
-                GetData<bool>(ref _showingCorpses, "ShowingCorpses");
-                return _showingCorpses;
+                return GetMember<bool>("ShowingCorpses");
             }
         }
 
-        private bool _showingCraftingStations;
         public bool ShowingCraftingStations
         {
             get
             {
-                GetData<bool>(ref _showingCraftingStations, "ShowingCraftingStations");
-                return _showingCraftingStations;
+                return GetMember<bool>("ShowingCraftingStations");
             }
         }
 
-        private bool _showingTrainers;
         public bool ShowingTrainers
         {
             get
             {
-                GetData<bool>(ref _showingTrainers, "ShowingTrainers");
-                return _showingTrainers;
+                return GetMember<bool>("ShowingTrainers");
             }
         }
 
-        private bool _showingGroupMembers;
         public bool ShowingGroupMembers
         {
             get
             {
-                GetData<bool>(ref _showingGroupMembers, "ShowingGroupMembers");
-                return _showingGroupMembers;
+                return GetMember<bool>("ShowingGroupMembers");
             }
         }
 
-        private bool _showingAggroNPCs;
         public bool ShowingAggroNPCs
         {
             get
             {
-                GetData<bool>(ref _showingAggroNPCs, "ShowingAggroNPCs");
-                return _showingAggroNPCs;
+                return GetMember<bool>("ShowingAggroNPCs");
             }
         }
 
-        private bool _showingNamedNPCs;
         public bool ShowingNamedNPCs
         {
             get
             {
-                GetData<bool>(ref _showingNamedNPCs, "ShowingNamedNPCs");
-                return _showingNamedNPCs;
+                return GetMember<bool>("ShowingNamedNPCs");
             }
         }
 
-        private bool _showingPets;
         public bool ShowingPets
         {
             get
             {
-                GetData<bool>(ref _showingPets, "ShowingPets");
-                return _showingPets;
+                return GetMember<bool>("ShowingPets");
             }
         }
 
-        private bool _showingMyPet;
         public bool ShowingMyPet
         {
             get
             {
-                GetData<bool>(ref _showingMyPet, "ShowingMyPet");
-                return _showingMyPet;
+                return GetMember<bool>("ShowingMyPet");
             }
         }
 
-        private bool _numCustomFilters;
-        public bool NumCustomFilters
-        {
-            get
-            {
-                GetData<bool>(ref _numCustomFilters, "NumCustomFilters");
-                return _numCustomFilters;
-            }
-        }
-
-        private string _customFilter;
-        public string CustomFilter(int args)
-        {
-            GetData<string>(ref _customFilter, "CustomFilters[" + args + "]");
-            return _customFilter;
-        }
-
-        private bool _bcustomFilter;
-        public bool CustomFilter(string args)
-        {
-            GetData<bool>(ref _bcustomFilter, "CustomFilters[" + args + "]");
-            return _bcustomFilter;
-        }
-
-        private string _customFiltersList;
-        public string CustomFiltersList
-        {
-            get
-            {
-                GetData<string>(ref _customFiltersList, "CustomFiltersList");
-                return _customFiltersList;
-            }
-        }
-
-        private int _size;
         public int Size
         {
             get
             {
-                GetData<int>(ref _size, "Size");
-                return _size;
+                return GetMember<int>("Size");
             }
         }
 
-        private bool _showingLabels;
         public bool ShowingLabels
         {
             get
             {
-                GetData<bool>(ref _showingLabels, "ShowingLabels");
-                return _showingLabels;
+                return GetMember<bool>("ShowingLabels");
             }
         }
 
-        private bool _zAxisClippingOn;
         public bool ZAxisClippingOn
         {
             get
             {
-                GetData<bool>(ref _zAxisClippingOn, "ZAxisClippingOn");
-                return _zAxisClippingOn;
+                return GetMember<bool>("ZAxisClippingOn");
             }
         }
 
-        private bool _clipRadiusOn;
         public bool ClipRadiusOn
         {
             get
             {
-                GetData<bool>(ref _clipRadiusOn, "ClipRadiusOn");
-                return _clipRadiusOn;
+                return GetMember<bool>("ClipRadiusOn");
             }
         }
 
-        private bool _clippingTextOn;
         public bool ClippingTextOn
         {
             get
             {
-                GetData<bool>(ref _clippingTextOn, "ClippingTextOn");
-                return _clippingTextOn;
+                return GetMember<bool>("ClippingTextOn");
             }
         }
 
-        private bool _rotationOn;
         public bool RotationOn
         {
             get
             {
-                GetData<bool>(ref _rotationOn, "RotationOn");
-                return _rotationOn;
+                return GetMember<bool>("RotationOn");
             }
         }
 
-        private string _name;
         public string Name
         {
             get
             {
-                GetData<string>(ref _name, "Name");
-                return _name;
+                return GetMember<string>("Name");
             }
         }
 
-        private string _showingClickables;
-        public string ShowingClickables
+        public bool ShowingClickables
         {
             get
             {
-                GetData<string>(ref _showingClickables, "ShowingClickables");
-                return _showingClickables;
+                return GetMember<bool>("ShowingClickables");
             }
         }
 
-        private string _showingQuestNPCs;
-        public string ShowingQuestNPCs
+        public bool ShowingQuestNPCs
         {
             get
             {
-                GetData<string>(ref _showingQuestNPCs, "ShowingQuestNPCs");
-                return _showingQuestNPCs;
+                return GetMember<bool>("ShowingQuestNPCs");
             }
         }
 
-        public void FilterMe()
+
+        public int NumCustomFilters
         {
-            LavishScript.ExecuteCommand(Args + ":FilterMe");
+            get
+            {
+                return GetMember<int>("NumCustomFilters");
+            }
         }
 
-        public void FilterNPCs()
+        public string CustomFilter
         {
-            LavishScript.ExecuteCommand(Args + ":FilterNPCs");
+            get
+            {
+                return GetMember<string>("CustomFilter");
+            }
         }
 
-        public void FilterPCs()
+        public string CustomFilterList
         {
-            LavishScript.ExecuteCommand(Args + ":FilterPCs");
+            get
+            {
+                return GetMember<string>("CustomFilterList");
+            }
         }
 
-        public void FilterSpecials()
+        public bool FilterMe
         {
-            LavishScript.ExecuteCommand(Args + ":FilterSpecials");
+           get { return ExecuteMethod("FilterMe"); }
         }
 
-        public void FilterResources()
+        public bool FilterNPCs
         {
-            LavishScript.ExecuteCommand(Args + ":FilterResources");
+           get { return ExecuteMethod("FilterNPCs"); }
         }
 
-        public void FilterMerchants()
+        public bool FilterPCs
         {
-            LavishScript.ExecuteCommand(Args + ":FilterMerchants");
+           get { return ExecuteMethod("FilterPCs"); }
         }
 
-        public void FilterCorpses()
+        public bool FilterSpecials
         {
-            LavishScript.ExecuteCommand(Args + ":FilterCorpses");
+           get { return ExecuteMethod("FilterSpecials"); }
         }
 
-        public void FilterCraftingStations()
+        public bool FilterResources
         {
-            LavishScript.ExecuteCommand(Args + ":FilterCraftingStations");
+           get { return ExecuteMethod("FilterResources"); }
         }
 
-        public void FilterTrainers()
+        public bool FilterMerchants
         {
-            LavishScript.ExecuteCommand(Args + ":FilterTrainers");
+           get { return ExecuteMethod("FilterMerchants"); }
         }
 
-        public void FilterGroupMembers()
+        public bool FilterCorpses
         {
-            LavishScript.ExecuteCommand(Args + ":FilterGroupMembers");
+           get { return ExecuteMethod("FilterCorpses"); }
         }
 
-        public void FilterAggroNPCs()
+        public bool FilterCraftingStations
         {
-            LavishScript.ExecuteCommand(Args + ":FilterAggroNPCs");
+           get { return ExecuteMethod("FilterCraftingStations"); }
         }
 
-        public void FilterNamedNPCs()
+        public bool FilterTrainers
         {
-            LavishScript.ExecuteCommand(Args + ":FilterNamedNPCs");
+           get { return ExecuteMethod("FilterTrainers"); }
         }
 
-        public void FilterPets()
+        public bool FilterGroupMembers
         {
-            LavishScript.ExecuteCommand(Args + ":FilterPets");
+           get { return ExecuteMethod("FilterGroupMembers"); }
         }
 
-        public void FilterMyPet()
+        public bool FilterAggroNPCs
         {
-            LavishScript.ExecuteCommand(Args + ":FilterMyPet");
+           get { return ExecuteMethod("FilterAggroNPCs"); }
         }
 
-        public void SetSize(int size)
+        public bool FilterNamedNPCs
         {
-            LavishScript.ExecuteCommand(Args + ":SetSize[" + size + "]");
+           get { return ExecuteMethod("FilterNamedNPCs"); }
         }
 
-        public void ShowLabels()
+        public bool FilterPets
         {
-            LavishScript.ExecuteCommand(Args + ":ShowLabels");
+           get { return ExecuteMethod("FilterPets"); }
         }
 
-        public void ZAxisClipping()
+        public bool FilterMyPet
         {
-            LavishScript.ExecuteCommand(Args + ":ZAxisClipping");
+           get { return ExecuteMethod("FilterMyPet"); }
         }
 
-        public void ClipText()
+        public bool SetSize(string size)
         {
-            LavishScript.ExecuteCommand(Args + ":ClipText");
+           return ExecuteMethod("SetSize",size);
         }
 
-        public void ClipRadius()
+        public bool ShowLabels
         {
-            LavishScript.ExecuteCommand(Args + ":ClipRadius");
+           get { return ExecuteMethod("ShowLabels"); }
         }
 
-        public void Rotation()
+        public bool ZAxisClipping
         {
-            LavishScript.ExecuteCommand(Args + ":Rotation");
+           get { return ExecuteMethod("ZAxisClipping"); }
         }
 
-        public void SetCustomFilter(int args)
+        public bool ClipText
         {
-            LavishScript.ExecuteCommand(Args + ":SetCustomFilter[" + args + "]");
+           get { return ExecuteMethod("ClipText"); }
         }
 
-        public void ZoomIn()
+        public bool ClipRadius(string ClipRadius)
         {
-            LavishScript.ExecuteCommand(Args + ":ZoomIn");
+           return ExecuteMethod("ClipRadius", ClipRadius);
         }
 
-        public void ZoomOut()
+        public bool Rotation
         {
-            LavishScript.ExecuteCommand(Args + ":ZoomOut");
+           get { return ExecuteMethod("Rotation"); }
         }
 
-        public void FilterClickables()
+        public bool SetCustomFilter(string Text)
         {
-            LavishScript.ExecuteCommand(Args + ":FilterClickables");
+            return ExecuteMethod("SetCustomFilter", Text);
         }
 
-        public void FilterQuestNPCs()
+        public bool ZoomIn
         {
-            LavishScript.ExecuteCommand(Args + ":FilterQuestNPCs");
+           get { return ExecuteMethod("ZoomIn"); }
+        }
+
+        public bool ZoomOut
+        {
+           get { return ExecuteMethod("ZoomOut"); }
+        }
+
+        public bool FilterClickables
+        {
+           get { return ExecuteMethod("FilterClickables"); }
+        }
+
+        public bool FilterQuestNPCs
+        {
+           get { return ExecuteMethod("FilterQuestNPCs"); }
         }
     }
 }
