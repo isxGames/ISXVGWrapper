@@ -6,267 +6,190 @@ using LavishScriptAPI;
 
 namespace Vanguard.ISXVG
 {
-    public class Ability
+    public class Ability : LavishScriptObject
     {
-        private string _AbilityName;
-
         public Ability(LavishScriptObject Obj)
             : base(Obj)
         {
         }
 
-        public Ability()
+        public Ability(string AbilityName)
+            : base(LavishScript.Objects.GetObject("Ability",AbilityName))
         {
         }
         
-        public Ability(string AbilityName)
-        {
-            return new Ability 
-        }
-
-        private string _name;
         public string Name
         {
             get
             {
-                GetData<string>(ref _name, "Name");
-                return _name;
+                return GetMember<string>("Name");
             }
         }
-
-        private string _description;
         public string Description
         {
             get
             {
-                GetData<string>(ref _descirption, "Description");
-                return _description;
+                return GetMember<string>("Description");
             }
         }
-
-        private float _castTime;
         public float CastTime
         {
             get
             {
-                GetData<float>(ref _castTime, "CastTime");
-                return _castTime;
+                return GetMember<float>("CastTime");
             }
         }
-
-        private float _recoveryTime;
         public float RecoveryTime
         {
             get
             {
-                GetData<float>(ref _recoveryTime, "RecoveryTime");
-                return _recoveryTime;
+                return GetMember<float>("RecoveryTime");
             }
         }
-
-        private int _range;
         public int Range
         {
             get
             {
-                GetData<int>(ref _range, "Range");
-                return _range;
+                return GetMember<int>("Range");
             }
         }
-        
-        private int _healthCost;
         public int HealthCost
         {
             get
             {
-                GetData<int>(ref _healthCost, "HealthCost");
-                return _healthCost;
+                return GetMember<int>("HealthCost");
             }
         }
-
-        private int _healthCostPerSecond;
         public int HealthCostPerSecond
         {
             get
             {
-                GetData<int>(ref _healthCostPerSec, "HealthCostPerSecond");
-                return _healthCostPerSecond;
+                return GetMember<int>("HealthCostPerSecond");
             }
         }
-
-        private int _energyCost;
         public int EnergyCost
         {
             get
             {
-                GetData<int>(ref _energyCost, "EnergyCost");
-                return _engergyCost;
+                return GetMember<int>("EnergyCost");
             }
         }
-
-        private int _energyCostPerSecond;
         public int EnergyCostPerSecond
         {
             get
             {
-                GetData<int>(ref _energyCostPerSecond, "EnergyCostPerSecond");
-                return _energyCostPerSecond;
+                return GetMember<int>("EnergyCostPerSecond");
             }
         }
-
-        private int _enduranceCost;
         public int EnduranceCost
         {
             get
             {
-                GetData<int>(ref _enduranceCost, "EnduranceCost");
-                return _enduranceCost;
+                return GetMember<int>("EnduranceCost");
             }
         }
-
-        private int _enduranceCostPerSecond;
         public int EnduranceCostPerSecond
         {
             get
             {
-                GetData<int>(ref _enduranceCostPerSecond, "EnduranceCostPerSecond");
-                return _enduranceCostPerSecond;
+                return GetMember<int>("EnduranceCostPerSecond");
             }
         }
-
-        private float _timeRemaining;
         public float TimeRemaining
         {
             get
             {
-                GetData<flaot>(ref _timeRemaining, "TimeRemaining");
-                return _timeRemaining;
+                return GetMember<float>("TimeRemaining");
             }
         }
-
-        private bool _toggled;
         public bool Toggled
         {
             get
             {
-                GetData<bool>(ref _toggled, "Toggled");
-                return _toggled;
+                return GetMember<bool>("Toggled");
             }
         }
-
-        private bool _targetInRange;
         public bool TargetInRange
         {
             get
             {
-                GetData<string>(ref _targetInRange, "TargetInRange");
-                return _targetInRange;
+                return GetMember<bool>("TargetInRange");
             }
         }
 
-        private bool _isReady;
         public bool IsReady
         {
             get
             {
-                GetData<bool>(ref _isReady, "IsReady");
-                return _isReady;
+                return GetMember<bool>("IsReady");
             }
         }
-
-        private int _specialPointsCost;
         public int SpecialPointsCost
         {
             get
             {
-                GetData<int>(ref _specialPointsCost, "SpecialPointsCost");
-                return _specialPointsCost;
+                return GetMember<int>("SpecialPointsCost");
             }
         }
-        private int _specialPointsCostPerSecond;
+
         public int SpecialPointsCostPerSecond
         {
             get
             {
-                GetData<int>(ref _specialPointsCostPerSecond, "SpecialPointsCostPerSecond");
-                return _specialPointsCostPerSecond;
+                return GetMember<int>("SpecialPointsCostPerSecond");
             }
         }
 
-        private int _phenomenaPointsCost;
         public int PhenomenaPointsCost
         {
             get
             {
-                GetData<int>(ref _pheonmenaPointsCost, "PhenomenaPointsCost");
-                return _phenomenaPointsCost;
+                return GetMember<int>("PhenomenaPointsCost");
             }
         }
 
-        private int _phenomenaPointsCostPerSecond;
         public int PhenomenaPointsCostPerSecond
         {
             get
             {
-                GetData<int>(ref _phenomenaPointsCostPersecond, "PhenomenaPointsCostPerSecond");
-                return _phenomenaPointsCostPerSecond;
+                return GetMember<int>("PhenomenaPointsCostPerSecond");
             }
         }
 
-        private int _virtuePointsCost;
         public int VirtuePointsCost
         {
             get
             {
-                GetData<int>(ref _virtuePointsCost, "VirtuePointsCost");
-                return _virtuePointsCost;
+                return GetMember<int>("VirtuePointsCost");
             }
         }
 
-        private int _virtuePointsCostPerSecond;
         public int VirtuePointsCostPerSecond
         {
             get
             {
-                GetData<int>(ref _virtuePointsCostPerSecond, "VirtuePointsCostPerSecond");
-                return _virtuePointsCostPerSecond;
+                return GetMember<int>("VirtuePointsCostPerSecond");
             }
         }
 
-        private int _jinCost;
         public int JinCost
         {
             get
             {
-                GetData<int>(ref _jinCost, "JinCost");
-                return _jinCost;
+                return GetMember<int>("JinCost");
             }
         }
 
-        private int _jinCostPerSecond;
         public int JinCostPerSecond
         {
             get
             {
-                GetData<int>(ref _jinCostPerSecond, "JinCostPerSecond");
-                return _jinCostPerSecond;
+                return GetMember<int>("JinCostPerSecond");
             }
         }
-        public void Use(string Name)
+        public void Use(string AbilityName)
         {
             LavishScript.ExecuteCommand("Me.Ability[" + AbilityName + "]:Use");
-        }
-
-        protected void GetData<T>(ref T obj, string param)
-        {
-            try
-            {
-                LavishScript.DataParse<T>("${Me.Ability[" + param + "]}", ref obj);
-            }
-            catch
-            {
-
-            }
         }
     }
 }

@@ -568,14 +568,14 @@ namespace Vanguard.ISXVG
             return _form;
         }
 
-        public Forms Form(int form)
+        public Form Form(int form)
         {
-            return new Forms("Me.Form[" + form + "]");
+            return new Form("Me.Form[" + form + "]");
         }
 
-        public Forms Form(string form)
+        public Form Form(string form)
         {
-            return new Forms("Me.Form[" + form + "]");
+            return new Form("Me.Form[" + form + "]");
         }
 
         protected void GetData<T>(ref T obj, string param)

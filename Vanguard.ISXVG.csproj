@@ -43,7 +43,7 @@
     <Compile Include="Character.cs" />
     <Compile Include="Effect.cs" />
     <Compile Include="Encounter.cs" />
-    <Compile Include="Forms.cs" />
+    <Compile Include="Form.cs" />
     <Compile Include="ISXVG.cs" />
     <Compile Include="Item.cs" />
     <Compile Include="ItemModifier.cs" />
