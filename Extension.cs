@@ -80,9 +80,9 @@ namespace Vanguard.ISXVG
             return new Map();
         }
 
-        public VGLoc VGLoc(string args)
+        public VGLocation VGLoc(string args)
         {
-            return new VGLoc("VGLoc[" + args + "]", 1);
+            return new VGLocation("VGLoc[" + args + "]", 1);
         }
 
         public void VGExecute(string Command)
