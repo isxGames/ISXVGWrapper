@@ -18,6 +18,11 @@ namespace Vanguard.ISXVG
         {
         }
 
+        public Form(int FormNumber)
+            : base(LavishScript.Objects.GetObject("Form", FormNumber.ToString()))
+        {
+        }
+
         public string Name
         {
             get
