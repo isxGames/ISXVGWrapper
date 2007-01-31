@@ -13,6 +13,7 @@
 /Map.cs -text
 /Minion.cs -text
 /Pawn.cs -text
+/PoI.cs -text
 Properties/AssemblyInfo.cs -text
 /Radar.cs -text
 /VG.cs -text
