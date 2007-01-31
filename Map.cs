@@ -9,9 +9,9 @@ namespace Vanguard.ISXVG
     public class Map : LavishScriptObject
     {
 
-        public Map(params string[] Args)
+        public Map()
             :
-            base(LavishScript.Objects.GetObject("Map",Args))
+            base(LavishScript.Objects.GetObject("Map"))
         {
         }
 
@@ -21,7 +21,7 @@ namespace Vanguard.ISXVG
         {
         }
 
-        public int NumPoI
+        public int NumPoIs
         {
             get { return GetMember<int>("NumPoI"); }
         }
@@ -36,7 +36,7 @@ namespace Vanguard.ISXVG
             return GetMember<PoI>("PoI", poi);
         }
 
-        public int NumCorpse
+        public int NumCorpses
         {
             get
             {
@@ -54,7 +54,7 @@ namespace Vanguard.ISXVG
             return GetMember<PoI>("Corpse", corpse);
         }
 
-        public int NumWaypoint
+        public int NumWaypoints
         {
             get
             {

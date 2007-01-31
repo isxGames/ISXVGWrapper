@@ -51,6 +51,7 @@
     <Compile Include="Map.cs" />
     <Compile Include="Minion.cs" />
     <Compile Include="Pawn.cs" />
+    <Compile Include="PoI.cs" />
     <Compile Include="Radar.cs" />
     <Compile Include="VG.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
