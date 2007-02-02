@@ -598,7 +598,8 @@ namespace Vanguard.ISXVG
         {
             get
             {
-                return GetMember<Minion>("Pet");
+                LavishScriptObject Obj = GetMember("Pet");
+                return new Minion(Obj);
             }
         }
 
@@ -606,7 +607,8 @@ namespace Vanguard.ISXVG
         {
             get
             {
-                return GetMember<Chunk>("Chunk");
+                LavishScriptObject Obj = GetMember("Chunk");
+                return new Chunk(Obj);
             }
         }
 
@@ -614,7 +616,8 @@ namespace Vanguard.ISXVG
         {
             get
             {
-                return GetMember<Pawn>("Target");
+                LavishScriptPersistentObject Obj = GetPersistentMember("Target");
+                return new Pawn(Obj);
             }
         }
 
@@ -622,7 +625,8 @@ namespace Vanguard.ISXVG
         {
             get
             {
-                return GetMember<Pawn>("DTarget");
+                LavishScriptPersistentObject Obj = GetPersistentMember("DTarget");
+                return new Pawn(Obj);
             }
         }
 
@@ -630,7 +634,8 @@ namespace Vanguard.ISXVG
         {
             get
             {
-                return GetMember<Pawn>("TargetOfTarget");
+                LavishScriptPersistentObject Obj = GetPersistentMember("TargetOfTarget");
+                return new Pawn(Obj);
             }
         }
 
@@ -638,7 +643,8 @@ namespace Vanguard.ISXVG
         {
             get
             {
-                return GetMember<Pawn>("TargetOfTarget");
+                LavishScriptPersistentObject Obj = GetPersistentMember("TargetOfTarget");
+                return new Pawn(Obj);
             }
         }
 
@@ -646,7 +652,8 @@ namespace Vanguard.ISXVG
         {
             get
             {
-                return GetMember<Encounter>("TargetAsEncounter");
+                LavishScriptObject Obj = GetMember("TargetAsEncounter");
+                return new Encounter(Obj);
             }
         }
 
@@ -663,12 +670,14 @@ namespace Vanguard.ISXVG
 
         public Minion Minion(int MinionNum)
         {
-            return GetMember<Minion>("Minion", MinionNum.ToString());
+            LavishScriptObject Obj = GetMember("MinionAsPawn", MinionNum.ToString());
+            return new Minion(Obj);
         }
 
         public Pawn MinionAsPawn(int MinionNum)
         {
-            return GetMember<Pawn>("MinionAsPawn", MinionNum.ToString());
+            LavishScriptPersistentObject Obj = GetPersistentMember("MinionAsPawn", MinionNum.ToString());
+            return new Pawn(Obj);
         }
 
         /// <summary>
@@ -684,12 +693,14 @@ namespace Vanguard.ISXVG
 
         public Ability Ability(int AbilityNum)
         {
-            return GetMember<Ability>("Ability", AbilityNum.ToString());
+            LavishScriptObject Obj = GetMember("Ability", AbilityNum.ToString());
+            return new Ability(Obj);
         }
 
         public Ability Ability(string AbilityName)
         {
-            return GetMember<Ability>("Ability", AbilityName);
+            LavishScriptObject Obj = GetMember("Ability", AbilityName);
+            return new Ability(Obj);
         }
 
         /// <summary>
@@ -705,12 +716,14 @@ namespace Vanguard.ISXVG
 
         public Effect Effect(int EffectNum)
         {
-            return GetMember<Effect>("Effect", EffectNum.ToString());
+            LavishScriptObject Obj = GetMember("Effect", EffectNum.ToString());
+            return new Effect(Obj);
         }
 
         public Effect Effect(string EffectName)
         {
-            return GetMember<Effect>("Effect", EffectName);
+            LavishScriptObject Obj = GetMember("Effect", EffectName);
+            return new Effect(Obj);
         }
 
         /// <summary>
@@ -726,12 +739,14 @@ namespace Vanguard.ISXVG
 
         public Effect Maintained(int MaintainedNum)
         {
-            return GetMember<Effect>("Maintained", MaintainedNum.ToString());
+            LavishScriptObject Obj = GetMember("Maintained", MaintainedNum.ToString());
+            return new Effect(Obj);
         }
 
         public Effect Maintained(string MaintainedName)
         {
-            return GetMember<Effect>("Maintained", MaintainedName);
+            LavishScriptObject Obj = GetMember("Maintained", MaintainedName);
+            return new Effect(Obj);
         }
 
         /// <summary>
@@ -747,12 +762,14 @@ namespace Vanguard.ISXVG
 
         public Effect TargetEffect(int TargetEffectNum)
         {
-            return GetMember<Effect>("TargetEffect", TargetEffectNum.ToString());
+            LavishScriptObject Obj = GetMember("TargetEffect", TargetEffectNum.ToString());
+            return new Effect(Obj);
         }
 
         public Effect TargetEffect(string TargetEffectName)
         {
-            return GetMember<Effect>("TargetEffect", TargetEffectName);
+            LavishScriptObject Obj = GetMember("TargetEffect", TargetEffectName);
+            return new Effect(Obj);
         }
 
         /// <summary>
@@ -768,32 +785,38 @@ namespace Vanguard.ISXVG
 
         public Encounter Encounter(int EncounterNum)
         {
-            return GetMember<Encounter>("Encounter", EncounterNum.ToString());
+            LavishScriptObject Obj = GetMember("Encounter", EncounterNum.ToString());
+            return new Encounter(Obj);
         }
 
         public Encounter Encounter(string EncounterName)
         {
-            return GetMember<Encounter>("Encounter", EncounterName);
+            LavishScriptObject Obj = GetMember("Encounter", EncounterName);
+            return new Encounter(Obj);
         }
 
         public Item Inventory(params string[] Parameters)
         {
-            return GetMember<Item>("Inventory", Parameters);
+            LavishScriptObject Obj = GetMember("Inventory", Parameters);
+            return new Item(Obj);
         }
 
         public Item Inventory(int Index)
         {
-            return GetMember<Item>("Inventory", Index.ToString());
+            LavishScriptObject Obj = GetMember("Inventory", Index.ToString());
+            return new Item(Obj);
         }
 
         public Item Bank(params string[] Parameters)
         {
-            return GetMember<Item>("Bank", Parameters);
+            LavishScriptObject Obj = GetMember("Bank", Parameters);
+            return new Item(Obj);
         }
 
         public Item Bank(int Index)
         {
-            return GetMember<Item>("Bank", Index.ToString());
+            LavishScriptObject Obj = GetMember("Bank", Index.ToString());
+            return new Item(Obj);
         }
 
         /// <summary>
@@ -809,19 +832,23 @@ namespace Vanguard.ISXVG
 
         public Form Form(int FormNum)
         {
-            return GetMember<Form>("Form", FormNum.ToString());
+            LavishScriptObject Obj = GetMember("Form", FormNum.ToString());
+            return new Form(Obj);
+
         }
 
         public Form Form(string FormName)
         {
-            return GetMember<Form>("Form", FormName);
+            LavishScriptObject Obj = GetMember("Form", FormName);
+            return new Form(Obj);
         }
 
         public Form CurrentForm
         {
             get
             {
-                return GetMember<Form>("CurrentForm");
+                LavishScriptObject Obj = GetMember("CurrentForm");
+                return new Form(Obj);
             }
         }
     }

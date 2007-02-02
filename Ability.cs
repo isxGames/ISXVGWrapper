@@ -13,8 +13,8 @@ namespace Vanguard.ISXVG
         {
         }
 
-        public Ability(string Argument)
-            : base(LavishScript.Objects.GetObject("Ability", Argument))
+        public Ability()
+            : base(LavishScript.Objects.GetObject("Ability"))
         {
         }
 
