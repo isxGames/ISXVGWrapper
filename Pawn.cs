@@ -410,29 +410,29 @@ namespace Vanguard.ISXVG
             }
         }
 
-        public bool Loot
+        public bool Loot()
         {
-            get {return ExecuteMethod("Loot"); }
+            return ExecuteMethod("Loot");
         }
 
-        public bool LootAll
+        public bool LootAll()
         {
-            get { return ExecuteMethod("LootAll"); }
+            return ExecuteMethod("LootAll");
         }
 
-        public bool Target
+        public bool Target()
         {
-            get {return ExecuteMethod("Target"); }
+            return ExecuteMethod("Target"); 
         }
 
-        public bool Face
+        public bool Face()
         {
-            get {return ExecuteMethod("Face"); }
+            return ExecuteMethod("Face");
         }
 
-        public bool Use
+        public bool Use()
         {
-            get {return ExecuteMethod("Use"); }
+            return ExecuteMethod("Use");
         }
     }
 }
