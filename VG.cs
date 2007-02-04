@@ -21,7 +21,6 @@ namespace Vanguard.ISXVG
         {
         }
 
-
         public int PawnCount
         {
             get { return GetMember<int>("PawnCount"); }
@@ -35,6 +34,16 @@ namespace Vanguard.ISXVG
         public int ServerID
         {
             get { return GetMember<int>("ServerID"); }
+        }
+
+        public bool InGlobalRecovery
+        {
+            get { return GetMember<bool>("InGlobalRecovery"); }
+        }
+
+        public int GlobalRecovery
+        {
+            get { return GetMember<int>("GlobalRecovery"); }
         }
 
         public bool ExecBinding(string Action)

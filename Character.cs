@@ -594,12 +594,12 @@ namespace Vanguard.ISXVG
             }
         }
 
-        public Minion Pet
+        public Pawn Pet
         {
             get
             {
-                LavishScriptObject Obj = GetMember("Pet");
-                return new Minion(Obj);
+                LavishScriptPersistentObject Obj = GetPersistentMember("Pet");
+                return new Pawn(Obj);
             }
         }
 
