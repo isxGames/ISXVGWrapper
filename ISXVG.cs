@@ -18,9 +18,14 @@ namespace Vanguard.ISXVG
         {
         }
 
-        public int NumItems
+        public int NumRadars
         {
             get { return GetMember<int>("NumRadars"); }
+        }
+
+        public int VGLocsCount
+        {
+            get { return GetMember<int>("VGLocsCount"); }
         }
 
         public string Version
