@@ -19,6 +19,11 @@ namespace Vanguard.ISXVG
         {
         }
 
+        public VGLocation(int Index)
+            : base(LavishScript.Objects.GetObject("VGLocation", Index.ToString()))
+        {
+        }
+
         public VGLocation()
             : base(LavishScript.Objects.GetObject("VGLocation", "1"))
         {
