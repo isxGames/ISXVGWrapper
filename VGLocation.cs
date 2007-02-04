@@ -85,6 +85,14 @@ namespace Vanguard.ISXVG
             }
         }
 
+        public float Z
+        {
+            get
+            {
+                return GetMember<float>("Z");
+            }
+        }
+
         public int ChunkX
         {
             get
