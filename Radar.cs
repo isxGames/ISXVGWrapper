@@ -19,6 +19,11 @@ namespace Vanguard.ISXVG
         {
         }
 
+        public Radar(int Index)
+            : base(LavishScript.Objects.GetPersistentObject("Radar", Index.ToString()))
+        {
+        }
+
         public Radar()
             : base(LavishScript.Objects.GetPersistentObject("Radar", "1"))
         {
