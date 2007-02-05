@@ -670,7 +670,13 @@ namespace Vanguard.ISXVG
 
         public Minion Minion(int MinionNum)
         {
-            LavishScriptObject Obj = GetMember("MinionAsPawn", MinionNum.ToString());
+            LavishScriptObject Obj = GetMember("Minion", MinionNum.ToString());
+            return new Minion(Obj);
+        }
+
+        public Minion Minion(string MinionName)
+        {
+            LavishScriptObject Obj = GetMember("Minion", MinionName);
             return new Minion(Obj);
         }
 
