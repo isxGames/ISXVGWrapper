@@ -406,7 +406,8 @@ namespace Vanguard.ISXVG
         {
             get
             {
-                return GetMember<Pawn>("Owner");
+                LavishScriptPersistentObject Obj = GetPersistentMember("Owner");
+                return new Pawn(Obj);
             }
         }
 

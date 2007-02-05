@@ -28,12 +28,14 @@ namespace Vanguard.ISXVG
 
         public PoI PoI(int poi)
         {
-            return GetMember<PoI>("PoI", poi.ToString());
+            LavishScriptObject Obj = GetMember("PoI", poi.ToString());
+            return new PoI(Obj);
         }
 
         public PoI PoI(string poi)
         {
-            return GetMember<PoI>("PoI", poi);
+            LavishScriptObject Obj = GetMember("PoI", poi);
+            return new PoI(Obj);
         }
 
         public int NumCorpses
@@ -46,12 +48,14 @@ namespace Vanguard.ISXVG
 
         public PoI Corpse(int Corpse)
         {
-                return GetMember<PoI>("Corpse", Corpse.ToString());
+            LavishScriptObject Obj = GetMember("Corpse", Corpse.ToString());
+            return new PoI(Obj);
         }
 
-        public PoI Corpse(string corpse)
+        public PoI Corpse(string Corpse)
         {
-            return GetMember<PoI>("Corpse", corpse);
+            LavishScriptObject Obj = GetMember("Corpse", Corpse);
+            return new PoI(Obj);
         }
 
         public int NumWaypoints
@@ -64,12 +68,14 @@ namespace Vanguard.ISXVG
 
         public PoI Waypoint(int Waypoint)
         {
-            return GetMember<PoI>("Waypoint", Waypoint.ToString());
+            LavishScriptObject Obj = GetMember("Waypoint", Waypoint.ToString());
+            return new PoI(Obj);
         }
 
         public PoI Waypoint(string Waypoint)
         {
-            return GetMember<PoI>("Waypoint", Waypoint);
+            LavishScriptObject Obj = GetMember("Waypoint", Waypoint);
+            return new PoI(Obj);
         }
         public string FName
         {

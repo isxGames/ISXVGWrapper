@@ -27,17 +27,23 @@ namespace Vanguard.ISXVG
 
         public Pawn LootingFrom
         {
-            get { return GetMember<Pawn>("LootingFrom"); }
+            get
+            {
+                LavishScriptPersistentObject Obj = GetPersistentMember("LootingFrom");
+                return new Pawn(Obj);
+            }
         }
 
         public Item Item(int item)
         {
-            return GetMember<Item>("Item",item.ToString());
+            LavishScriptObject Obj = GetMember("Item", item.ToString());
+            return new Item(Obj);
         }
 
         public Item Item(string item)
         {
-            return GetMember<Item>("Item",item);
+            LavishScriptObject Obj = GetMember("Item", item);
+            return new Item(Obj);
         }
 
         public bool LootAll

@@ -230,12 +230,14 @@ namespace Vanguard.ISXVG
 
         public ItemModifier Modifier(int ModifierNumber)
         {
-            return GetMember<ItemModifier>("Modifier", ModifierNumber.ToString());
+            LavishScriptObject Obj = GetMember("Modifier", ModifierNumber.ToString());
+            return new ItemModifier(Obj);
         }
 
         public ItemModifier Modifier(string ModifierName)
         {
-            return GetMember<ItemModifier>("Modifier", ModifierName.ToString());
+            LavishScriptObject Obj = GetMember("Modifier", ModifierName);
+            return new ItemModifier(Obj);
         }
 
         public bool LootNDC
