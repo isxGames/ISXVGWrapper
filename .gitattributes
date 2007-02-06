@@ -12,6 +12,8 @@
 /Loot.cs -text
 /Map.cs -text
 /Minion.cs -text
+/Parlay.cs -text
+/ParlayCard.cs -text
 /Pawn.cs -text
 /PoI.cs -text
 Properties/AssemblyInfo.cs -text
