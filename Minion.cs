@@ -1,7 +1,6 @@
 using System;
 using System.Text;
 
-using InnerSpaceAPI;
 using LavishScriptAPI;
 
 namespace Vanguard.ISXVG

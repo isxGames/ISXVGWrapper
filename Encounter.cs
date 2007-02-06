@@ -59,6 +59,15 @@ namespace Vanguard.ISXVG
             }
         }
 
+        public Pawn ToPawn
+        {
+            get
+            {
+                LavishScriptPersistentObject Obj = GetPersistentMember("ToPawn");
+                return new Pawn(Obj);
+            }
+        }
+
         public Pawn TargetOfTarget
         {
             get

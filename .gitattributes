@@ -18,7 +18,6 @@ Properties/AssemblyInfo.cs -text
 /Radar.cs -text
 /VG.cs -text
 /VGEvent.cs -text
-/VGLoc.cs -text
 /VGLocation.cs -text
 /Vanguard.ISXVG.csproj -text
 bin/Debug/PostBuild.bat -text

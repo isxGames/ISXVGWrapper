@@ -30,7 +30,7 @@
   <ItemGroup>
     <Reference Include="Lavish.InnerSpace, Version=1.0.0.0, Culture=neutral, PublicKeyToken=9029a3ab4cbe108d, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
-      <HintPath>..\Lavish.InnerSpace.dll</HintPath>
+      <HintPath>..\..\Lavish.InnerSpace.dll</HintPath>
     </Reference>
     <Reference Include="System" />
     <Reference Include="System.Data" />
@@ -50,6 +50,8 @@
     <Compile Include="Loot.cs" />
     <Compile Include="Map.cs" />
     <Compile Include="Minion.cs" />
+    <Compile Include="Parlay.cs" />
+    <Compile Include="ParlayCard.cs" />
     <Compile Include="Pawn.cs" />
     <Compile Include="PoI.cs" />
     <Compile Include="Radar.cs" />

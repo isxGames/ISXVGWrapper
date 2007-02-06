@@ -188,9 +188,9 @@ namespace Vanguard.ISXVG
             }
         }
 
-        public bool Use
+        public bool Use()
         {
-            get { return ExecuteMethod("Use"); }
+            return ExecuteMethod("Use"); 
         }
     }
 }

@@ -33,69 +33,109 @@ namespace Vanguard.ISXVG
         {
         }
 
-        public Character Me()
+        public Character Me
         {
-            return new Character();
+            get
+            {
+                LavishScriptPersistentObject Obj = LavishScript.Objects.GetPersistentObject("Me");
+                return new Character(Obj);
+            }
         }
 
         public Pawn Pawn(params string[] Args)
         {
-            return new Pawn(Args);
+            LavishScriptPersistentObject Obj = LavishScript.Objects.GetPersistentObject("Pawn", Args);
+            return new Pawn(Obj);
         }
 
         public Pawn Pawn(string Arg)
         {
-            return new Pawn(Arg);
+            LavishScriptPersistentObject Obj = LavishScript.Objects.GetPersistentObject("Pawn", Arg);
+            return new Pawn(Obj);
         }
 
         public Pawn Pawn(int Arg)
         {
-            return new Pawn(Arg.ToString());
+            LavishScriptPersistentObject Obj = LavishScript.Objects.GetPersistentObject("Pawn", Arg.ToString());
+            return new Pawn(Obj);
         }
 
         public Radar Radar(int Index)
         {
-            return new Radar(Index.ToString());
+            LavishScriptPersistentObject Obj = LavishScript.Objects.GetPersistentObject("Radar", Index.ToString());
+            return new Radar(Obj);
         }
 
         public Radar Radar(string Name)
         {
-            return new Radar(Name);
+            LavishScriptPersistentObject Obj = LavishScript.Objects.GetPersistentObject("Radar",Name);
+            return new Radar(Obj);
         }
 
         public Radar Radar()
         {
-            return new Radar();
+            LavishScriptPersistentObject Obj = LavishScript.Objects.GetPersistentObject("Radar");
+            return new Radar(Obj);
         }
 
         public ISXVG ISXVG()
         {
-            return new ISXVG();
+            LavishScriptPersistentObject Obj = LavishScript.Objects.GetPersistentObject("ISXVG");
+            return new ISXVG(Obj);
         }
 
         public Loot Loot()
         {
-            return new Loot();
+            LavishScriptPersistentObject Obj = LavishScript.Objects.GetPersistentObject("Loot");
+            return new Loot(Obj);
         }
 
         public VG VG()
         {
-            return new VG();
+            LavishScriptPersistentObject Obj = LavishScript.Objects.GetPersistentObject("VG");
+            return new VG(Obj);
         }
 
         public Map Map()
         {
-            return new Map();
+            LavishScriptObject Obj = LavishScript.Objects.GetObject("Map");
+            return new Map(Obj);
         }
 
         public VGLocation VGLoc(string Arg)
         {
-            return new VGLocation(Arg);
+            LavishScriptObject Obj = LavishScript.Objects.GetObject("VGLoc", Arg);
+            return new VGLocation(Obj);
         }
 
         public VGLocation VGLoc(int Arg)
         {
-            return new VGLocation(Arg.ToString());
+            LavishScriptObject Obj = LavishScript.Objects.GetObject("VGLoc", Arg.ToString());
+            return new VGLocation(Obj);
+        }
+
+        public ParlayCard Strategy(int Arg)
+        {
+            LavishScriptObject Obj = LavishScript.Objects.GetObject("Strategy", Arg.ToString());
+            return new ParlayCard(Obj);
+        }
+
+        public ParlayCard Strategy(string Name)
+        {
+            LavishScriptObject Obj = LavishScript.Objects.GetObject("Strategy", Name);
+            return new ParlayCard(Obj);
+        }
+
+        public ParlayCard ParlayCard(int Arg)
+        {
+            LavishScriptObject Obj = LavishScript.Objects.GetObject("ParlayCard", Arg.ToString());
+            return new ParlayCard(Obj);
+        }
+
+        public ParlayCard ParlayCard(string Name)
+        {
+            LavishScriptObject Obj = LavishScript.Objects.GetObject("ParlayCard", Name);
+            return new ParlayCard(Obj);
         }
 
         public void VGExecute(string Command)

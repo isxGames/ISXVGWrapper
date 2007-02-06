@@ -31,19 +31,29 @@ namespace Vanguard.ISXVG
             get { return GetMember<bool>("IsSwimming"); }
         }
 
+        public bool InGlobalRecovery
+        {
+            get { return GetMember<bool>("InGlobalRecovery"); }
+        }
+        
+        public float GlobalRecovery
+        {
+            get { return GetMember<float>("GlobalRecovery"); }
+        }
+
+        public string GroupInviteSender
+        {
+            get { return GetMember<string>("GroupInviteSender"); }
+        }
+
         public int ServerID
         {
             get { return GetMember<int>("ServerID"); }
         }
 
-        public bool InGlobalRecovery
+        public bool IsInParlay
         {
-            get { return GetMember<bool>("InGlobalRecovery"); }
-        }
-
-        public int GlobalRecovery
-        {
-            get { return GetMember<int>("GlobalRecovery"); }
+            get { return GetMember<bool>("IsInParlay"); }
         }
 
         public bool ExecBinding(string Action)
@@ -54,7 +64,10 @@ namespace Vanguard.ISXVG
         public bool ExecBinding(string Action, bool Release)
         {
             if (Release)
-                return ExecuteMethod("ExecBinding", Action, "Release");
+            {
+                return ExecuteMethod("ExecBinding", Action , "Release");
+                
+            }
             else
                 return ExecuteMethod("ExecBinding", Action);
         }
