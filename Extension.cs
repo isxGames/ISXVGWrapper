@@ -138,6 +138,12 @@ namespace Vanguard.ISXVG
             return new ParlayCard(Obj);
         }
 
+        public Parlay Parlay()
+        {
+                LavishScriptObject Obj = LavishScript.Objects.GetObject("Parlay");
+                return new Parlay(Obj);
+        }
+
         public void VGExecute(string Command)
         {
             LavishScript.ExecuteCommand("VGExecute " + Command);

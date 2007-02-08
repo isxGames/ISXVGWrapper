@@ -849,6 +849,11 @@ namespace Vanguard.ISXVG
             return new Form(Obj);
         }
 
+        public int Stat(string StatType, String StatName)
+        {
+            return GetMember<int>("Stat", StatType, StatName);
+        }
+
         public Form CurrentForm
         {
             get

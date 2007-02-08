@@ -48,6 +48,7 @@
     <Compile Include="Item.cs" />
     <Compile Include="ItemModifier.cs" />
     <Compile Include="Loot.cs" />
+    <Compile Include="LavishScriptEventArgs.cs" />
     <Compile Include="Map.cs" />
     <Compile Include="Minion.cs" />
     <Compile Include="Parlay.cs" />

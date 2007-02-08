@@ -9,6 +9,7 @@
 /ISXVG.cs -text
 /Item.cs -text
 /ItemModifier.cs -text
+/LavishScriptEventArgs.cs -text
 /Loot.cs -text
 /Map.cs -text
 /Minion.cs -text

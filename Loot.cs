@@ -46,9 +46,9 @@ namespace Vanguard.ISXVG
             return new Item(Obj);
         }
 
-        public bool LootAll
+        public bool LootAll()
         {
-            get { return ExecuteMethod("LootAll"); }
+            return ExecuteMethod("LootAll");
         }
 
         public bool EndLooting
