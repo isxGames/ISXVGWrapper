@@ -22,7 +22,7 @@ namespace Vanguard.ISXVG
         private LavishScriptAPI.Delegates.EventTarget Event_OnParlayOppPlayedCard;
         private LavishScriptAPI.Delegates.EventTarget Event_OnParlaySuccess;
         private LavishScriptAPI.Delegates.EventTarget Event_OnParlayLoss;
-        private LavishScriptAPI.Delegates.EventTarget Event_OnParalyEnd; 
+        private LavishScriptAPI.Delegates.EventTarget Event_OnParlayEnd; 
         #endregion
 
         #region .Net Event Handlers
@@ -96,7 +96,7 @@ namespace Vanguard.ISXVG
             LavishScript.Events.DetachEventTarget(LavishScript.Events.RegisterEvent("VG_onParlayOppPlayedCard"), Event_OnParlayOppPlayedCard);
             LavishScript.Events.DetachEventTarget(LavishScript.Events.RegisterEvent("VG_onParlaySuccess"), Event_OnParlaySuccess);
             LavishScript.Events.DetachEventTarget(LavishScript.Events.RegisterEvent("VG_onParlayLost"), Event_OnParlayLoss);
-            LavishScript.Events.DetachEventTarget(LavishScript.Events.RegisterEvent("VG_onParlayEnd"), Event_OnParalyEnd);
+            LavishScript.Events.DetachEventTarget(LavishScript.Events.RegisterEvent("VG_onParlayEnd"), Event_OnParlayEnd);
         }
 
         public VGEvent()
@@ -113,7 +113,7 @@ namespace Vanguard.ISXVG
             Event_OnParlayOppPlayedCard = new LavishScriptAPI.Delegates.EventTarget(Event_ParlayOppPlayedCard);
             Event_OnParlaySuccess = new LavishScriptAPI.Delegates.EventTarget(Event_ParlaySuccess);
             Event_OnParlayLoss = new LavishScriptAPI.Delegates.EventTarget(Event_ParlayLoss);
-            Event_OnParalyEnd = new LavishScriptAPI.Delegates.EventTarget(Event_ParlayEnd);
+            Event_OnParlayEnd = new LavishScriptAPI.Delegates.EventTarget(Event_ParlayEnd);
 
             LavishScript.Events.AttachEventTarget(LavishScript.Events.RegisterEvent("VG_onParlayBegin"), Event_OnParlayBegin);
             LavishScript.Events.AttachEventTarget(LavishScript.Events.RegisterEvent("VG_onParlayDialog"), Event_OnParlayDialog);
@@ -123,7 +123,7 @@ namespace Vanguard.ISXVG
             LavishScript.Events.AttachEventTarget(LavishScript.Events.RegisterEvent("VG_onParlayOppPlayedCard"), Event_OnParlayOppPlayedCard);
             LavishScript.Events.AttachEventTarget(LavishScript.Events.RegisterEvent("VG_onParlaySuccess"), Event_OnParlaySuccess);
             LavishScript.Events.AttachEventTarget(LavishScript.Events.RegisterEvent("VG_onParlayLost"), Event_OnParlayLoss);
-            LavishScript.Events.AttachEventTarget(LavishScript.Events.RegisterEvent("VG_onParlayEnd"), Event_OnParalyEnd);
+            LavishScript.Events.AttachEventTarget(LavishScript.Events.RegisterEvent("VG_onParlayEnd"), Event_OnParlayEnd);
         }
 
         #region LavishScript to .Net Event Triggers
