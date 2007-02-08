@@ -228,6 +228,14 @@ namespace Vanguard.ISXVG
             }
         }
 
+        public int IconID
+        {
+            get
+            {
+                return GetMember<int>("IconID");
+            }
+        }
+
         public ItemModifier Modifier(int ModifierNumber)
         {
             LavishScriptObject Obj = GetMember("Modifier", ModifierNumber.ToString());
@@ -240,44 +248,44 @@ namespace Vanguard.ISXVG
             return new ItemModifier(Obj);
         }
 
-        public bool LootNDC
+        public bool LootNDC()
         {
-            get { return ExecuteMethod("Loot","NDC"); }
+            return ExecuteMethod("Loot","NDC");
         }
 
-        public bool Loot
+        public bool Loot()
         {
-            get { return ExecuteMethod("Loot"); }
+            return ExecuteMethod("Loot");
         }
 
-        public bool Use
+        public bool Use()
         {
-            get { return ExecuteMethod("Use"); }
+            return ExecuteMethod("Use");
         }
 
-        public bool Delete
+        public bool Delete()
         {
-            get { return ExecuteMethod("Delete"); }
+            return ExecuteMethod("Delete");
         }
 
-        public bool Equip
+        public bool Equip()
         {
-            get { return ExecuteMethod("Equip"); }
+            return ExecuteMethod("Equip");
         }
 
-        public bool EquipNDC
+        public bool EquipNDC()
         {
-            get { return ExecuteMethod("Equip","NDC"); }
+            return ExecuteMethod("Equip","NDC");
         }
 
-        public bool Unequip
+        public bool Unequip()
         {
-            get { return ExecuteMethod("Unequip"); }
+            return ExecuteMethod("Unequip");
         }
 
-        public bool StartConvert
+        public bool StartConvert()
         {
-            get { return ExecuteMethod("StartConvert"); }
+            return ExecuteMethod("StartConvert");
         }
 
         public bool StackWith(int StackWith)

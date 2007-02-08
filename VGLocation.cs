@@ -125,9 +125,9 @@ namespace Vanguard.ISXVG
             }
         }
 
-        public bool Delete
+        public bool Delete()
         {
-            get { return ExecuteMethod("Delete"); }
+           return ExecuteMethod("Delete");
         }
 
     }

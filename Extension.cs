@@ -102,6 +102,12 @@ namespace Vanguard.ISXVG
             return new Map(Obj);
         }
 
+        public VGLocation VGLoc(params string[] Args)
+        {
+            LavishScriptObject Obj = LavishScript.Objects.GetObject("VGLoc", Args);
+            return new VGLocation(Obj);
+        }
+
         public VGLocation VGLoc(string Arg)
         {
             LavishScriptObject Obj = LavishScript.Objects.GetObject("VGLoc", Arg);
@@ -142,6 +148,24 @@ namespace Vanguard.ISXVG
         {
                 LavishScriptObject Obj = LavishScript.Objects.GetObject("Parlay");
                 return new Parlay(Obj);
+        }
+
+        public GroupMember Group(int Arg)
+        {
+            LavishScriptObject Obj = LavishScript.Objects.GetObject("Group", Arg.ToString());
+            return new GroupMember(Obj);
+        }
+
+        public GroupMember Group(string Name)
+        {
+            LavishScriptObject Obj = LavishScript.Objects.GetObject("Group", Name);
+            return new GroupMember(Obj);
+        }
+
+        public Group Group()
+        {
+            LavishScriptObject Obj = LavishScript.Objects.GetObject("Group");
+            return new Group(Obj);
         }
 
         public void VGExecute(string Command)

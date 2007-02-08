@@ -51,9 +51,14 @@ namespace Vanguard.ISXVG
             return ExecuteMethod("LootAll");
         }
 
-        public bool EndLooting
+        public bool BeginLooting()
         {
-            get { return ExecuteMethod("EndLooting"); }
+            return ExecuteMethod("BeginLooting");
+        }
+
+        public bool EndLooting()
+        {
+            return ExecuteMethod("EndLooting");
         }
     }
 }

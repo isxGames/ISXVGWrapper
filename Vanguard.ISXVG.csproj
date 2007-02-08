@@ -37,6 +37,13 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Assembly.cs" />
+    <Compile Include="AssemblyRecipe.cs" />
+    <Compile Include="Complication.cs" />
+    <Compile Include="Correction.cs" />
+    <Compile Include="CraftingAction.cs" />
+    <Compile Include="CraftingStage.cs" />
+    <Compile Include="CraftingStep.cs" />
     <Compile Include="Extension.cs" />
     <Compile Include="Ability.cs" />
     <Compile Include="Chunk.cs" />
@@ -44,6 +51,8 @@
     <Compile Include="Effect.cs" />
     <Compile Include="Encounter.cs" />
     <Compile Include="Form.cs" />
+    <Compile Include="Group.cs" />
+    <Compile Include="GroupMember.cs" />
     <Compile Include="ISXVG.cs" />
     <Compile Include="Item.cs" />
     <Compile Include="ItemModifier.cs" />
@@ -56,6 +65,8 @@
     <Compile Include="Pawn.cs" />
     <Compile Include="PoI.cs" />
     <Compile Include="Radar.cs" />
+    <Compile Include="Refining.cs" />
+    <Compile Include="RefiningRecipe.cs" />
     <Compile Include="VG.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="VGEvent.cs" />

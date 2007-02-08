@@ -51,9 +51,9 @@ namespace Vanguard.ISXVG
                 return GetMember<bool>("Visible");
             }
         }
-        public bool Hide
+        public bool Hide()
         {
-            get { return ExecuteMethod("Hide"); }
+            return ExecuteMethod("Hide");
         }
 
     }

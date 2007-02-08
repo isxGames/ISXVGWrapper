@@ -538,6 +538,14 @@ namespace Vanguard.ISXVG
             }
         }
 
+        public bool IsGroupMasterLooter
+        {
+            get
+            {
+                return GetMember<bool>("IsGroupMasterLooter");
+            }
+        }
+
         public bool GroupInvitePending
         {
             get 

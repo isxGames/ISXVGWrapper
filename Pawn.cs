@@ -177,6 +177,16 @@ namespace Vanguard.ISXVG
                 return GetMember<int>("GuildID");
              }
         }
+        /// <summary>
+        /// works for PCs only
+        /// </summary>
+        public int PVPPoints
+        {
+            get
+            {
+                return GetMember<int>("PVPPoints");
+            }
+        }
 
         public int FactionID
         {
@@ -295,6 +305,14 @@ namespace Vanguard.ISXVG
             get
             {
                 return GetMember<bool>("IsGroupMember");
+            }
+        }
+
+        public bool IsInMyGroup
+        {
+            get
+            {
+                return GetMember<bool>("IsInMyGroup");
             }
         }
 

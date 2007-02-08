@@ -22,7 +22,29 @@ namespace Vanguard.ISXVG
         private LavishScriptAPI.Delegates.EventTarget Event_OnParlayOppPlayedCard;
         private LavishScriptAPI.Delegates.EventTarget Event_OnParlaySuccess;
         private LavishScriptAPI.Delegates.EventTarget Event_OnParlayLoss;
-        private LavishScriptAPI.Delegates.EventTarget Event_OnParlayEnd; 
+        private LavishScriptAPI.Delegates.EventTarget Event_OnParlayEnd;
+        private LavishScriptAPI.Delegates.EventTarget Event_OnGroupBooted;
+        private LavishScriptAPI.Delegates.EventTarget Event_OnGroupDisbanded;
+        private LavishScriptAPI.Delegates.EventTarget Event_OnGroupFormed;
+        private LavishScriptAPI.Delegates.EventTarget Event_OnGroupJoined;
+        private LavishScriptAPI.Delegates.EventTarget Event_OnGroupLootNotify;
+        private LavishScriptAPI.Delegates.EventTarget Event_OnGroupLootRandomStarted;
+        private LavishScriptAPI.Delegates.EventTarget Event_OnGroupLootRandomEnded;
+        private LavishScriptAPI.Delegates.EventTarget Event_OnGroupMemberAdded;
+        private LavishScriptAPI.Delegates.EventTarget Event_OnGroupMemberBooted;
+        private LavishScriptAPI.Delegates.EventTarget Event_OnGroupMemberDeath;
+        private LavishScriptAPI.Delegates.EventTarget Event_OnGroupMemberCountChange;
+        private LavishScriptAPI.Delegates.EventTarget Event_OnCraftingStepComplete;
+        private LavishScriptAPI.Delegates.EventTarget Event_OnCraftingAlert;
+        private LavishScriptAPI.Delegates.EventTarget Event_OnChangeChunk;
+        private LavishScriptAPI.Delegates.EventTarget Event_OnStartSwimming;
+        private LavishScriptAPI.Delegates.EventTarget Event_OnStopSwimming;
+        private LavishScriptAPI.Delegates.EventTarget Event_OnConnectionStateChange;
+        private LavishScriptAPI.Delegates.EventTarget Event_OnPawnDespawned;
+        private LavishScriptAPI.Delegates.EventTarget Event_OnPawnSpawned;
+        private LavishScriptAPI.Delegates.EventTarget Event_OnIncomingText;
+
+
         #endregion
 
         #region .Net Event Handlers
@@ -34,7 +56,27 @@ namespace Vanguard.ISXVG
         public event LavishScriptEventHandler ParlayOppPlayedCard;
         public event LavishScriptEventHandler ParlaySuccess;
         public event LavishScriptEventHandler ParlayLoss;
-        public event LavishScriptEventHandler ParlayEnd; 
+        public event LavishScriptEventHandler ParlayEnd;
+        public event LavishScriptEventHandler GroupBooted;
+        public event LavishScriptEventHandler GroupDisbanded;
+        public event LavishScriptEventHandler GroupFormed;
+        public event LavishScriptEventHandler GroupJoined;
+        public event LavishScriptEventHandler GroupLootNotify;
+        public event LavishScriptEventHandler GroupLootRandomStarted;
+        public event LavishScriptEventHandler GroupLootRandomEnded;
+        public event LavishScriptEventHandler GroupMemberAdded;
+        public event LavishScriptEventHandler GroupMemberBooted;
+        public event LavishScriptEventHandler GroupMemberDeath;
+        public event LavishScriptEventHandler GroupMemberCountChange;
+        public event LavishScriptEventHandler CraftingStepComplete;
+        public event LavishScriptEventHandler CraftingAlert;
+        public event LavishScriptEventHandler ChangeChunk;
+        public event LavishScriptEventHandler StartSwimming;
+        public event LavishScriptEventHandler StopSwimming;
+        public event LavishScriptEventHandler ConnectionStateChange;
+        public event LavishScriptEventHandler PawnSpawned;
+        public event LavishScriptEventHandler PawnDespawned;
+        public event LavishScriptEventHandler IncomingText;
         #endregion
 
         #region .Net Event Raisers
@@ -82,7 +124,107 @@ namespace Vanguard.ISXVG
         {
             if (ParlayEnd != null)
                 ParlayEnd(this, e);
-        } 
+        }
+        protected virtual void OnGroupBooted(LavishScriptEventArgs e)
+        {
+            if (GroupBooted != null)
+                GroupBooted(this, e);
+        }
+        protected virtual void OnGroupDisbanded(LavishScriptEventArgs e)
+        {
+            if (GroupDisbanded != null)
+                GroupDisbanded(this, e);
+        }
+        protected virtual void OnGroupFormed(LavishScriptEventArgs e)
+        {
+            if (GroupFormed != null)
+                GroupFormed(this, e);
+        }
+        protected virtual void OnGroupJoined(LavishScriptEventArgs e)
+        {
+            if (GroupJoined != null)
+                GroupJoined(this, e);
+        }
+        protected virtual void OnGroupLootNotify(LavishScriptEventArgs e)
+        {
+            if (GroupLootNotify != null)
+                GroupLootNotify(this, e);
+        }
+        protected virtual void OnGroupLootRandomStarted(LavishScriptEventArgs e)
+        {
+            if (GroupLootRandomStarted != null)
+                GroupLootRandomStarted(this, e);
+        }
+        protected virtual void OnGroupLootRandomEnded(LavishScriptEventArgs e)
+        {
+            if (GroupLootRandomEnded != null)
+                GroupLootRandomEnded(this, e);
+        }
+        protected virtual void OnGroupMemberAdded(LavishScriptEventArgs e)
+        {
+            if (GroupMemberAdded != null)
+                GroupMemberAdded(this, e);
+        }
+        protected virtual void OnGroupMemberBooted(LavishScriptEventArgs e)
+        {
+            if (GroupMemberBooted != null)
+                GroupMemberBooted(this, e);
+        }
+        protected virtual void OnGroupMemberDeath(LavishScriptEventArgs e)
+        {
+            if (GroupMemberDeath != null)
+                GroupMemberDeath(this, e);
+        }
+        protected virtual void OnGroupMemberCountChange(LavishScriptEventArgs e)
+        {
+            if (GroupMemberCountChange != null)
+                GroupMemberCountChange(this, e);
+        }
+        protected virtual void OnCraftingStepComplete(LavishScriptEventArgs e)
+        {
+            if (CraftingStepComplete != null)
+                CraftingStepComplete(this, e);
+        }
+        protected virtual void OnCraftingAlert(LavishScriptEventArgs e)
+        {
+            if (CraftingAlert != null)
+                CraftingAlert(this, e);
+        }
+        protected virtual void OnChangeChunk(LavishScriptEventArgs e)
+        {
+            if (ChangeChunk != null)
+                ChangeChunk(this, e);
+        }
+        protected virtual void OnStartSwimming(LavishScriptEventArgs e)
+        {
+            if (StartSwimming != null)
+                StartSwimming(this, e);
+        }
+        protected virtual void OnStopSwimming(LavishScriptEventArgs e)
+        {
+            if (StopSwimming != null)
+                StopSwimming(this, e);
+        }
+        protected virtual void OnConnectionStateChange(LavishScriptEventArgs e)
+        {
+            if (ConnectionStateChange != null)
+                ConnectionStateChange(this, e);
+        }
+        protected virtual void OnPawnSpawned(LavishScriptEventArgs e)
+        {
+            if (PawnSpawned != null)
+                PawnSpawned(this, e);
+        }
+        protected virtual void OnPawnDespawned(LavishScriptEventArgs e)
+        {
+            if (PawnDespawned != null)
+                PawnDespawned(this, e);
+        }
+        protected virtual void OnIncomingText(LavishScriptEventArgs e)
+        {
+            if (IncomingText != null)
+                IncomingText(this, e);
+        }
         #endregion
 
         ~VGEvent()
@@ -97,6 +239,27 @@ namespace Vanguard.ISXVG
             LavishScript.Events.DetachEventTarget(LavishScript.Events.RegisterEvent("VG_onParlaySuccess"), Event_OnParlaySuccess);
             LavishScript.Events.DetachEventTarget(LavishScript.Events.RegisterEvent("VG_onParlayLost"), Event_OnParlayLoss);
             LavishScript.Events.DetachEventTarget(LavishScript.Events.RegisterEvent("VG_onParlayEnd"), Event_OnParlayEnd);
+            LavishScript.Events.DetachEventTarget(LavishScript.Events.RegisterEvent("VG_onGroupBooted"), Event_OnGroupBooted);
+            LavishScript.Events.DetachEventTarget(LavishScript.Events.RegisterEvent("VG_onGroupDisbanded"), Event_OnGroupDisbanded);
+            LavishScript.Events.DetachEventTarget(LavishScript.Events.RegisterEvent("VG_onGroupFormed"), Event_OnGroupFormed);
+            LavishScript.Events.DetachEventTarget(LavishScript.Events.RegisterEvent("VG_onGroupJoined"), Event_OnGroupJoined);
+            LavishScript.Events.DetachEventTarget(LavishScript.Events.RegisterEvent("VG_onGroupLootNotify"), Event_OnGroupLootNotify);
+            LavishScript.Events.DetachEventTarget(LavishScript.Events.RegisterEvent("VG_onGroupLootRandomStarted"), Event_OnGroupLootRandomStarted);
+            LavishScript.Events.DetachEventTarget(LavishScript.Events.RegisterEvent("VG_onGroupLootRandomEnded"), Event_OnGroupLootRandomEnded);
+            LavishScript.Events.DetachEventTarget(LavishScript.Events.RegisterEvent("VG_onGroupMemberAdded"), Event_OnGroupMemberAdded);
+            LavishScript.Events.DetachEventTarget(LavishScript.Events.RegisterEvent("VG_onGroupMemberBooted"), Event_OnGroupMemberBooted);
+            LavishScript.Events.DetachEventTarget(LavishScript.Events.RegisterEvent("VG_onGroupMemberDeath"), Event_OnGroupMemberDeath);
+            LavishScript.Events.DetachEventTarget(LavishScript.Events.RegisterEvent("VG_onGroupMemberCountChange"), Event_OnGroupMemberCountChange);
+            LavishScript.Events.DetachEventTarget(LavishScript.Events.RegisterEvent("VG_onCraftingStepComplete"), Event_OnCraftingStepComplete);
+            LavishScript.Events.DetachEventTarget(LavishScript.Events.RegisterEvent("VG_onCraftingAlert"), Event_OnCraftingAlert);
+            LavishScript.Events.DetachEventTarget(LavishScript.Events.RegisterEvent("VG_onChangeChunk"), Event_OnChangeChunk);
+            LavishScript.Events.DetachEventTarget(LavishScript.Events.RegisterEvent("VG_onStartSwimming"), Event_OnStartSwimming);
+            LavishScript.Events.DetachEventTarget(LavishScript.Events.RegisterEvent("VG_onStopSwimming"), Event_OnStopSwimming);
+            LavishScript.Events.DetachEventTarget(LavishScript.Events.RegisterEvent("VG_onConnectionStateChange"), Event_OnConnectionStateChange);
+            LavishScript.Events.DetachEventTarget(LavishScript.Events.RegisterEvent("VG_OnPawnSpawned"), Event_OnPawnSpawned);
+            LavishScript.Events.DetachEventTarget(LavishScript.Events.RegisterEvent("VG_OnPawnDespawned"), Event_OnPawnDespawned);
+            LavishScript.Events.DetachEventTarget(LavishScript.Events.RegisterEvent("VG_OnIncomingText"), Event_OnIncomingText);
+
         }
 
         public VGEvent()
@@ -104,7 +267,7 @@ namespace Vanguard.ISXVG
             //InnerSpace.Echo("Attaching Event: " + Extension.GetVGEventID("VG_onStartSwimming").ToString());//sample
             //Eventdel_VGEvent = new LavishScriptAPI.Delegates.EventTarget(Event_VGEvent);//sample
             //LavishScript.Events.AttachEventTarget(Extension.GetVGEventID("VG_onStartSwimming"), Eventdel_VGEvent);//sample
-            
+
             Event_OnParlayBegin = new LavishScriptAPI.Delegates.EventTarget(Event_ParlayBegin);
             Event_OnParlayDialog = new LavishScriptAPI.Delegates.EventTarget(Event_ParlayDialog);
             Event_OnParlayUpdate = new LavishScriptAPI.Delegates.EventTarget(Event_ParlayUpdate);
@@ -114,6 +277,26 @@ namespace Vanguard.ISXVG
             Event_OnParlaySuccess = new LavishScriptAPI.Delegates.EventTarget(Event_ParlaySuccess);
             Event_OnParlayLoss = new LavishScriptAPI.Delegates.EventTarget(Event_ParlayLoss);
             Event_OnParlayEnd = new LavishScriptAPI.Delegates.EventTarget(Event_ParlayEnd);
+            Event_OnGroupBooted = new LavishScriptAPI.Delegates.EventTarget(Event_GroupBooted);
+            Event_OnGroupDisbanded = new LavishScriptAPI.Delegates.EventTarget(Event_GroupDisbanded);
+            Event_OnGroupFormed = new LavishScriptAPI.Delegates.EventTarget(Event_GroupFormed);
+            Event_OnGroupJoined = new LavishScriptAPI.Delegates.EventTarget(Event_GroupJoined);
+            Event_OnGroupLootNotify = new LavishScriptAPI.Delegates.EventTarget(Event_GroupLootNotify);
+            Event_OnGroupLootRandomStarted = new LavishScriptAPI.Delegates.EventTarget(Event_GroupLootRandomStarted);
+            Event_OnGroupLootRandomEnded = new LavishScriptAPI.Delegates.EventTarget(Event_GroupLootRandomEnded);
+            Event_OnGroupMemberAdded = new LavishScriptAPI.Delegates.EventTarget(Event_GroupMemberAdded);
+            Event_OnGroupMemberBooted = new LavishScriptAPI.Delegates.EventTarget(Event_GroupMemberBooted);
+            Event_OnGroupMemberDeath = new LavishScriptAPI.Delegates.EventTarget(Event_GroupMemberDeath);
+            Event_OnGroupMemberCountChange = new LavishScriptAPI.Delegates.EventTarget(Event_GroupMemberCountChange);
+            Event_OnCraftingStepComplete = new LavishScriptAPI.Delegates.EventTarget(Event_CraftingStepComplete);
+            Event_OnCraftingAlert = new LavishScriptAPI.Delegates.EventTarget(Event_CraftingAlert);
+            Event_OnChangeChunk = new LavishScriptAPI.Delegates.EventTarget(Event_ChangeChunk);
+            Event_OnStartSwimming = new LavishScriptAPI.Delegates.EventTarget(Event_StartSwimming);
+            Event_OnStopSwimming = new LavishScriptAPI.Delegates.EventTarget(Event_StopSwimming);
+            Event_OnConnectionStateChange = new LavishScriptAPI.Delegates.EventTarget(Event_ConnectionStateChange);
+            Event_OnPawnSpawned = new LavishScriptAPI.Delegates.EventTarget(Event_PawnSpawned);
+            Event_OnPawnDespawned = new LavishScriptAPI.Delegates.EventTarget(Event_PawnDespawned);
+            Event_OnIncomingText = new LavishScriptAPI.Delegates.EventTarget(Event_IncomingText);
 
             LavishScript.Events.AttachEventTarget(LavishScript.Events.RegisterEvent("VG_onParlayBegin"), Event_OnParlayBegin);
             LavishScript.Events.AttachEventTarget(LavishScript.Events.RegisterEvent("VG_onParlayDialog"), Event_OnParlayDialog);
@@ -124,6 +307,26 @@ namespace Vanguard.ISXVG
             LavishScript.Events.AttachEventTarget(LavishScript.Events.RegisterEvent("VG_onParlaySuccess"), Event_OnParlaySuccess);
             LavishScript.Events.AttachEventTarget(LavishScript.Events.RegisterEvent("VG_onParlayLost"), Event_OnParlayLoss);
             LavishScript.Events.AttachEventTarget(LavishScript.Events.RegisterEvent("VG_onParlayEnd"), Event_OnParlayEnd);
+            LavishScript.Events.AttachEventTarget(LavishScript.Events.RegisterEvent("VG_onGroupBooted"), Event_OnGroupBooted);
+            LavishScript.Events.AttachEventTarget(LavishScript.Events.RegisterEvent("VG_onGroupDisbanded"), Event_OnGroupDisbanded);
+            LavishScript.Events.AttachEventTarget(LavishScript.Events.RegisterEvent("VG_onGroupFormed"), Event_OnGroupFormed);
+            LavishScript.Events.AttachEventTarget(LavishScript.Events.RegisterEvent("VG_onGroupJoined"), Event_OnGroupJoined);
+            LavishScript.Events.AttachEventTarget(LavishScript.Events.RegisterEvent("VG_onGroupLootNotify"), Event_OnGroupLootNotify);
+            LavishScript.Events.AttachEventTarget(LavishScript.Events.RegisterEvent("VG_onGroupLootRandomStarted"), Event_OnGroupLootRandomStarted);
+            LavishScript.Events.AttachEventTarget(LavishScript.Events.RegisterEvent("VG_onGroupLootRandomEnded"), Event_OnGroupLootRandomEnded);
+            LavishScript.Events.AttachEventTarget(LavishScript.Events.RegisterEvent("VG_onGroupMemberAdded"), Event_OnGroupMemberAdded);
+            LavishScript.Events.AttachEventTarget(LavishScript.Events.RegisterEvent("VG_onGroupMemberBooted"), Event_OnGroupMemberBooted);
+            LavishScript.Events.AttachEventTarget(LavishScript.Events.RegisterEvent("VG_onGroupMemberDeath"), Event_OnGroupMemberDeath);
+            LavishScript.Events.AttachEventTarget(LavishScript.Events.RegisterEvent("VG_onGroupMemberCountChange"), Event_OnGroupMemberCountChange);
+            LavishScript.Events.AttachEventTarget(LavishScript.Events.RegisterEvent("VG_onCraftingStepComplete"), Event_OnCraftingStepComplete);
+            LavishScript.Events.AttachEventTarget(LavishScript.Events.RegisterEvent("VG_onCraftingAlert"), Event_OnCraftingAlert);
+            LavishScript.Events.AttachEventTarget(LavishScript.Events.RegisterEvent("VG_onChangeChunk"), Event_OnChangeChunk);
+            LavishScript.Events.AttachEventTarget(LavishScript.Events.RegisterEvent("VG_onStartSwimming"), Event_OnStartSwimming);
+            LavishScript.Events.AttachEventTarget(LavishScript.Events.RegisterEvent("VG_onStopSwimming"), Event_OnStopSwimming);
+            LavishScript.Events.AttachEventTarget(LavishScript.Events.RegisterEvent("VG_onConnectionStateChange"), Event_OnConnectionStateChange);
+            LavishScript.Events.AttachEventTarget(LavishScript.Events.RegisterEvent("VG_OnPawnSpawned"), Event_OnPawnSpawned);
+            LavishScript.Events.AttachEventTarget(LavishScript.Events.RegisterEvent("VG_OnPawnDespawned"), Event_OnPawnDespawned);
+            LavishScript.Events.AttachEventTarget(LavishScript.Events.RegisterEvent("VG_OnIncomingText"), Event_OnIncomingText);
         }
 
         #region LavishScript to .Net Event Triggers
@@ -179,7 +382,87 @@ namespace Vanguard.ISXVG
         private void Event_ParlayEnd(int argc, uint argv, Object ThisObject)
         {
             OnParlayEnd(new LavishScriptEventArgs(argc, argv, ThisObject));
-        } 
+        }
+        private void Event_GroupBooted(int argc, uint argv, Object ThisObject)
+        {
+            OnGroupBooted(new LavishScriptEventArgs(argc, argv, ThisObject));
+        }
+        private void Event_GroupDisbanded(int argc, uint argv, Object ThisObject)
+        {
+            OnGroupDisbanded(new LavishScriptEventArgs(argc, argv, ThisObject));
+        }
+        private void Event_GroupFormed(int argc, uint argv, Object ThisObject)
+        {
+            OnGroupFormed(new LavishScriptEventArgs(argc, argv, ThisObject));
+        }
+        private void Event_GroupJoined(int argc, uint argv, Object ThisObject)
+        {
+            OnGroupJoined(new LavishScriptEventArgs(argc, argv, ThisObject));
+        }
+        private void Event_GroupLootNotify(int argc, uint argv, Object ThisObject)
+        {
+            OnGroupLootNotify(new LavishScriptEventArgs(argc, argv, ThisObject));
+        }
+        private void Event_GroupLootRandomStarted(int argc, uint argv, Object ThisObject)
+        {
+            OnGroupLootRandomStarted(new LavishScriptEventArgs(argc, argv, ThisObject));
+        }
+        private void Event_GroupLootRandomEnded(int argc, uint argv, Object ThisObject)
+        {
+            OnGroupLootRandomEnded(new LavishScriptEventArgs(argc, argv, ThisObject));
+        }
+        private void Event_GroupMemberAdded(int argc, uint argv, Object ThisObject)
+        {
+            OnGroupMemberAdded(new LavishScriptEventArgs(argc, argv, ThisObject));
+        }
+        private void Event_GroupMemberBooted(int argc, uint argv, Object ThisObject)
+        {
+            OnGroupMemberBooted(new LavishScriptEventArgs(argc, argv, ThisObject));
+        }
+        private void Event_GroupMemberDeath(int argc, uint argv, Object ThisObject)
+        {
+            OnGroupMemberDeath(new LavishScriptEventArgs(argc, argv, ThisObject));
+        }
+        private void Event_GroupMemberCountChange(int argc, uint argv, Object ThisObject)
+        {
+            OnGroupMemberCountChange(new LavishScriptEventArgs(argc, argv, ThisObject));
+        }
+        private void Event_CraftingStepComplete(int argc, uint argv, Object ThisObject)
+        {
+            OnCraftingStepComplete(new LavishScriptEventArgs(argc, argv, ThisObject));
+        }
+        private void Event_CraftingAlert(int argc, uint argv, Object ThisObject)
+        {
+            OnCraftingAlert(new LavishScriptEventArgs(argc, argv, ThisObject));
+        }
+        private void Event_ChangeChunk(int argc, uint argv, Object ThisObject)
+        {
+            OnChangeChunk(new LavishScriptEventArgs(argc, argv, ThisObject));
+        }
+        private void Event_StartSwimming(int argc, uint argv, Object ThisObject)
+        {
+            OnStartSwimming(new LavishScriptEventArgs(argc, argv, ThisObject));
+        }
+        private void Event_StopSwimming(int argc, uint argv, Object ThisObject)
+        {
+            OnStopSwimming(new LavishScriptEventArgs(argc, argv, ThisObject));
+        }
+        private void Event_ConnectionStateChange(int argc, uint argv, Object ThisObject)
+        {
+            OnConnectionStateChange(new LavishScriptEventArgs(argc, argv, ThisObject));
+        }
+        private void Event_PawnSpawned(int argc, uint argv, Object ThisObject)
+        {
+            OnPawnSpawned(new LavishScriptEventArgs(argc, argv, ThisObject));
+        }
+        private void Event_PawnDespawned(int argc, uint argv, Object ThisObject)
+        {
+            OnPawnDespawned(new LavishScriptEventArgs(argc, argv, ThisObject));
+        }
+        private void Event_IncomingText(int argc, uint argv, Object ThisObject)
+        {
+            OnIncomingText(new LavishScriptEventArgs(argc, argv, ThisObject));
+        }
         #endregion
     }
 }

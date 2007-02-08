@@ -238,74 +238,74 @@ namespace Vanguard.ISXVG
             }
         }
 
-        public bool FilterMe
+        public bool FilterMe()
         {
-           get { return ExecuteMethod("FilterMe"); }
+           return ExecuteMethod("FilterMe");
         }
 
-        public bool FilterNPCs
+        public bool FilterNPCs()
         {
-           get { return ExecuteMethod("FilterNPCs"); }
+           return ExecuteMethod("FilterNPCs");
         }
 
-        public bool FilterPCs
+        public bool FilterPCs()
         {
-           get { return ExecuteMethod("FilterPCs"); }
+           return ExecuteMethod("FilterPCs");
         }
 
-        public bool FilterSpecials
+        public bool FilterSpecials()
         {
-           get { return ExecuteMethod("FilterSpecials"); }
+           return ExecuteMethod("FilterSpecials");
         }
 
-        public bool FilterResources
+        public bool FilterResources()
         {
-           get { return ExecuteMethod("FilterResources"); }
+           return ExecuteMethod("FilterResources");
         }
 
-        public bool FilterMerchants
+        public bool FilterMerchants()
         {
-           get { return ExecuteMethod("FilterMerchants"); }
+           return ExecuteMethod("FilterMerchants");
         }
 
-        public bool FilterCorpses
+        public bool FilterCorpses()
         {
-           get { return ExecuteMethod("FilterCorpses"); }
+           return ExecuteMethod("FilterCorpses");
         }
 
-        public bool FilterCraftingStations
+        public bool FilterCraftingStations()
         {
-           get { return ExecuteMethod("FilterCraftingStations"); }
+           return ExecuteMethod("FilterCraftingStations");
         }
 
-        public bool FilterTrainers
+        public bool FilterTrainers()
         {
-           get { return ExecuteMethod("FilterTrainers"); }
+           return ExecuteMethod("FilterTrainers");
         }
 
-        public bool FilterGroupMembers
+        public bool FilterGroupMembers()
         {
-           get { return ExecuteMethod("FilterGroupMembers"); }
+           return ExecuteMethod("FilterGroupMembers");
         }
 
-        public bool FilterAggroNPCs
+        public bool FilterAggroNPCs()
         {
-           get { return ExecuteMethod("FilterAggroNPCs"); }
+            return ExecuteMethod("FilterAggroNPCs");
         }
 
-        public bool FilterNamedNPCs
+        public bool FilterNamedNPCs()
         {
-           get { return ExecuteMethod("FilterNamedNPCs"); }
+            return ExecuteMethod("FilterNamedNPCs");
         }
 
-        public bool FilterPets
+        public bool FilterPets()
         {
-           get { return ExecuteMethod("FilterPets"); }
+           return ExecuteMethod("FilterPets");
         }
 
-        public bool FilterMyPet
+        public bool FilterMyPet()
         {
-           get { return ExecuteMethod("FilterMyPet"); }
+           return ExecuteMethod("FilterMyPet");
         }
 
         public bool SetSize(int Size)
@@ -313,19 +313,19 @@ namespace Vanguard.ISXVG
             return ExecuteMethod("SetSize", Size.ToString());
         }
 
-        public bool ShowLabels
+        public bool ShowLabels()
         {
-           get { return ExecuteMethod("ShowLabels"); }
+           return ExecuteMethod("ShowLabels");
         }
 
-        public bool ZAxisClipping
+        public bool ZAxisClipping()
         {
-           get { return ExecuteMethod("ZAxisClipping"); }
+           return ExecuteMethod("ZAxisClipping");
         }
 
-        public bool ClipText
+        public bool ClipText()
         {
-           get { return ExecuteMethod("ClipText"); }
+           return ExecuteMethod("ClipText");
         }
 
         public bool ClipRadius(int ClipRadius)
@@ -333,9 +333,9 @@ namespace Vanguard.ISXVG
             return ExecuteMethod("ClipRadius", ClipRadius.ToString());
         }
 
-        public bool Rotation
+        public bool Rotation()
         {
-           get { return ExecuteMethod("Rotation"); }
+           return ExecuteMethod("Rotation");
         }
 
         public bool SetCustomFilter(string Text)
@@ -343,24 +343,24 @@ namespace Vanguard.ISXVG
             return ExecuteMethod("SetCustomFilter", Text);
         }
 
-        public bool ZoomIn
+        public bool ZoomIn()
         {
-           get { return ExecuteMethod("ZoomIn"); }
+           return ExecuteMethod("ZoomIn");
         }
 
-        public bool ZoomOut
+        public bool ZoomOut()
         {
-           get { return ExecuteMethod("ZoomOut"); }
+           return ExecuteMethod("ZoomOut");
         }
 
-        public bool FilterClickables
+        public bool FilterClickables()
         {
-           get { return ExecuteMethod("FilterClickables"); }
+           return ExecuteMethod("FilterClickables");
         }
 
-        public bool FilterQuestNPCs
+        public bool FilterQuestNPCs()
         {
-           get { return ExecuteMethod("FilterQuestNPCs"); }
+           return ExecuteMethod("FilterQuestNPCs");
         }
     }
 }
