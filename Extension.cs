@@ -78,6 +78,30 @@ namespace Vanguard.ISXVG
             return new Radar(Obj);
         }
 
+        public RefiningRecipe RefiningRecipe(string Name)
+        {
+            LavishScriptObject Obj = LavishScript.Objects.GetObject("Recipie","Refining",Name);
+            return new RefiningRecipe(Obj);
+        }
+
+        public RefiningRecipe RefiningRecipe(int Arg)
+        {
+            LavishScriptObject Obj = LavishScript.Objects.GetObject("Recipie", "Refining", Arg.ToString());
+            return new RefiningRecipe(Obj);
+        }
+
+        public AssemblyRecipe AssemblyRecipe(string Name)
+        {
+            LavishScriptObject Obj = LavishScript.Objects.GetObject("Recipe", "Assembly", Name);
+            return new AssemblyRecipe(Obj);
+        }
+
+        public AssemblyRecipe AssemblyRecipe(int Arg)
+        {
+            LavishScriptObject Obj = LavishScript.Objects.GetObject("Recipe", "Assembly", Arg.ToString());
+            return new AssemblyRecipe(Obj);
+        }
+
         public ISXVG ISXVG()
         {
             LavishScriptPersistentObject Obj = LavishScript.Objects.GetPersistentObject("ISXVG");
