@@ -86,7 +86,7 @@ namespace Vanguard.ISXVG
 
         public Loot Loot()
         {
-            LavishScriptPersistentObject Obj = LavishScript.Objects.GetPersistentObject("Loot");
+            LavishScriptObject Obj = LavishScript.Objects.GetObject("Loot");
             return new Loot(Obj);
         }
 
@@ -168,44 +168,44 @@ namespace Vanguard.ISXVG
             return new Group(Obj);
         }
 
-        public void VGExecute(string Command)
+        public void VGExecute(params string[] Args)
         {
-            LavishScript.ExecuteCommand("VGExecute " + Command);
+            LavishScript.ExecuteCommandEx("VGExecute", Args);
         }
 
-        public void VGEcho(string args)
+        public void VGEcho(params string[] Args)
         {
-            LavishScript.ExecuteCommand("VGEcho " + args);
+            LavishScript.ExecuteCommandEx("VGEcho", Args);
         }
 
         public void Target()
         {
-            LavishScript.ExecuteCommand("Target");
+            LavishScript.ExecuteCommandEx("Target");
         }
 
-        public void Target(string args)
+        public void Target(params string[] Args)
         {
-            LavishScript.ExecuteCommand("Target " + args);
+            LavishScript.ExecuteCommandEx("Target", Args);
         }
 
         public void Face()
         {
-            LavishScript.ExecuteCommand("Face");
+            LavishScript.ExecuteCommandEx("Face");
         }
 
-        public void Face(string args)
+        public void Face(params string[] Args)
         {
-            LavishScript.ExecuteCommand("Face " + args);
+            LavishScript.ExecuteCommandEx("Face", Args);
         }
 
         public void Where()
         {
-            LavishScript.ExecuteCommand("Where");
+            LavishScript.ExecuteCommandEx("Where");
         }
 
-        public void Where(string args)
+        public void Where(params string[] Args)
         {
-            LavishScript.ExecuteCommand("Where " + args);
+            LavishScript.ExecuteCommandEx("Where", Args);
         }
     }
 }

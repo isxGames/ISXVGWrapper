@@ -14,7 +14,7 @@ namespace Vanguard.ISXVG
         {
         }
 
-        public Loot(LavishScriptPersistentObject Copy)
+        public Loot(LavishScriptObject Copy)
             :
             base(Copy)
         {
