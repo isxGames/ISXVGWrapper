@@ -20,6 +20,15 @@ namespace Vanguard.ISXVG
             base(Copy)
         {
         }
+        public int LanguageID
+        {
+            get { return GetMember<int>("LanguageID"); }
+        }
+
+        public int LanguageSubtypeID
+        {
+            get { return GetMember<int>("LanguageSubtypeID"); }
+        }
 
         public int PawnCount
         {
@@ -46,6 +55,17 @@ namespace Vanguard.ISXVG
             get { return GetMember<string>("GroupInviteSender"); }
         }
 
+        public string Language
+        {
+            get { return GetMember<string>("Language"); }
+        }
+        /// <summary>
+        /// Vanguards current build
+        /// </summary>
+        public string Version
+        {
+            get { return GetMember<string>("Version"); }
+        }
         public int ServerID
         {
             get { return GetMember<int>("ServerID"); }
