@@ -717,15 +717,10 @@ namespace Vanguard.ISXVG
             return new Ability(Obj);
         }
 
-        /// <summary>
-        ///Number of effects on your character 
-        /// </summary>
-        public int EffectCount
+        public EffectsManager Effect()
         {
-            get
-            {
-                return GetMember<int>("Effect");
-            }
+            LavishScriptObject Obj = GetMember("Effect");
+            return new EffectsManager(Obj);
         }
 
         public Effect Effect(int EffectNum)
@@ -740,15 +735,10 @@ namespace Vanguard.ISXVG
             return new Effect(Obj);
         }
 
-        /// <summary>
-        ///Number of maintained buffs on your character 
-        /// </summary>
-        public int MaintainedCount
+        public EffectsManager Maintained()
         {
-            get
-            {
-                return GetMember<int>("Maintained");
-            }
+            LavishScriptObject Obj = GetMember("Maintained");
+            return new EffectsManager(Obj);
         }
 
         public Effect Maintained(int MaintainedNum)

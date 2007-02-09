@@ -10,6 +10,7 @@
 /CraftingStage.cs -text
 /CraftingStep.cs -text
 /Effect.cs -text
+/EffectsManager.cs -text
 /Encounter.cs -text
 /Extension.cs -text
 /Form.cs -text
@@ -30,6 +31,7 @@ Properties/AssemblyInfo.cs -text
 /Radar.cs -text
 /Refining.cs -text
 /RefiningRecipe.cs -text
+/TargetEffect.cs -text
 /VG.cs -text
 /VGEvent.cs -text
 /VGLocation.cs -text

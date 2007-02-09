@@ -50,5 +50,39 @@ namespace Vanguard.ISXVG
                 return GetMember<string>("TimeRemaining");
             }
         }
+
+        public bool IsVisibleOnUI
+        {
+            get
+            {
+                return GetMember<bool>("IsVisibleOnUI");
+            }
+        }
+
+        public bool IsBeneficial
+        {
+            get
+            {
+                return GetMember<bool>("IsBeneficial");
+            }
+        }
+
+        public bool IsDetrimental
+        {
+            get
+            {
+                return GetMember<bool>("IsDetrimental");
+            }
+        }
+
+        public bool Cancel()
+        {
+            return ExecuteMethod("Cancel");
+        }
+
+        public bool Remove()
+        {
+            return ExecuteMethod("Remove");
+        }
     }
 }
