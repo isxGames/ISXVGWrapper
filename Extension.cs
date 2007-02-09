@@ -80,13 +80,13 @@ namespace Vanguard.ISXVG
 
         public RefiningRecipe RefiningRecipe(string Name)
         {
-            LavishScriptObject Obj = LavishScript.Objects.GetObject("Recipie","Refining",Name);
+            LavishScriptObject Obj = LavishScript.Objects.GetObject("Recipe","Refining",Name);
             return new RefiningRecipe(Obj);
         }
 
         public RefiningRecipe RefiningRecipe(int Arg)
         {
-            LavishScriptObject Obj = LavishScript.Objects.GetObject("Recipie", "Refining", Arg.ToString());
+            LavishScriptObject Obj = LavishScript.Objects.GetObject("Recipe", "Refining", Arg.ToString());
             return new RefiningRecipe(Obj);
         }
 
