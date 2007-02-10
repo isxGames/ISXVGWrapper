@@ -13,7 +13,7 @@ public class LavishScriptEventArgs : EventArgs
     public LavishScriptEventArgs(int ArgC, uint ArgV, object ThisObject) 
     {
         argC = ArgC;
-        argV = argV;
+        argV = ArgV;
         thisObject = ThisObject;
     }
 
