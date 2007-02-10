@@ -9,6 +9,8 @@
 /CraftingAction.cs -text
 /CraftingStage.cs -text
 /CraftingStep.cs -text
+/Dialog.cs -text
+/DialogResponse.cs -text
 /Effect.cs -text
 /EffectsManager.cs -text
 /Encounter.cs -text

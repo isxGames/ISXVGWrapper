@@ -144,6 +144,15 @@ namespace Vanguard.ISXVG
             return new VGLocation(Obj);
         }
 
+        /// <summary>
+        /// number of cards in strategy deck
+        /// </summary>
+        /// <returns>number of cards in strategy deck</returns>
+        public int Strategy()
+        {
+            return LavishScript.Objects.GetObject<int>("Strategy");
+        }
+
         public ParlayCard Strategy(int Arg)
         {
             LavishScriptObject Obj = LavishScript.Objects.GetObject("Strategy", Arg.ToString());
@@ -154,6 +163,15 @@ namespace Vanguard.ISXVG
         {
             LavishScriptObject Obj = LavishScript.Objects.GetObject("Strategy", Name);
             return new ParlayCard(Obj);
+        }
+
+        /// <summary>
+        /// number of cards in ParlayCard deck
+        /// </summary>
+        /// <returns>number of cards in ParlayCard deck</returns>
+        public int ParlayCard()
+        {
+            return LavishScript.Objects.GetObject<int>("ParlayCard");
         }
 
         public ParlayCard ParlayCard(int Arg)
@@ -190,6 +208,18 @@ namespace Vanguard.ISXVG
         {
             LavishScriptObject Obj = LavishScript.Objects.GetObject("Group");
             return new Group(Obj);
+        }
+
+        public Dialog Dialog(string Arg)
+        {
+            LavishScriptObject Obj = LavishScript.Objects.GetObject("Dialog", Arg);
+            return new Dialog(Obj);
+        }
+
+        public DialogResponse Dialog(params string[] Args)
+        {
+            LavishScriptObject Obj = LavishScript.Objects.GetObject("Dialog", Args);
+            return new DialogResponse(Obj);
         }
 
         public void VGExecute(params string[] Args)
