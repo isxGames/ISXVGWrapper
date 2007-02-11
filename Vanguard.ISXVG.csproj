@@ -44,6 +44,8 @@
     <Compile Include="CraftingAction.cs" />
     <Compile Include="CraftingStage.cs" />
     <Compile Include="CraftingStep.cs" />
+    <Compile Include="Dialog.cs" />
+    <Compile Include="DialogResponse.cs" />
     <Compile Include="EffectsManager.cs" />
     <Compile Include="Extension.cs" />
     <Compile Include="Ability.cs" />
