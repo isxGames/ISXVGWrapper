@@ -60,6 +60,22 @@ namespace Vanguard.ISXVG
             return GetMember<string>("ToLink", CustomName.ToString());
         }
 
+        public int MaxQuantity
+        {
+            get
+            {
+                return GetMember<int>("MaxQuantity");
+            }
+        }
+
+        public string MiscDescription
+        {
+            get
+            {
+                return GetMember<string>("MiscDescription");
+            }
+        }
+
         public string Description
         {
             get
@@ -121,6 +137,22 @@ namespace Vanguard.ISXVG
             get
             {
                 return GetMember<int>("NumSlots");
+            }
+        }
+
+        public int NumSlotsOpen
+        {
+            get
+            {
+                return GetMember<int>("NumSlotsOpen");
+            }
+        }
+
+        public bool IsFull
+        {
+            get
+            {
+                return GetMember<bool>("IsFull");
             }
         }
 
@@ -283,6 +315,11 @@ namespace Vanguard.ISXVG
             return ExecuteMethod("Unequip");
         }
 
+        public bool MoveToGeneralInventory()
+        {
+            return ExecuteMethod("MoveToGeneralInventory");
+        }
+
         public bool StartConvert()
         {
             return ExecuteMethod("StartConvert");
@@ -301,6 +338,22 @@ namespace Vanguard.ISXVG
         public bool PutIn(int ContainerIndex)
         {
             return ExecuteMethod("PutIn", ContainerIndex.ToString());
+        }
+        public bool Buy()
+        {
+            return ExecuteMethod("Buy");
+        }
+        public bool Buy(int NumStacks)
+        {
+            return ExecuteMethod("Buy", NumStacks.ToString());
+        }
+        public bool Sell()
+        {
+            return ExecuteMethod("Sell");
+        }
+        public bool Sell(int QtyInAStack)
+        {
+            return ExecuteMethod("Sell", QtyInAStack.ToString());
         }
     }
 }

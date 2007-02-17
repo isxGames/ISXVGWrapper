@@ -34,6 +34,22 @@ namespace Vanguard.ISXVG
             }
         }
 
+        public int PresenceRequired
+        {
+            get
+            {
+                return GetMember<int>("PresenceRequired");
+            }
+        }
+
+        public string PresenceRequiredType
+        {
+            get
+            {
+                return GetMember<string>("PresenceRequiredType");
+            }
+        }
+
         public bool IsCivicDiplomacyResponse 
         {
             get

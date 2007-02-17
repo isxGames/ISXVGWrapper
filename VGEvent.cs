@@ -43,7 +43,11 @@ namespace Vanguard.ISXVG
         private LavishScriptAPI.Delegates.EventTarget Event_OnPawnDespawned;
         private LavishScriptAPI.Delegates.EventTarget Event_OnPawnSpawned;
         private LavishScriptAPI.Delegates.EventTarget Event_OnIncomingText;
-
+        private LavishScriptAPI.Delegates.EventTarget Event_OnWeightUpdate;
+        private LavishScriptAPI.Delegates.EventTarget Event_OnAddInventoryItem;
+        private LavishScriptAPI.Delegates.EventTarget Event_OnCoinUpdate;
+        private LavishScriptAPI.Delegates.EventTarget Event_OnItemStackCountChange;
+        private LavishScriptAPI.Delegates.EventTarget Event_OnItemCanUseUpdated;
 
         #endregion
 
@@ -77,6 +81,11 @@ namespace Vanguard.ISXVG
         public event LavishScriptEventHandler PawnSpawned;
         public event LavishScriptEventHandler PawnDespawned;
         public event LavishScriptEventHandler IncomingText;
+        public event LavishScriptEventHandler WeightUpdate;
+        public event LavishScriptEventHandler AddInventoryItem;
+        public event LavishScriptEventHandler CoinUpdate;
+        public event LavishScriptEventHandler ItemStackCountChange;
+        public event LavishScriptEventHandler ItemCanUseUpdated;
         #endregion
 
         #region .Net Event Raisers
@@ -225,6 +234,31 @@ namespace Vanguard.ISXVG
             if (IncomingText != null)
                 IncomingText(this, e);
         }
+        protected virtual void OnWeightUpdate(LavishScriptEventArgs e)
+        {
+            if (WeightUpdate != null)
+                WeightUpdate(this, e);
+        }
+        protected virtual void OnAddInventoryItem(LavishScriptEventArgs e)
+        {
+            if (AddInventoryItem != null)
+                AddInventoryItem(this, e);
+        }
+        protected virtual void OnCoinUpdate(LavishScriptEventArgs e)
+        {
+            if (CoinUpdate != null)
+                CoinUpdate(this, e);
+        }
+        protected virtual void OnItemStackCountChange(LavishScriptEventArgs e)
+        {
+            if (ItemStackCountChange != null)
+                ItemStackCountChange(this, e);
+        }
+        protected virtual void OnItemCanUseUpdated(LavishScriptEventArgs e)
+        {
+            if (ItemCanUseUpdated != null)
+                ItemCanUseUpdated(this, e);
+        }
         #endregion
 
         ~VGEvent()
@@ -259,7 +293,11 @@ namespace Vanguard.ISXVG
             LavishScript.Events.DetachEventTarget(LavishScript.Events.RegisterEvent("VG_OnPawnSpawned"), Event_OnPawnSpawned);
             LavishScript.Events.DetachEventTarget(LavishScript.Events.RegisterEvent("VG_OnPawnDespawned"), Event_OnPawnDespawned);
             LavishScript.Events.DetachEventTarget(LavishScript.Events.RegisterEvent("VG_OnIncomingText"), Event_OnIncomingText);
-
+            LavishScript.Events.DetachEventTarget(LavishScript.Events.RegisterEvent("VG_onWeightUpdate"), Event_OnWeightUpdate);
+            LavishScript.Events.DetachEventTarget(LavishScript.Events.RegisterEvent("VG_onAddInventoryItem"), Event_OnAddInventoryItem);
+            LavishScript.Events.DetachEventTarget(LavishScript.Events.RegisterEvent("VG_onCoinUpdate"), Event_OnCoinUpdate);
+            LavishScript.Events.DetachEventTarget(LavishScript.Events.RegisterEvent("VG_onItemStackCountChange"), Event_OnItemStackCountChange);
+            LavishScript.Events.DetachEventTarget(LavishScript.Events.RegisterEvent("VG_onItemCanUseUpdated"), Event_OnItemCanUseUpdated);
         }
 
         public VGEvent()
@@ -297,6 +335,11 @@ namespace Vanguard.ISXVG
             Event_OnPawnSpawned = new LavishScriptAPI.Delegates.EventTarget(Event_PawnSpawned);
             Event_OnPawnDespawned = new LavishScriptAPI.Delegates.EventTarget(Event_PawnDespawned);
             Event_OnIncomingText = new LavishScriptAPI.Delegates.EventTarget(Event_IncomingText);
+            Event_OnWeightUpdate = new LavishScriptAPI.Delegates.EventTarget(Event_WeightUpdate);
+            Event_OnAddInventoryItem = new LavishScriptAPI.Delegates.EventTarget(Event_AddInventoryItem);
+            Event_OnCoinUpdate = new LavishScriptAPI.Delegates.EventTarget(Event_CoinUpdate);
+            Event_OnItemStackCountChange = new LavishScriptAPI.Delegates.EventTarget(Event_ItemStackCountChange);
+            Event_OnItemCanUseUpdated = new LavishScriptAPI.Delegates.EventTarget(Event_ItemCanUseUpdated);
 
             LavishScript.Events.AttachEventTarget(LavishScript.Events.RegisterEvent("VG_onParlayBegin"), Event_OnParlayBegin);
             LavishScript.Events.AttachEventTarget(LavishScript.Events.RegisterEvent("VG_onParlayDialog"), Event_OnParlayDialog);
@@ -327,6 +370,11 @@ namespace Vanguard.ISXVG
             LavishScript.Events.AttachEventTarget(LavishScript.Events.RegisterEvent("VG_OnPawnSpawned"), Event_OnPawnSpawned);
             LavishScript.Events.AttachEventTarget(LavishScript.Events.RegisterEvent("VG_OnPawnDespawned"), Event_OnPawnDespawned);
             LavishScript.Events.AttachEventTarget(LavishScript.Events.RegisterEvent("VG_OnIncomingText"), Event_OnIncomingText);
+            LavishScript.Events.AttachEventTarget(LavishScript.Events.RegisterEvent("VG_onWeightUpdate"), Event_OnWeightUpdate);
+            LavishScript.Events.AttachEventTarget(LavishScript.Events.RegisterEvent("VG_onAddInventoryItem"), Event_OnAddInventoryItem);
+            LavishScript.Events.AttachEventTarget(LavishScript.Events.RegisterEvent("VG_onCoinUpdate"), Event_OnCoinUpdate);
+            LavishScript.Events.AttachEventTarget(LavishScript.Events.RegisterEvent("VG_onItemStackCountChange"), Event_OnItemStackCountChange);
+            LavishScript.Events.AttachEventTarget(LavishScript.Events.RegisterEvent("VG_onItemCanUseUpdated"), Event_OnItemCanUseUpdated);
         }
 
         #region LavishScript to .Net Event Triggers
@@ -462,6 +510,26 @@ namespace Vanguard.ISXVG
         private void Event_IncomingText(int argc, uint argv, Object ThisObject)
         {
             OnIncomingText(new LavishScriptEventArgs(argc, argv, ThisObject));
+        }
+        private void Event_WeightUpdate(int argc, uint argv, Object ThisObject)
+        {
+            OnWeightUpdate(new LavishScriptEventArgs(argc, argv, ThisObject));
+        }
+        private void Event_AddInventoryItem(int argc, uint argv, Object ThisObject)
+        {
+            OnAddInventoryItem(new LavishScriptEventArgs(argc, argv, ThisObject));
+        }
+        private void Event_CoinUpdate(int argc, uint argv, Object ThisObject)
+        {
+            OnCoinUpdate(new LavishScriptEventArgs(argc, argv, ThisObject));
+        }
+        private void Event_ItemStackCountChange(int argc, uint argv, Object ThisObject)
+        {
+            OnItemStackCountChange(new LavishScriptEventArgs(argc, argv, ThisObject));
+        }
+        private void Event_ItemCanUseUpdated(int argc, uint argv, Object ThisObject)
+        {
+            OnItemCanUseUpdated(new LavishScriptEventArgs(argc, argv, ThisObject));
         }
         #endregion
     }

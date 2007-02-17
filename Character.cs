@@ -594,6 +594,14 @@ namespace Vanguard.ISXVG
             }
         }
 
+        public int InventorySlotsOpen
+        {
+            get
+            {
+                return GetMember<int>("InventorySlotsOpen");
+            }
+        }
+
         public float GenInvSlotsUsed
         {
             get
@@ -773,16 +781,16 @@ namespace Vanguard.ISXVG
             }
         }
 
-        public Effect TargetEffect(int TargetEffectNum)
+        public TargetEffect TargetEffect(int TargetEffectNum)
         {
             LavishScriptObject Obj = GetMember("TargetEffect", TargetEffectNum.ToString());
-            return new Effect(Obj);
+            return new TargetEffect(Obj);
         }
 
-        public Effect TargetEffect(string TargetEffectName)
+        public TargetEffect TargetEffect(string TargetEffectName)
         {
             LavishScriptObject Obj = GetMember("TargetEffect", TargetEffectName);
-            return new Effect(Obj);
+            return new TargetEffect(Obj);
         }
 
         /// <summary>

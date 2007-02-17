@@ -78,30 +78,6 @@ namespace Vanguard.ISXVG
             return new Radar(Obj);
         }
 
-        public RefiningRecipe RefiningRecipe(string Name)
-        {
-            LavishScriptObject Obj = LavishScript.Objects.GetObject("Recipe","Refining",Name);
-            return new RefiningRecipe(Obj);
-        }
-
-        public RefiningRecipe RefiningRecipe(int Arg)
-        {
-            LavishScriptObject Obj = LavishScript.Objects.GetObject("Recipe", "Refining", Arg.ToString());
-            return new RefiningRecipe(Obj);
-        }
-
-        public AssemblyRecipe AssemblyRecipe(string Name)
-        {
-            LavishScriptObject Obj = LavishScript.Objects.GetObject("Recipe", "Assembly", Name);
-            return new AssemblyRecipe(Obj);
-        }
-
-        public AssemblyRecipe AssemblyRecipe(int Arg)
-        {
-            LavishScriptObject Obj = LavishScript.Objects.GetObject("Recipe", "Assembly", Arg.ToString());
-            return new AssemblyRecipe(Obj);
-        }
-
         public ISXVG ISXVG()
         {
             LavishScriptPersistentObject Obj = LavishScript.Objects.GetPersistentObject("ISXVG");
@@ -222,44 +198,92 @@ namespace Vanguard.ISXVG
             return new DialogResponse(Obj);
         }
 
-        public void VGExecute(params string[] Args)
+        public QuestJournal QuestJournal()
         {
-            LavishScript.ExecuteCommandEx("VGExecute", Args);
+            LavishScriptObject Obj = LavishScript.Objects.GetObject("Journal", "Quest");
+            return new QuestJournal(Obj);
         }
 
-        public void VGEcho(params string[] Args)
+        public QuestJournal QuestJournal(string Arg)
         {
-            LavishScript.ExecuteCommandEx("VGEcho", Args);
+            LavishScriptObject Obj = LavishScript.Objects.GetObject("Journal", "Quest", Arg);
+            return new QuestJournal(Obj);
+        }
+
+        public QuestJournal QuestJournal(int Arg)
+        {
+            LavishScriptObject Obj = LavishScript.Objects.GetObject("Journal", "Quest", Arg.ToString());
+            return new QuestJournal(Obj);
+        }
+
+        public TravelJournal TravelJournal()
+        {
+            LavishScriptObject Obj = LavishScript.Objects.GetObject("Journal", "Travel");
+            return new TravelJournal(Obj);
+        }
+
+        public TravelJournal TravelJournal(string Arg)
+        {
+            LavishScriptObject Obj = LavishScript.Objects.GetObject("Journal", "Travel", Arg);
+            return new TravelJournal(Obj);
+        }
+
+        public TravelJournal TravelJournal(int Arg)
+        {
+            LavishScriptObject Obj = LavishScript.Objects.GetObject("Journal", "Travel", Arg.ToString());
+            return new TravelJournal(Obj);
+        }
+
+        public Merchant Merchant()
+        {
+            LavishScriptObject Obj = LavishScript.Objects.GetObject("Merchant");
+            return new Merchant(Obj);
+        }
+
+        public CraftingTaskMaster CraftingTaskMaster()
+        {
+            LavishScriptObject Obj = LavishScript.Objects.GetObject("TaskMaster", "Crafting");
+            return new CraftingTaskMaster(Obj);
+        }
+
+        public void VGExecute(string Args)
+        {
+            LavishScript.ExecuteCommand("VGExecute " + Args);
+        }
+
+        public void VGEcho(string Args)
+        {
+            LavishScript.ExecuteCommand("VGEcho " + Args);
         }
 
         public void Target()
         {
-            LavishScript.ExecuteCommandEx("Target");
+            LavishScript.ExecuteCommand("Target");
         }
 
-        public void Target(params string[] Args)
+        public void Target(string Args)
         {
-            LavishScript.ExecuteCommandEx("Target", Args);
+            LavishScript.ExecuteCommand("Target " + Args);
         }
 
         public void Face()
         {
-            LavishScript.ExecuteCommandEx("Face");
+            LavishScript.ExecuteCommand("Face");
         }
 
-        public void Face(params string[] Args)
+        public void Face(string Args)
         {
-            LavishScript.ExecuteCommandEx("Face", Args);
+            LavishScript.ExecuteCommand("Face " + Args);
         }
 
         public void Where()
         {
-            LavishScript.ExecuteCommandEx("Where");
+            LavishScript.ExecuteCommand("Where");
         }
 
-        public void Where(params string[] Args)
+        public void Where(string Args)
         {
-            LavishScript.ExecuteCommandEx("Where", Args);
+            LavishScript.ExecuteCommand("Where" + Args);
         }
     }
 }

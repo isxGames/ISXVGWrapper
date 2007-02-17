@@ -53,6 +53,69 @@ namespace Vanguard.ISXVG
                 return GetMember<int>("Range");
             }
         }
+        public string Type
+        {
+            get
+            {
+                return GetMember<string>("Type");
+            }
+        }
+        public string SongType
+        {
+            get
+            {
+                return GetMember<string>("SongType");
+            }
+        }
+        public string TargetType
+        {
+            get
+            {
+                return GetMember<string>("TargetType");
+            }
+        }
+        public bool IsChain
+        {
+            get
+            {
+                return GetMember<bool>("IsChain");
+            }
+        }
+        public bool IsCounter
+        {
+            get
+            {
+                return GetMember<bool>("IsCounter");
+            }
+        }
+        public bool IsRescue
+        {
+            get
+            {
+                return GetMember<bool>("IsRescue");
+            }
+        }
+        public bool IsOffensive
+        {
+            get
+            {
+                return GetMember<bool>("IsOffensive");
+            }
+        }
+        public float TriggeredCountdown
+        {
+            get
+            {
+                return GetMember<float>("TriggeredCountdown");
+            }
+        }
+        public int LevelGranted
+        {
+            get
+            {
+                return GetMember<int>("LevelGranted");
+            }
+        }
         public int HealthCost
         {
             get

@@ -33,7 +33,13 @@ namespace Vanguard.ISXVG
                 return GetMember<float>("Recovery");
             }
         }
-
+        public int RecipeCount
+        {
+            get
+            {
+                return GetMember<int>("RecipeCount");
+            }
+        }
         public int State
         {
             get
@@ -61,7 +67,16 @@ namespace Vanguard.ISXVG
             LavishScriptObject Obj = GetMember("CurrentRecipe");
             return new RefiningRecipe(Obj);
         }
-
+        public RefiningRecipe Recipe(string Name)
+        {
+            LavishScriptObject Obj = GetMember("CurrentRecipe", Name);
+            return new RefiningRecipe(Obj);
+        }
+        public RefiningRecipe Recipe(int Index)
+        {
+            LavishScriptObject Obj = GetMember("CurrentRecipe", Index.ToString());
+            return new RefiningRecipe(Obj);
+        }
         public int ActionPointsUsed
         {
             get
@@ -133,11 +148,14 @@ namespace Vanguard.ISXVG
             return ExecuteMethod("Begin");
         }
 
-        public bool SetRecipe(int Arg)
+        public bool ChangeToolbelt(int ToolbeltID)
         {
-            return ExecuteMethod("SetRecipe", Arg.ToString());
+            return ExecuteMethod("ChangeToolbelt", ToolbeltID.ToString());
         }
-
+        public bool AddItemToTable(int ItemID)
+        {
+            return ExecuteMethod("AddItemToTable", ItemID.ToString());
+        }
         public bool DoSetup()
         {
             return ExecuteMethod("DoSetup");
@@ -152,7 +170,10 @@ namespace Vanguard.ISXVG
         {
             return ExecuteMethod("Cancel");
         }
-
+        public bool Select()
+        {
+            return ExecuteMethod("Select");
+        }
         public bool End()
         {
             return ExecuteMethod("End");

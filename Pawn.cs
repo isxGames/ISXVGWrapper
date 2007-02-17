@@ -74,6 +74,17 @@ namespace Vanguard.ISXVG
                 return GetMember<int>("Level");
             }
         }
+        /// <summary>
+        /// This is the heading that the pawn is currently facing and/or heading.  Not to be confused with "HeadingTo", which
+        /// is the heading YOU would take to reach the pawn.
+        /// </summary>
+        public int Heading
+        {
+            get
+            {
+                return GetMember<int>("Heading");
+            }
+        }
         public int Pitch
         {
             get

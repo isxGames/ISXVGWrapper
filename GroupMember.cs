@@ -45,6 +45,21 @@ namespace Vanguard.ISXVG
             get { return GetMember<float>("Z"); }
         }
 
+        public float Health
+        {
+            get { return GetMember<float>("Health"); }
+        }
+
+        public float Energy
+        {
+            get { return GetMember<float>("Energy"); }
+        }
+
+        public float Endurance
+        {
+            get { return GetMember<float>("Endurance"); }
+        }
+
         public int ChunkX
         {
             get { return GetMember<int>("ChunkX"); }
