@@ -250,11 +250,11 @@ namespace Vanguard.ISXVG
             }
         }
 
-        public int Heading
+        public float Heading
         {
             get
             {
-                return GetMember<int>("Heading"); 
+                return GetMember<float>("Heading"); 
             }
         }
 
@@ -701,7 +701,7 @@ namespace Vanguard.ISXVG
         {
             get
             {
-                return GetMember<int>("Ability");
+                return GetMember<int>("NumAbilities");
             }
         }
 
