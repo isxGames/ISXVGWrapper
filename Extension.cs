@@ -37,50 +37,50 @@ namespace Vanguard.ISXVG
         {
             get
             {
-                LavishScriptPersistentObject Obj = LavishScript.Objects.GetPersistentObject("Me");
+                LavishScriptObject Obj = LavishScript.Objects.GetObject("Me");
                 return new Character(Obj);
             }
         }
 
         public Pawn Pawn(params string[] Args)
         {
-            LavishScriptPersistentObject Obj = LavishScript.Objects.GetPersistentObject("Pawn", Args);
+            LavishScriptObject Obj = LavishScript.Objects.GetObject("Pawn", Args);
             return new Pawn(Obj);
         }
 
         public Pawn Pawn(string Arg)
         {
-            LavishScriptPersistentObject Obj = LavishScript.Objects.GetPersistentObject("Pawn", Arg);
+            LavishScriptObject Obj = LavishScript.Objects.GetObject("Pawn", Arg);
             return new Pawn(Obj);
         }
 
         public Pawn Pawn(int Arg)
         {
-            LavishScriptPersistentObject Obj = LavishScript.Objects.GetPersistentObject("Pawn", Arg.ToString());
+            LavishScriptObject Obj = LavishScript.Objects.GetObject("Pawn", Arg.ToString());
             return new Pawn(Obj);
         }
 
         public Radar Radar(int Index)
         {
-            LavishScriptPersistentObject Obj = LavishScript.Objects.GetPersistentObject("Radar", Index.ToString());
+            LavishScriptObject Obj = LavishScript.Objects.GetObject("Radar", Index.ToString());
             return new Radar(Obj);
         }
 
         public Radar Radar(string Name)
         {
-            LavishScriptPersistentObject Obj = LavishScript.Objects.GetPersistentObject("Radar",Name);
+            LavishScriptObject Obj = LavishScript.Objects.GetObject("Radar",Name);
             return new Radar(Obj);
         }
 
         public Radar Radar()
         {
-            LavishScriptPersistentObject Obj = LavishScript.Objects.GetPersistentObject("Radar");
+            LavishScriptObject Obj = LavishScript.Objects.GetObject("Radar");
             return new Radar(Obj);
         }
 
         public ISXVG ISXVG()
         {
-            LavishScriptPersistentObject Obj = LavishScript.Objects.GetPersistentObject("ISXVG");
+            LavishScriptObject Obj = LavishScript.Objects.GetObject("ISXVG");
             return new ISXVG(Obj);
         }
 
@@ -92,7 +92,7 @@ namespace Vanguard.ISXVG
 
         public VG VG()
         {
-            LavishScriptPersistentObject Obj = LavishScript.Objects.GetPersistentObject("VG");
+            LavishScriptObject Obj = LavishScript.Objects.GetObject("VG");
             return new VG(Obj);
         }
 

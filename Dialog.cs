@@ -30,7 +30,7 @@ namespace Vanguard.ISXVG
         {
             get
             {
-                LavishScriptPersistentObject Obj = GetPersistentMember("NPCTalkingWith");
+                LavishScriptObject Obj = GetMember("NPCTalkingWith");
                 return new Pawn(Obj);
             }
         }

@@ -6,26 +6,26 @@ using LavishScriptAPI;
 
 namespace Vanguard.ISXVG
 {
-    public class Radar : LavishScriptPersistentObject
+    public class Radar : LavishScriptObject
     {
 
-        public Radar(LavishScriptPersistentObject Obj)
+        public Radar(LavishScriptObject Obj)
             : base(Obj)
         {
         }
 
         public Radar(params string[] Args)
-            : base(LavishScript.Objects.GetPersistentObject("Radar", Args))
+            : base(LavishScript.Objects.GetObject("Radar", Args))
         {
         }
 
         public Radar(int Index)
-            : base(LavishScript.Objects.GetPersistentObject("Radar", Index.ToString()))
+            : base(LavishScript.Objects.GetObject("Radar", Index.ToString()))
         {
         }
 
         public Radar()
-            : base(LavishScript.Objects.GetPersistentObject("Radar", "1"))
+            : base(LavishScript.Objects.GetObject("Radar", "1"))
         {
         }
 

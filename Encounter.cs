@@ -63,7 +63,7 @@ namespace Vanguard.ISXVG
         {
             get
             {
-                LavishScriptPersistentObject Obj = GetPersistentMember("ToPawn");
+                LavishScriptObject Obj = GetMember("ToPawn");
                 return new Pawn(Obj);
             }
         }
@@ -72,7 +72,7 @@ namespace Vanguard.ISXVG
         {
             get
             {
-                LavishScriptPersistentObject Obj = GetPersistentMember("TargetOfTarget");
+                LavishScriptObject Obj = GetMember("TargetOfTarget");
                 return new Pawn(Obj);
             }
         }

@@ -6,15 +6,15 @@ using LavishScriptAPI;
 
 namespace Vanguard.ISXVG
 {
-    public class Pawn : LavishScriptPersistentObject
+    public class Pawn : LavishScriptObject
     {
         public Pawn(params string[] Args)
             :
-            base(LavishScript.Objects.GetPersistentObject("Pawn",Args))
+            base(LavishScript.Objects.GetObject("Pawn",Args))
         {
         }
 
-        public Pawn(LavishScriptPersistentObject Copy)
+        public Pawn(LavishScriptObject Copy)
             :
             base(Copy)
         {
@@ -435,7 +435,7 @@ namespace Vanguard.ISXVG
         {
             get
             {
-                LavishScriptPersistentObject Obj = GetPersistentMember("Owner");
+                LavishScriptObject Obj = GetMember("Owner");
                 return new Pawn(Obj);
             }
         }
