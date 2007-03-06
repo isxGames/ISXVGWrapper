@@ -17,7 +17,13 @@ namespace Vanguard.ISXVG
             : base(LavishScript.Objects.GetObject("Item"))
         {
         }
-
+        public string Name
+        {
+            get
+            {
+                return GetMember<string>("Name");
+            }
+        }
         public float ExpertiseCost
         {
             get

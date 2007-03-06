@@ -815,6 +815,11 @@ namespace Vanguard.ISXVG
             LavishScriptObject Obj = GetMember("Encounter", EncounterName);
             return new Encounter(Obj);
         }
+        
+        public int InventoryCount
+        {
+            get{ return GetMember<int>("Inventory"); }
+        }
 
         public Item Inventory(params string[] Parameters)
         {

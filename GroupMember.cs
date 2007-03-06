@@ -27,7 +27,13 @@ namespace Vanguard.ISXVG
 
         public string Name
         {
-            get { return GetMember<string>("Name"); }
+            get {
+                string s;
+                LavishVMAPI.Frame.Lock();
+                s=GetMember<string>("Name");
+                LavishVMAPI.Frame.Unlock();
+                return s;
+            }
         }
 
         public float X

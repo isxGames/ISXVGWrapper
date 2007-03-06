@@ -8,6 +8,7 @@ namespace Vanguard.ISXVG
 {
     public class ISXVG : LavishScriptObject
     {
+        
         public ISXVG(LavishScriptObject Copy)
             : base(Copy)
         {
