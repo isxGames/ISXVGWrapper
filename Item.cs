@@ -24,6 +24,13 @@ namespace Vanguard.ISXVG
                 return GetMember<string>("Name");
             }
         }
+        public string ContinentalEffect
+        {
+            get
+            {
+                return GetMember<string>("ContinentalEffect");
+            }
+        }
         public float ExpertiseCost
         {
             get

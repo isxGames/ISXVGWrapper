@@ -98,7 +98,36 @@ namespace Vanguard.ISXVG
             LavishScriptObject Obj = GetMember("UseableItem", Arg.ToString());
             return new Item(Obj);
         }
+        public Item UseableItem(string Arg)
+        {
+            LavishScriptObject Obj = GetMember("UseableItem", Arg);
+            return new Item(Obj);
+        }
+        public int TotalTableSpace
+        {
+            get
+            {
+                return GetMember<int>("TotalTableSpace");
+            }
+        }
+        /// <summary>
+        /// Number of item stacks currently on the table
+        /// </summary>
+        public int Table()
+        {
+            return GetMember<int>("Table");
+        }
 
+        public CraftingTableItem Table(int Arg)
+        {
+            LavishScriptObject Obj = GetMember("Table", Arg.ToString());
+            return new CraftingTableItem(Obj);
+        }
+        public CraftingTableItem Table(string Arg)
+        {
+            LavishScriptObject Obj = GetMember("Table", Arg);
+            return new CraftingTableItem(Obj);
+        }
         public int Quality
         {
             get

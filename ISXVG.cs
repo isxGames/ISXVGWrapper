@@ -53,6 +53,9 @@ namespace Vanguard.ISXVG
         {
             return ExecuteMethod("AddLoc", Label, Notes);
         }
-
+        public bool FixAltTab()
+        {
+            return ExecuteMethod("FixAltTab");
+        }
     }
 }

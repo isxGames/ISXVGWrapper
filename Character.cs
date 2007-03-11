@@ -466,22 +466,6 @@ namespace Vanguard.ISXVG
             }
         }
 
-        public int PetHPs
-        {
-            get
-            {
-                return GetMember<int>("PetHPs"); 
-            }
-        }
-
-        public int PetHealth
-        {
-            get
-            {
-                return GetMember<int>("PetHealth"); 
-            }
-        }
-
         public string PetType
         {
             get
@@ -673,12 +657,12 @@ namespace Vanguard.ISXVG
             }
         }
 
-        public Encounter TargetAsEncounter
+        public CombatNPC TargetAsEncounter
         {
             get
             {
                 LavishScriptObject Obj = GetMember("TargetAsEncounter");
-                return new Encounter(Obj);
+                return new CombatNPC(Obj);
             }
         }
 
@@ -804,16 +788,16 @@ namespace Vanguard.ISXVG
             }
         }
 
-        public Encounter Encounter(int EncounterNum)
+        public CombatNPC Encounter(int EncounterNum)
         {
             LavishScriptObject Obj = GetMember("Encounter", EncounterNum.ToString());
-            return new Encounter(Obj);
+            return new CombatNPC(Obj);
         }
 
-        public Encounter Encounter(string EncounterName)
+        public CombatNPC Encounter(string EncounterName)
         {
             LavishScriptObject Obj = GetMember("Encounter", EncounterName);
-            return new Encounter(Obj);
+            return new CombatNPC(Obj);
         }
         
         public int InventoryCount

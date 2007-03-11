@@ -32,7 +32,13 @@ namespace Vanguard.ISXVG
                 return GetMember<string>("Description");
             }
         }
-
+        public bool IsReady
+        {
+            get
+            {
+                return GetMember<bool>("IsReady");
+            }
+        }
         public bool ChangeTo(params string[] Args)
         {
             return ExecuteMethod("ChangeTo",Args);

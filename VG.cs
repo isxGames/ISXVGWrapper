@@ -75,7 +75,30 @@ namespace Vanguard.ISXVG
         {
             get { return GetMember<bool>("IsInParlay"); }
         }
-
+        public bool IsMinimized
+        {
+            get { return GetMember<bool>("IsMinimized"); }
+        }
+        public bool IsMaximized
+        {
+            get { return GetMember<bool>("IsMaximized"); }
+        }
+        public bool InFullScreenMode
+        {
+            get { return GetMember<bool>("InFullScreenMode"); }
+        }
+        public bool ToggleFullScreenMode()
+        {
+            return ExecuteMethod("ToggleFullScreenMode");
+        }
+        public bool MaximizeWindow()
+        {
+            return ExecuteMethod("MaximizeWindow");
+        }
+        public bool MinimizeWindow()
+        {
+            return ExecuteMethod("MinimizeWindow");
+        }
         public bool ExecBinding(string Action)
         {
             return ExecuteMethod("ExecBinding", Action);

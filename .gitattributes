@@ -4,11 +4,13 @@
 /AssemblyRecipe.cs -text
 /Character.cs -text
 /Chunk.cs -text
+/CombatNPC.cs -text
 /Complication.cs -text
 /Correction.cs -text
 /CraftingAction.cs -text
 /CraftingStage.cs -text
 /CraftingStep.cs -text
+/CraftingTableItem.cs -text
 /CraftingTaskMaster.cs -text
 /CraftingWorkOrder.cs -text
 /CurrentDisplayedQuest.cs -text
@@ -32,6 +34,8 @@
 /Parlay.cs -text
 /ParlayCard.cs -text
 /Pawn.cs -text
+/Pet.cs -text
+/PetAbility.cs -text
 /PoI.cs -text
 Properties/AssemblyInfo.cs -text
 /QuestJournal.cs -text

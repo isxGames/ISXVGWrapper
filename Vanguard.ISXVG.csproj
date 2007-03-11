@@ -44,6 +44,7 @@
     <Compile Include="CraftingAction.cs" />
     <Compile Include="CraftingStage.cs" />
     <Compile Include="CraftingStep.cs" />
+    <Compile Include="CraftingTableItem.cs" />
     <Compile Include="CraftingTaskMaster.cs" />
     <Compile Include="CraftingWorkOrder.cs" />
     <Compile Include="CurrentDisplayedQuest.cs" />
@@ -55,7 +56,7 @@
     <Compile Include="Chunk.cs" />
     <Compile Include="Character.cs" />
     <Compile Include="Effect.cs" />
-    <Compile Include="Encounter.cs" />
+    <Compile Include="CombatNPC.cs" />
     <Compile Include="Form.cs" />
     <Compile Include="Group.cs" />
     <Compile Include="GroupMember.cs" />
@@ -70,6 +71,8 @@
     <Compile Include="Parlay.cs" />
     <Compile Include="ParlayCard.cs" />
     <Compile Include="Pawn.cs" />
+    <Compile Include="Pet.cs" />
+    <Compile Include="PetAbility.cs" />
     <Compile Include="PoI.cs" />
     <Compile Include="QuestJournal.cs" />
     <Compile Include="QuestJournalEntry.cs" />
