@@ -10,22 +10,22 @@ namespace Vanguard.ISXVG
 {
     namespace Delegates
     {
-        public delegate uint GetVGEventID(string EventName);
+        public delegate bool IsFullScreen();
     }
 
     public class Extension
     {
-        public static Vanguard.ISXVG.Delegates.GetVGEventID GetVGEventID = Stubs.GetVGEventID;
+        public static Vanguard.ISXVG.Delegates.IsFullScreen IsFullScreen = Stubs.IsFullScreen;
 
         internal class Stubs
         {
-            static public uint GetVGEventID(string EventName)
+            static public bool IsFullScreen()
             {
-                IntPtr Address = LavishVM.GetAPI("ISXVGAPI", "GetVGEventID", 1);
+                IntPtr Address = LavishVM.GetAPI("VGWindowsAPI", "IsFullScreen", 1);
                 if (Address.ToInt32() == 0)
-                    return 0;
-                Extension.GetVGEventID = (Vanguard.ISXVG.Delegates.GetVGEventID)Marshal.GetDelegateForFunctionPointer(Address, typeof(Vanguard.ISXVG.Delegates.GetVGEventID));
-                return Extension.GetVGEventID(EventName);
+                    return false;
+                Extension.IsFullScreen = (Vanguard.ISXVG.Delegates.IsFullScreen)Marshal.GetDelegateForFunctionPointer(Address, typeof(Vanguard.ISXVG.Delegates.IsFullScreen));
+                return Extension.IsFullScreen();
             }
         }
 
