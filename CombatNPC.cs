@@ -44,11 +44,11 @@ namespace Vanguard.ISXVG
                 return GetMember<float>("Health");
             }
         }
-        public int Distance
+        public float Distance
         {
             get
             {
-                return GetMember<int>("Distance");
+                return GetMember<float>("Distance");
             }
         }
 
