@@ -48,7 +48,7 @@ namespace Vanguard.ISXVG
         private LavishScriptAPI.Delegates.EventTarget Event_OnCoinUpdate;
         private LavishScriptAPI.Delegates.EventTarget Event_OnItemStackCountChange;
         private LavishScriptAPI.Delegates.EventTarget Event_OnItemCanUseUpdated;
-
+        private LavishScriptAPI.Delegates.EventTarget Event_OnIncomingCombatText;
         #endregion
 
         #region .Net Event Handlers
@@ -86,6 +86,7 @@ namespace Vanguard.ISXVG
         public event LavishScriptEventHandler CoinUpdate;
         public event LavishScriptEventHandler ItemStackCountChange;
         public event LavishScriptEventHandler ItemCanUseUpdated;
+        public event LavishScriptEventHandler IncomingCombatText;
         #endregion
 
         #region .Net Event Raisers
@@ -259,6 +260,11 @@ namespace Vanguard.ISXVG
             if (ItemCanUseUpdated != null)
                 ItemCanUseUpdated(this, e);
         }
+        protected virtual void OnIncomingCombatText(LavishScriptEventArgs e)
+        {
+            if (IncomingCombatText != null)
+                IncomingCombatText(this, e);
+        }
         #endregion
 
         ~VGEvent()
@@ -298,6 +304,7 @@ namespace Vanguard.ISXVG
             LavishScript.Events.DetachEventTarget(LavishScript.Events.RegisterEvent("VG_onCoinUpdate"), Event_OnCoinUpdate);
             LavishScript.Events.DetachEventTarget(LavishScript.Events.RegisterEvent("VG_onItemStackCountChange"), Event_OnItemStackCountChange);
             LavishScript.Events.DetachEventTarget(LavishScript.Events.RegisterEvent("VG_onItemCanUseUpdated"), Event_OnItemCanUseUpdated);
+            LavishScript.Events.DetachEventTarget(LavishScript.Events.RegisterEvent("VG_OnIncomingCombatText"), Event_OnIncomingCombatText);
         }
 
         public VGEvent()
@@ -340,6 +347,7 @@ namespace Vanguard.ISXVG
             Event_OnCoinUpdate = new LavishScriptAPI.Delegates.EventTarget(Event_CoinUpdate);
             Event_OnItemStackCountChange = new LavishScriptAPI.Delegates.EventTarget(Event_ItemStackCountChange);
             Event_OnItemCanUseUpdated = new LavishScriptAPI.Delegates.EventTarget(Event_ItemCanUseUpdated);
+            Event_OnIncomingCombatText = new LavishScriptAPI.Delegates.EventTarget(Event_IncomingCombatText);
 
             LavishScript.Events.AttachEventTarget(LavishScript.Events.RegisterEvent("VG_onParlayBegin"), Event_OnParlayBegin);
             LavishScript.Events.AttachEventTarget(LavishScript.Events.RegisterEvent("VG_onParlayDialog"), Event_OnParlayDialog);
@@ -375,6 +383,7 @@ namespace Vanguard.ISXVG
             LavishScript.Events.AttachEventTarget(LavishScript.Events.RegisterEvent("VG_onCoinUpdate"), Event_OnCoinUpdate);
             LavishScript.Events.AttachEventTarget(LavishScript.Events.RegisterEvent("VG_onItemStackCountChange"), Event_OnItemStackCountChange);
             LavishScript.Events.AttachEventTarget(LavishScript.Events.RegisterEvent("VG_onItemCanUseUpdated"), Event_OnItemCanUseUpdated);
+            LavishScript.Events.AttachEventTarget(LavishScript.Events.RegisterEvent("VG_OnIncomingCombatText"), Event_OnIncomingCombatText);
         }
 
         #region LavishScript to .Net Event Triggers
@@ -530,6 +539,10 @@ namespace Vanguard.ISXVG
         private void Event_ItemCanUseUpdated(int argc, uint argv, Object ThisObject)
         {
             OnItemCanUseUpdated(new LavishScriptEventArgs(argc, argv, ThisObject));
+        }
+        private void Event_IncomingCombatText(int argc, uint argv, Object ThisObject)
+        {
+            OnIncomingCombatText(new LavishScriptEventArgs(argc, argv, ThisObject));
         }
         #endregion
     }
