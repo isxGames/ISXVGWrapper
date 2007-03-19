@@ -594,7 +594,7 @@ namespace Vanguard.ISXVG
             }
         }
 
-        public Pawn Pet
+        public Pet Pet
         {
             get
             {
