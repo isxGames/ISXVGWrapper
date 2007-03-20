@@ -599,7 +599,7 @@ namespace Vanguard.ISXVG
             get
             {
                 LavishScriptObject Obj = GetMember("Pet");
-                return new Pawn(Obj);
+                return new Pet(Obj);
             }
         }
 
