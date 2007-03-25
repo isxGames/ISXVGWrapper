@@ -49,6 +49,8 @@ namespace Vanguard.ISXVG
         private LavishScriptAPI.Delegates.EventTarget Event_OnItemStackCountChange;
         private LavishScriptAPI.Delegates.EventTarget Event_OnItemCanUseUpdated;
         private LavishScriptAPI.Delegates.EventTarget Event_OnIncomingCombatText;
+        private LavishScriptAPI.Delegates.EventTarget Event_onHitObstacle;
+        private LavishScriptAPI.Delegates.EventTarget Event_onTouchPawn;
         #endregion
 
         #region .Net Event Handlers
@@ -87,6 +89,8 @@ namespace Vanguard.ISXVG
         public event LavishScriptEventHandler ItemStackCountChange;
         public event LavishScriptEventHandler ItemCanUseUpdated;
         public event LavishScriptEventHandler IncomingCombatText;
+        public event LavishScriptEventHandler HitObstacle;
+        public event LavishScriptEventHandler TouchPawn;
         #endregion
 
         #region .Net Event Raisers
@@ -265,6 +269,16 @@ namespace Vanguard.ISXVG
             if (IncomingCombatText != null)
                 IncomingCombatText(this, e);
         }
+        protected virtual void OnHitObstacle(LavishScriptEventArgs e)
+        {
+            if (HitObstacle != null)
+                HitObstacle(this, e);
+        }
+        protected virtual void onTouchPawn(LavishScriptEventArgs e)
+        {
+            if (TouchPawn != null)
+                TouchPawn(this, e);
+        }
         #endregion
 
         ~VGEvent()
@@ -305,6 +319,8 @@ namespace Vanguard.ISXVG
             LavishScript.Events.DetachEventTarget(LavishScript.Events.RegisterEvent("VG_onItemStackCountChange"), Event_OnItemStackCountChange);
             LavishScript.Events.DetachEventTarget(LavishScript.Events.RegisterEvent("VG_onItemCanUseUpdated"), Event_OnItemCanUseUpdated);
             LavishScript.Events.DetachEventTarget(LavishScript.Events.RegisterEvent("VG_OnIncomingCombatText"), Event_OnIncomingCombatText);
+            LavishScript.Events.DetachEventTarget(LavishScript.Events.RegisterEvent("VG_onHitObstacle"), Event_onHitObstacle);
+            LavishScript.Events.DetachEventTarget(LavishScript.Events.RegisterEvent("VG_onTouchPawn"), Event_onTouchPawn);
         }
 
         public VGEvent()
@@ -348,6 +364,8 @@ namespace Vanguard.ISXVG
             Event_OnItemStackCountChange = new LavishScriptAPI.Delegates.EventTarget(Event_ItemStackCountChange);
             Event_OnItemCanUseUpdated = new LavishScriptAPI.Delegates.EventTarget(Event_ItemCanUseUpdated);
             Event_OnIncomingCombatText = new LavishScriptAPI.Delegates.EventTarget(Event_IncomingCombatText);
+            Event_onHitObstacle = new LavishScriptAPI.Delegates.EventTarget(Event_HitObstacle);
+            Event_onTouchPawn = new LavishScriptAPI.Delegates.EventTarget(Event_TouchPawn);
 
             LavishScript.Events.AttachEventTarget(LavishScript.Events.RegisterEvent("VG_onParlayBegin"), Event_OnParlayBegin);
             LavishScript.Events.AttachEventTarget(LavishScript.Events.RegisterEvent("VG_onParlayDialog"), Event_OnParlayDialog);
@@ -384,6 +402,8 @@ namespace Vanguard.ISXVG
             LavishScript.Events.AttachEventTarget(LavishScript.Events.RegisterEvent("VG_onItemStackCountChange"), Event_OnItemStackCountChange);
             LavishScript.Events.AttachEventTarget(LavishScript.Events.RegisterEvent("VG_onItemCanUseUpdated"), Event_OnItemCanUseUpdated);
             LavishScript.Events.AttachEventTarget(LavishScript.Events.RegisterEvent("VG_OnIncomingCombatText"), Event_OnIncomingCombatText);
+            LavishScript.Events.AttachEventTarget(LavishScript.Events.RegisterEvent("VG_onHitObstacle"), Event_onHitObstacle);
+            LavishScript.Events.AttachEventTarget(LavishScript.Events.RegisterEvent("VG_onTouchPawn"), Event_onTouchPawn);
         }
 
         #region LavishScript to .Net Event Triggers
@@ -543,6 +563,14 @@ namespace Vanguard.ISXVG
         private void Event_IncomingCombatText(int argc, uint argv, Object ThisObject)
         {
             OnIncomingCombatText(new LavishScriptEventArgs(argc, argv, ThisObject));
+        }
+        private void Event_HitObstacle(int argc, uint argv, Object ThisObject)
+        {
+            OnHitObstacle(new LavishScriptEventArgs(argc, argv, ThisObject));
+        }
+        private void Event_TouchPawn(int argc, uint argv, Object ThisObject)
+        {
+            onTouchPawn(new LavishScriptEventArgs(argc, argv, ThisObject));
         }
         #endregion
     }
