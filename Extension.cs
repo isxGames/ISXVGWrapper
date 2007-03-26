@@ -35,8 +35,9 @@ namespace Vanguard.ISXVG
 
         public Character Me()
         {
-                LavishScriptObject Obj = LavishScript.Objects.GetObject("Me");
-                return new Character(Obj);
+                
+            LavishScriptObject Obj = LavishScript.Objects.GetObject("Me");
+            return new Character(Obj);
         }
 
         public Pawn Pawn(params string[] Args)
