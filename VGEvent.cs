@@ -10,7 +10,7 @@ namespace Vanguard.ISXVG
 {
     public class VGEvent
     {
-        #region .Net Event Handlers
+        #region .Net Events
         public event System.EventHandler<LSEventArgs> ParlayBegin;
         public event System.EventHandler<LSEventArgs> ParlayDialog;
         public event System.EventHandler<LSEventArgs> ParlayUpdate;
@@ -50,86 +50,311 @@ namespace Vanguard.ISXVG
         public event System.EventHandler<LSEventArgs> TouchPawn;
         #endregion
 
+        #region .Net Event Raisers
+        protected virtual void OnParlayBegin(object Sender,LSEventArgs e)
+        {
+            System.EventHandler<LSEventArgs> temp = ParlayBegin; 
+            if (temp != null)
+                temp(Sender, e);
+        }
+        protected virtual void OnParlayDialog(object Sender,LSEventArgs e)
+        {
+            System.EventHandler<LSEventArgs> temp = ParlayDialog;
+            if (temp != null)
+                temp(Sender, e);
+        }
+        protected virtual void OnParlayUpdate(object Sender,LSEventArgs e)
+        {
+            System.EventHandler<LSEventArgs> temp = ParlayUpdate;
+            if (temp != null)
+                temp(Sender, e);
+        }
+        protected virtual void OnParlayOppTurnBegin(object Sender,LSEventArgs e)
+        {
+            System.EventHandler<LSEventArgs> temp = ParlayOppTurnBegin;
+            if (temp != null)
+                temp(Sender, e);
+        }
+        protected virtual void OnParlayOppTurnEnd(object Sender,LSEventArgs e)
+        {
+            System.EventHandler<LSEventArgs> temp = ParlayOppTurnEnd;
+            if (temp != null)
+                temp(Sender, e);
+        }
+        protected virtual void OnParlayOppPlayedCard(object Sender,LSEventArgs e)
+        {
+            System.EventHandler<LSEventArgs> temp = ParlayOppPlayedCard;
+            if (temp != null)
+                temp(Sender, e);
+        }
+        protected virtual void OnParlaySuccess(object Sender,LSEventArgs e)
+        {
+            System.EventHandler<LSEventArgs> temp = ParlaySuccess;
+            if (temp != null)
+                temp(Sender, e);
+        }
+        protected virtual void OnParlayLoss(object Sender,LSEventArgs e)
+        {
+            System.EventHandler<LSEventArgs> temp = ParlayLoss;
+            if (temp != null)
+                temp(Sender, e);
+        }
+        protected virtual void OnParlayEnd(object Sender,LSEventArgs e)
+        {
+            System.EventHandler<LSEventArgs> temp = ParlayEnd;
+            if (temp != null)
+                temp(Sender, e);
+        }
+        protected virtual void OnGroupBooted(object Sender,LSEventArgs e)
+        {
+            System.EventHandler<LSEventArgs> temp = GroupBooted;
+            if (temp != null)
+                temp(Sender, e);
+        }
+        protected virtual void OnGroupDisbanded(object Sender,LSEventArgs e)
+        {
+            System.EventHandler<LSEventArgs> temp = GroupDisbanded;
+            if (temp != null)
+                temp(Sender, e);
+        }
+        protected virtual void OnGroupFormed(object Sender,LSEventArgs e)
+        {
+            System.EventHandler<LSEventArgs> temp = GroupFormed;
+            if (temp != null)
+                temp(Sender, e);
+        }
+        protected virtual void OnGroupJoined(object Sender,LSEventArgs e)
+        {
+            System.EventHandler<LSEventArgs> temp = GroupJoined;
+            if (temp != null)
+                temp(Sender, e);
+        }
+        protected virtual void OnGroupLootNotify(object Sender,LSEventArgs e)
+        {
+            System.EventHandler<LSEventArgs> temp = GroupLootNotify;
+            if (temp != null)
+                temp(Sender, e);
+        }
+        protected virtual void OnGroupLootRandomStarted(object Sender,LSEventArgs e)
+        {
+            System.EventHandler<LSEventArgs> temp = GroupLootRandomStarted;
+            if (temp != null)
+                temp(Sender, e);
+        }
+        protected virtual void OnGroupLootRandomEnded(object Sender,LSEventArgs e)
+        {
+            System.EventHandler<LSEventArgs> temp = GroupLootRandomEnded;
+            if (temp != null)
+                temp(Sender, e);
+        }
+        protected virtual void OnGroupMemberAdded(object Sender,LSEventArgs e)
+        {
+            System.EventHandler<LSEventArgs> temp = GroupMemberAdded;
+            if (temp != null)
+                temp(Sender, e);
+        }
+        protected virtual void OnGroupMemberBooted(object Sender,LSEventArgs e)
+        {
+            System.EventHandler<LSEventArgs> temp = GroupMemberBooted;
+            if (temp != null)
+                temp(Sender, e);
+        }
+        protected virtual void OnGroupMemberDeath(object Sender,LSEventArgs e)
+        {
+            System.EventHandler<LSEventArgs> temp = GroupMemberDeath;
+            if (temp != null)
+                temp(Sender, e);
+        }
+        protected virtual void OnGroupMemberCountChange(object Sender,LSEventArgs e)
+        {
+            System.EventHandler<LSEventArgs> temp = GroupMemberCountChange;
+            if (temp != null)
+                temp(Sender, e);
+        }
+        protected virtual void OnCraftingStepComplete(object Sender,LSEventArgs e)
+        {
+            System.EventHandler<LSEventArgs> temp = CraftingStepComplete;
+            if (temp != null)
+                temp(Sender, e);
+        }
+        protected virtual void OnCraftingAlert(object Sender,LSEventArgs e)
+        {
+            System.EventHandler<LSEventArgs> temp = CraftingAlert;
+            if (temp != null)
+                temp(Sender, e);
+        }
+        protected virtual void OnChangeChunk(object Sender,LSEventArgs e)
+        {
+            System.EventHandler<LSEventArgs> temp = ChangeChunk;
+            if (temp != null)
+                temp(Sender, e);
+        }
+        protected virtual void OnStartSwimming(object Sender,LSEventArgs e)
+        {
+            System.EventHandler<LSEventArgs> temp = StartSwimming;
+            if (temp != null)
+                temp(Sender, e);
+        }
+        protected virtual void OnStopSwimming(object Sender,LSEventArgs e)
+        {
+            System.EventHandler<LSEventArgs> temp = StopSwimming;
+            if (temp != null)
+                temp(Sender, e);
+        }
+        protected virtual void OnConnectionStateChange(object Sender,LSEventArgs e)
+        {
+            System.EventHandler<LSEventArgs> temp = ConnectionStateChange;
+            if (temp != null)
+                temp(Sender, e);
+        }
+        protected virtual void OnPawnSpawned(object Sender,LSEventArgs e)
+        {
+            System.EventHandler<LSEventArgs> temp = PawnSpawned;
+            if (temp != null)
+                temp(Sender, e);
+        }
+        protected virtual void OnPawnDespawned(object Sender,LSEventArgs e)
+        {
+            System.EventHandler<LSEventArgs> temp = PawnDespawned;
+            if (temp != null)
+                temp(Sender, e);
+        }
+        protected virtual void OnIncomingText(object Sender,LSEventArgs e)
+        {
+            System.EventHandler<LSEventArgs> temp = IncomingText;
+            if (temp != null)
+                temp(Sender, e);
+        }
+        protected virtual void OnWeightUpdate(object Sender,LSEventArgs e)
+        {
+            System.EventHandler<LSEventArgs> temp = WeightUpdate;
+            if (temp != null)
+                temp(Sender, e);
+        }
+        protected virtual void OnAddInventoryItem(object Sender,LSEventArgs e)
+        {
+            System.EventHandler<LSEventArgs> temp = AddInventoryItem;
+            if (temp != null)
+                temp(Sender, e);
+        }
+        protected virtual void OnCoinUpdate(object Sender,LSEventArgs e)
+        {
+            System.EventHandler<LSEventArgs> temp = CoinUpdate;
+            if (temp != null)
+                temp(Sender, e);
+        }
+        protected virtual void OnItemStackCountChange(object Sender,LSEventArgs e)
+        {
+            System.EventHandler<LSEventArgs> temp = ItemStackCountChange;
+            if (temp != null)
+                temp(Sender, e);
+        }
+        protected virtual void OnItemCanUseUpdated(object Sender,LSEventArgs e)
+        {
+            System.EventHandler<LSEventArgs> temp = ItemCanUseUpdated;
+            if (temp != null)
+                temp(Sender, e);
+        }
+        protected virtual void OnIncomingCombatText(object Sender,LSEventArgs e)
+        {
+            System.EventHandler<LSEventArgs> temp = IncomingCombatText;
+            if (temp != null)
+                temp(Sender, e);
+        }
+        protected virtual void OnHitObstacle(object Sender,LSEventArgs e)
+        {
+            System.EventHandler<LSEventArgs> temp = HitObstacle;
+            if (temp != null)
+                temp(Sender, e); ;
+        }
+        protected virtual void OnTouchPawn(object Sender,LSEventArgs e)
+        {
+            System.EventHandler<LSEventArgs> temp = TouchPawn;
+            if (temp != null)
+                temp(Sender, e);
+        }
+        #endregion
+
         ~VGEvent()
         {
-            LavishScript.Events.DetachEventTarget(LavishScript.Events.RegisterEvent("VG_onParlayBegin"), ParlayBegin);
-            LavishScript.Events.DetachEventTarget(LavishScript.Events.RegisterEvent("VG_onParlayDialog"), ParlayDialog);
-            LavishScript.Events.DetachEventTarget(LavishScript.Events.RegisterEvent("VG_onParlayUpdate"), ParlayUpdate);
-            LavishScript.Events.DetachEventTarget(LavishScript.Events.RegisterEvent("VG_onParlayOppTurnBegin"), ParlayOppTurnBegin);
-            LavishScript.Events.DetachEventTarget(LavishScript.Events.RegisterEvent("VG_onParlayOppTurnEnd"), ParlayOppTurnEnd);
-            LavishScript.Events.DetachEventTarget(LavishScript.Events.RegisterEvent("VG_onParlayOppPlayedCard"), ParlayOppPlayedCard);
-            LavishScript.Events.DetachEventTarget(LavishScript.Events.RegisterEvent("VG_onParlaySuccess"), ParlaySuccess);
-            LavishScript.Events.DetachEventTarget(LavishScript.Events.RegisterEvent("VG_onParlayLost"), ParlayLoss);
-            LavishScript.Events.DetachEventTarget(LavishScript.Events.RegisterEvent("VG_onParlayEnd"), ParlayEnd);
-            LavishScript.Events.DetachEventTarget(LavishScript.Events.RegisterEvent("VG_onGroupBooted"), GroupBooted);
-            LavishScript.Events.DetachEventTarget(LavishScript.Events.RegisterEvent("VG_onGroupDisbanded"), GroupDisbanded);
-            LavishScript.Events.DetachEventTarget(LavishScript.Events.RegisterEvent("VG_onGroupFormed"), GroupFormed);
-            LavishScript.Events.DetachEventTarget(LavishScript.Events.RegisterEvent("VG_onGroupJoined"), GroupJoined);
-            LavishScript.Events.DetachEventTarget(LavishScript.Events.RegisterEvent("VG_onGroupLootNotify"), GroupLootNotify);
-            LavishScript.Events.DetachEventTarget(LavishScript.Events.RegisterEvent("VG_onGroupLootRandomStarted"), GroupLootRandomStarted);
-            LavishScript.Events.DetachEventTarget(LavishScript.Events.RegisterEvent("VG_onGroupLootRandomEnded"), GroupLootRandomEnded);
-            LavishScript.Events.DetachEventTarget(LavishScript.Events.RegisterEvent("VG_onGroupMemberAdded"), GroupMemberAdded);
-            LavishScript.Events.DetachEventTarget(LavishScript.Events.RegisterEvent("VG_onGroupMemberBooted"), GroupMemberBooted);
-            LavishScript.Events.DetachEventTarget(LavishScript.Events.RegisterEvent("VG_onGroupMemberDeath"), GroupMemberDeath);
-            LavishScript.Events.DetachEventTarget(LavishScript.Events.RegisterEvent("VG_onGroupMemberCountChange"), GroupMemberCountChange);
-            LavishScript.Events.DetachEventTarget(LavishScript.Events.RegisterEvent("VG_onCraftingStepComplete"), CraftingStepComplete);
-            LavishScript.Events.DetachEventTarget(LavishScript.Events.RegisterEvent("VG_onCraftingAlert"), CraftingAlert);
-            LavishScript.Events.DetachEventTarget(LavishScript.Events.RegisterEvent("VG_onChangeChunk"), ChangeChunk);
-            LavishScript.Events.DetachEventTarget(LavishScript.Events.RegisterEvent("VG_onStartSwimming"), StartSwimming);
-            LavishScript.Events.DetachEventTarget(LavishScript.Events.RegisterEvent("VG_onStopSwimming"), StopSwimming);
-            LavishScript.Events.DetachEventTarget(LavishScript.Events.RegisterEvent("VG_onConnectionStateChange"), ConnectionStateChange);
-            LavishScript.Events.DetachEventTarget(LavishScript.Events.RegisterEvent("VG_OnPawnSpawned"), PawnSpawned);
-            LavishScript.Events.DetachEventTarget(LavishScript.Events.RegisterEvent("VG_OnPawnDespawned"), PawnDespawned);
-            LavishScript.Events.DetachEventTarget(LavishScript.Events.RegisterEvent("VG_OnIncomingText"), IncomingText);
-            LavishScript.Events.DetachEventTarget(LavishScript.Events.RegisterEvent("VG_onWeightUpdate"), WeightUpdate);
-            LavishScript.Events.DetachEventTarget(LavishScript.Events.RegisterEvent("VG_onAddInventoryItem"), AddInventoryItem);
-            LavishScript.Events.DetachEventTarget(LavishScript.Events.RegisterEvent("VG_onCoinUpdate"), CoinUpdate);
-            LavishScript.Events.DetachEventTarget(LavishScript.Events.RegisterEvent("VG_onItemStackCountChange"), ItemStackCountChange);
-            LavishScript.Events.DetachEventTarget(LavishScript.Events.RegisterEvent("VG_onItemCanUseUpdated"), ItemCanUseUpdated);
-            LavishScript.Events.DetachEventTarget(LavishScript.Events.RegisterEvent("VG_OnIncomingCombatText"), IncomingCombatText);
-            LavishScript.Events.DetachEventTarget(LavishScript.Events.RegisterEvent("VG_onHitObstacle"), HitObstacle);
-            LavishScript.Events.DetachEventTarget(LavishScript.Events.RegisterEvent("VG_onTouchPawn"), TouchPawn);
+            LavishScript.Events.DetachEventTarget(LavishScript.Events.RegisterEvent("VG_onParlayBegin"), OnParlayBegin);
+            LavishScript.Events.DetachEventTarget(LavishScript.Events.RegisterEvent("VG_onParlayDialog"), OnParlayDialog);
+            LavishScript.Events.DetachEventTarget(LavishScript.Events.RegisterEvent("VG_onParlayUpdate"), OnParlayUpdate);
+            LavishScript.Events.DetachEventTarget(LavishScript.Events.RegisterEvent("VG_onParlayOppTurnBegin"), OnParlayOppTurnBegin);
+            LavishScript.Events.DetachEventTarget(LavishScript.Events.RegisterEvent("VG_onParlayOppTurnEnd"), OnParlayOppTurnEnd);
+            LavishScript.Events.DetachEventTarget(LavishScript.Events.RegisterEvent("VG_onParlayOppPlayedCard"), OnParlayOppPlayedCard);
+            LavishScript.Events.DetachEventTarget(LavishScript.Events.RegisterEvent("VG_onParlaySuccess"), OnParlaySuccess);
+            LavishScript.Events.DetachEventTarget(LavishScript.Events.RegisterEvent("VG_onParlayLost"), OnParlayLoss);
+            LavishScript.Events.DetachEventTarget(LavishScript.Events.RegisterEvent("VG_onParlayEnd"), OnParlayEnd);
+            LavishScript.Events.DetachEventTarget(LavishScript.Events.RegisterEvent("VG_onGroupBooted"), OnGroupBooted);
+            LavishScript.Events.DetachEventTarget(LavishScript.Events.RegisterEvent("VG_onGroupDisbanded"), OnGroupDisbanded);
+            LavishScript.Events.DetachEventTarget(LavishScript.Events.RegisterEvent("VG_onGroupFormed"), OnGroupFormed);
+            LavishScript.Events.DetachEventTarget(LavishScript.Events.RegisterEvent("VG_onGroupJoined"), OnGroupJoined);
+            LavishScript.Events.DetachEventTarget(LavishScript.Events.RegisterEvent("VG_onGroupLootNotify"), OnGroupLootNotify);
+            LavishScript.Events.DetachEventTarget(LavishScript.Events.RegisterEvent("VG_onGroupLootRandomStarted"), OnGroupLootRandomStarted);
+            LavishScript.Events.DetachEventTarget(LavishScript.Events.RegisterEvent("VG_onGroupLootRandomEnded"), OnGroupLootRandomEnded);
+            LavishScript.Events.DetachEventTarget(LavishScript.Events.RegisterEvent("VG_onGroupMemberAdded"), OnGroupMemberAdded);
+            LavishScript.Events.DetachEventTarget(LavishScript.Events.RegisterEvent("VG_onGroupMemberBooted"), OnGroupMemberBooted);
+            LavishScript.Events.DetachEventTarget(LavishScript.Events.RegisterEvent("VG_onGroupMemberDeath"), OnGroupMemberDeath);
+            LavishScript.Events.DetachEventTarget(LavishScript.Events.RegisterEvent("VG_onGroupMemberCountChange"), OnGroupMemberCountChange);
+            LavishScript.Events.DetachEventTarget(LavishScript.Events.RegisterEvent("VG_onCraftingStepComplete"), OnCraftingStepComplete);
+            LavishScript.Events.DetachEventTarget(LavishScript.Events.RegisterEvent("VG_onCraftingAlert"), OnCraftingAlert);
+            LavishScript.Events.DetachEventTarget(LavishScript.Events.RegisterEvent("VG_onChangeChunk"), OnChangeChunk);
+            LavishScript.Events.DetachEventTarget(LavishScript.Events.RegisterEvent("VG_onStartSwimming"), OnStartSwimming);
+            LavishScript.Events.DetachEventTarget(LavishScript.Events.RegisterEvent("VG_onStopSwimming"), OnStopSwimming);
+            LavishScript.Events.DetachEventTarget(LavishScript.Events.RegisterEvent("VG_onConnectionStateChange"), OnConnectionStateChange);
+            LavishScript.Events.DetachEventTarget(LavishScript.Events.RegisterEvent("VG_OnPawnSpawned"), OnPawnSpawned);
+            LavishScript.Events.DetachEventTarget(LavishScript.Events.RegisterEvent("VG_OnPawnDespawned"), OnPawnDespawned);
+            LavishScript.Events.DetachEventTarget(LavishScript.Events.RegisterEvent("VG_OnIncomingText"), OnIncomingText);
+            LavishScript.Events.DetachEventTarget(LavishScript.Events.RegisterEvent("VG_onWeightUpdate"), OnWeightUpdate);
+            LavishScript.Events.DetachEventTarget(LavishScript.Events.RegisterEvent("VG_onAddInventoryItem"), OnAddInventoryItem);
+            LavishScript.Events.DetachEventTarget(LavishScript.Events.RegisterEvent("VG_onCoinUpdate"), OnCoinUpdate);
+            LavishScript.Events.DetachEventTarget(LavishScript.Events.RegisterEvent("VG_onItemStackCountChange"), OnItemStackCountChange);
+            LavishScript.Events.DetachEventTarget(LavishScript.Events.RegisterEvent("VG_onItemCanUseUpdated"), OnItemCanUseUpdated);
+            LavishScript.Events.DetachEventTarget(LavishScript.Events.RegisterEvent("VG_OnIncomingCombatText"), OnIncomingCombatText);
+            LavishScript.Events.DetachEventTarget(LavishScript.Events.RegisterEvent("VG_onHitObstacle"), OnHitObstacle);
+            LavishScript.Events.DetachEventTarget(LavishScript.Events.RegisterEvent("VG_onTouchPawn"), OnTouchPawn);
         }
 
         public VGEvent()
         {
-            LavishScript.Events.AttachEventTarget(LavishScript.Events.RegisterEvent("VG_onParlayBegin"), ParlayBegin);
-            LavishScript.Events.AttachEventTarget(LavishScript.Events.RegisterEvent("VG_onParlayDialog"), ParlayDialog);
-            LavishScript.Events.AttachEventTarget(LavishScript.Events.RegisterEvent("VG_onParlayUpdate"), ParlayUpdate);
-            LavishScript.Events.AttachEventTarget(LavishScript.Events.RegisterEvent("VG_onParlayOppTurnBegin"), ParlayOppTurnBegin);
-            LavishScript.Events.AttachEventTarget(LavishScript.Events.RegisterEvent("VG_onParlayOppTurnEnd"), ParlayOppTurnEnd);
-            LavishScript.Events.AttachEventTarget(LavishScript.Events.RegisterEvent("VG_onParlayOppPlayedCard"), ParlayOppPlayedCard);
-            LavishScript.Events.AttachEventTarget(LavishScript.Events.RegisterEvent("VG_onParlaySuccess"), ParlaySuccess);
-            LavishScript.Events.AttachEventTarget(LavishScript.Events.RegisterEvent("VG_onParlayLost"), ParlayLoss);
-            LavishScript.Events.AttachEventTarget(LavishScript.Events.RegisterEvent("VG_onParlayEnd"), ParlayEnd);
-            LavishScript.Events.AttachEventTarget(LavishScript.Events.RegisterEvent("VG_onGroupBooted"), GroupBooted);
-            LavishScript.Events.AttachEventTarget(LavishScript.Events.RegisterEvent("VG_onGroupDisbanded"), GroupDisbanded);
-            LavishScript.Events.AttachEventTarget(LavishScript.Events.RegisterEvent("VG_onGroupFormed"), GroupFormed);
-            LavishScript.Events.AttachEventTarget(LavishScript.Events.RegisterEvent("VG_onGroupJoined"), GroupJoined);
-            LavishScript.Events.AttachEventTarget(LavishScript.Events.RegisterEvent("VG_onGroupLootNotify"), GroupLootNotify);
-            LavishScript.Events.AttachEventTarget(LavishScript.Events.RegisterEvent("VG_onGroupLootRandomStarted"), GroupLootRandomStarted);
-            LavishScript.Events.AttachEventTarget(LavishScript.Events.RegisterEvent("VG_onGroupLootRandomEnded"), GroupLootRandomEnded);
-            LavishScript.Events.AttachEventTarget(LavishScript.Events.RegisterEvent("VG_onGroupMemberAdded"), GroupMemberAdded);
-            LavishScript.Events.AttachEventTarget(LavishScript.Events.RegisterEvent("VG_onGroupMemberBooted"), GroupMemberBooted);
-            LavishScript.Events.AttachEventTarget(LavishScript.Events.RegisterEvent("VG_onGroupMemberDeath"), GroupMemberDeath);
-            LavishScript.Events.AttachEventTarget(LavishScript.Events.RegisterEvent("VG_onGroupMemberCountChange"), GroupMemberCountChange);
-            LavishScript.Events.AttachEventTarget(LavishScript.Events.RegisterEvent("VG_onCraftingStepComplete"), CraftingStepComplete);
-            LavishScript.Events.AttachEventTarget(LavishScript.Events.RegisterEvent("VG_onCraftingAlert"), CraftingAlert);
-            LavishScript.Events.AttachEventTarget(LavishScript.Events.RegisterEvent("VG_onChangeChunk"), ChangeChunk);
-            LavishScript.Events.AttachEventTarget(LavishScript.Events.RegisterEvent("VG_onStartSwimming"), StartSwimming);
-            LavishScript.Events.AttachEventTarget(LavishScript.Events.RegisterEvent("VG_onStopSwimming"), StopSwimming);
-            LavishScript.Events.AttachEventTarget(LavishScript.Events.RegisterEvent("VG_onConnectionStateChange"), ConnectionStateChange);
-            LavishScript.Events.AttachEventTarget(LavishScript.Events.RegisterEvent("VG_OnPawnSpawned"), PawnSpawned);
-            LavishScript.Events.AttachEventTarget(LavishScript.Events.RegisterEvent("VG_OnPawnDespawned"), PawnDespawned);
-            LavishScript.Events.AttachEventTarget(LavishScript.Events.RegisterEvent("VG_OnIncomingText"), IncomingText);
-            LavishScript.Events.AttachEventTarget(LavishScript.Events.RegisterEvent("VG_onWeightUpdate"), WeightUpdate);
-            LavishScript.Events.AttachEventTarget(LavishScript.Events.RegisterEvent("VG_onAddInventoryItem"), AddInventoryItem);
-            LavishScript.Events.AttachEventTarget(LavishScript.Events.RegisterEvent("VG_onCoinUpdate"), CoinUpdate);
-            LavishScript.Events.AttachEventTarget(LavishScript.Events.RegisterEvent("VG_onItemStackCountChange"), ItemStackCountChange);
-            LavishScript.Events.AttachEventTarget(LavishScript.Events.RegisterEvent("VG_onItemCanUseUpdated"), ItemCanUseUpdated);
-            LavishScript.Events.AttachEventTarget(LavishScript.Events.RegisterEvent("VG_OnIncomingCombatText"), IncomingCombatText);
-            LavishScript.Events.AttachEventTarget(LavishScript.Events.RegisterEvent("VG_onHitObstacle"), HitObstacle);
-            LavishScript.Events.AttachEventTarget(LavishScript.Events.RegisterEvent("VG_onTouchPawn"), TouchPawn);
+            LavishScript.Events.AttachEventTarget(LavishScript.Events.RegisterEvent("VG_onParlayBegin"), OnParlayBegin);
+            LavishScript.Events.AttachEventTarget(LavishScript.Events.RegisterEvent("VG_onParlayDialog"), OnParlayDialog);
+            LavishScript.Events.AttachEventTarget(LavishScript.Events.RegisterEvent("VG_onParlayUpdate"), OnParlayUpdate);
+            LavishScript.Events.AttachEventTarget(LavishScript.Events.RegisterEvent("VG_onParlayOppTurnBegin"), OnParlayOppTurnBegin);
+            LavishScript.Events.AttachEventTarget(LavishScript.Events.RegisterEvent("VG_onParlayOppTurnEnd"), OnParlayOppTurnEnd);
+            LavishScript.Events.AttachEventTarget(LavishScript.Events.RegisterEvent("VG_onParlayOppPlayedCard"), OnParlayOppPlayedCard);
+            LavishScript.Events.AttachEventTarget(LavishScript.Events.RegisterEvent("VG_onParlaySuccess"), OnParlaySuccess);
+            LavishScript.Events.AttachEventTarget(LavishScript.Events.RegisterEvent("VG_onParlayLost"), OnParlayLoss);
+            LavishScript.Events.AttachEventTarget(LavishScript.Events.RegisterEvent("VG_onParlayEnd"), OnParlayEnd);
+            LavishScript.Events.AttachEventTarget(LavishScript.Events.RegisterEvent("VG_onGroupBooted"), OnGroupBooted);
+            LavishScript.Events.AttachEventTarget(LavishScript.Events.RegisterEvent("VG_onGroupDisbanded"), OnGroupDisbanded);
+            LavishScript.Events.AttachEventTarget(LavishScript.Events.RegisterEvent("VG_onGroupFormed"), OnGroupFormed);
+            LavishScript.Events.AttachEventTarget(LavishScript.Events.RegisterEvent("VG_onGroupJoined"), OnGroupJoined);
+            LavishScript.Events.AttachEventTarget(LavishScript.Events.RegisterEvent("VG_onGroupLootNotify"), OnGroupLootNotify);
+            LavishScript.Events.AttachEventTarget(LavishScript.Events.RegisterEvent("VG_onGroupLootRandomStarted"), OnGroupLootRandomStarted);
+            LavishScript.Events.AttachEventTarget(LavishScript.Events.RegisterEvent("VG_onGroupLootRandomEnded"), OnGroupLootRandomEnded);
+            LavishScript.Events.AttachEventTarget(LavishScript.Events.RegisterEvent("VG_onGroupMemberAdded"), OnGroupMemberAdded);
+            LavishScript.Events.AttachEventTarget(LavishScript.Events.RegisterEvent("VG_onGroupMemberBooted"), OnGroupMemberBooted);
+            LavishScript.Events.AttachEventTarget(LavishScript.Events.RegisterEvent("VG_onGroupMemberDeath"), OnGroupMemberDeath);
+            LavishScript.Events.AttachEventTarget(LavishScript.Events.RegisterEvent("VG_onGroupMemberCountChange"), OnGroupMemberCountChange);
+            LavishScript.Events.AttachEventTarget(LavishScript.Events.RegisterEvent("VG_onCraftingStepComplete"), OnCraftingStepComplete);
+            LavishScript.Events.AttachEventTarget(LavishScript.Events.RegisterEvent("VG_onCraftingAlert"), OnCraftingAlert);
+            LavishScript.Events.AttachEventTarget(LavishScript.Events.RegisterEvent("VG_onChangeChunk"), OnChangeChunk);
+            LavishScript.Events.AttachEventTarget(LavishScript.Events.RegisterEvent("VG_onStartSwimming"), OnStartSwimming);
+            LavishScript.Events.AttachEventTarget(LavishScript.Events.RegisterEvent("VG_onStopSwimming"), OnStopSwimming);
+            LavishScript.Events.AttachEventTarget(LavishScript.Events.RegisterEvent("VG_onConnectionStateChange"), OnConnectionStateChange);
+            LavishScript.Events.AttachEventTarget(LavishScript.Events.RegisterEvent("VG_OnPawnSpawned"), OnPawnSpawned);
+            LavishScript.Events.AttachEventTarget(LavishScript.Events.RegisterEvent("VG_OnPawnDespawned"), OnPawnDespawned);
+            LavishScript.Events.AttachEventTarget(LavishScript.Events.RegisterEvent("VG_OnIncomingText"), OnIncomingText);
+            LavishScript.Events.AttachEventTarget(LavishScript.Events.RegisterEvent("VG_onWeightUpdate"), OnWeightUpdate);
+            LavishScript.Events.AttachEventTarget(LavishScript.Events.RegisterEvent("VG_onAddInventoryItem"), OnAddInventoryItem);
+            LavishScript.Events.AttachEventTarget(LavishScript.Events.RegisterEvent("VG_onCoinUpdate"), OnCoinUpdate);
+            LavishScript.Events.AttachEventTarget(LavishScript.Events.RegisterEvent("VG_onItemStackCountChange"), OnItemStackCountChange);
+            LavishScript.Events.AttachEventTarget(LavishScript.Events.RegisterEvent("VG_onItemCanUseUpdated"), OnItemCanUseUpdated);
+            LavishScript.Events.AttachEventTarget(LavishScript.Events.RegisterEvent("VG_OnIncomingCombatText"), OnIncomingCombatText);
+            LavishScript.Events.AttachEventTarget(LavishScript.Events.RegisterEvent("VG_onHitObstacle"), OnHitObstacle);
+            LavishScript.Events.AttachEventTarget(LavishScript.Events.RegisterEvent("VG_onTouchPawn"), OnTouchPawn);
         }
 
 
