@@ -460,9 +460,5 @@ namespace Vanguard.ISXVG
             return ExecuteMethod("Face");
         }
 
-        public bool Use()
-        {
-            return ExecuteMethod("Use");
-        }
     }
 }
