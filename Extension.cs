@@ -33,13 +33,10 @@ namespace Vanguard.ISXVG
         {
         }
 
-        public Character Me
+        public Character Me()
         {
-            get
-            {
                 LavishScriptObject Obj = LavishScript.Objects.GetObject("Me");
                 return new Character(Obj);
-            }
         }
 
         public Pawn Pawn(params string[] Args)
