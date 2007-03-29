@@ -24,6 +24,20 @@ namespace Vanguard.ISXVG
                 return GetMember<string>("Name");
             }
         }
+        public string Quality
+        {
+            get
+            {
+                return GetMember<string>("Quality");
+            }
+        }
+        public int Handle
+        {
+            get
+            {
+                return GetMember<int>("Handle");
+            }
+        }
         public string ContinentalEffect
         {
             get
@@ -342,7 +356,14 @@ namespace Vanguard.ISXVG
         {
             return ExecuteMethod("StackWith",StackWith.ToString());
         }
-
+        public bool OfferInTrade(int Qty)
+        {
+            return ExecuteMethod("OfferInTrade", Qty.ToString());
+        }
+        public bool OfferInTrade()
+        {
+            return ExecuteMethod("OfferInTrade");
+        }
         public bool PutInContainer(int ContainerIndex)
         {
             return ExecuteMethod("PutInContainer", ContainerIndex.ToString());

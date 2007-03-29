@@ -430,7 +430,13 @@ namespace Vanguard.ISXVG
                 return GetMember<bool>("OwnerIsMe");
             }
         }
-
+        public bool IsStunned
+        {
+            get
+            {
+                return GetMember<bool>("IsStunned");
+            }
+        }
         public Pawn Owner
         {
             get
@@ -439,7 +445,17 @@ namespace Vanguard.ISXVG
                 return new Pawn(Obj);
             }
         }
+        public Point3f CheckCollision()
+        {
+                LavishScriptObject Obj = GetMember("CheckCollision");
+                return new Point3f(Obj);
 
+        }
+        public Point3f CheckCollision(float X, float Y, float Z)
+        {
+                LavishScriptObject Obj = GetMember("CheckCollision",X.ToString(),Y.ToString(),Z.ToString());
+                return new Point3f(Obj);
+        }
         public bool Loot()
         {
             return ExecuteMethod("Loot");

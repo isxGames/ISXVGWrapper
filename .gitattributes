@@ -46,7 +46,10 @@ Properties/AssemblyInfo.cs -text
 /Refining.cs -text
 /RefiningRecipe.cs -text
 /RepairItem.cs -text
+/Song.cs -text
+/SongBook.cs -text
 /TargetEffect.cs -text
+/Trade.cs -text
 /TravelJournal.cs -text
 /TravelJournalEntry.cs -text
 /VG.cs -text

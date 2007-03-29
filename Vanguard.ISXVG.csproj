@@ -60,6 +60,7 @@
     <Compile Include="Form.cs" />
     <Compile Include="Group.cs" />
     <Compile Include="GroupMember.cs" />
+    <Compile Include="GV.cs" />
     <Compile Include="ISXVG.cs" />
     <Compile Include="Item.cs" />
     <Compile Include="ItemModifier.cs" />
@@ -81,7 +82,10 @@
     <Compile Include="Refining.cs" />
     <Compile Include="RefiningRecipe.cs" />
     <Compile Include="RepairItem.cs" />
+    <Compile Include="Song.cs" />
+    <Compile Include="SongBook.cs" />
     <Compile Include="TargetEffect.cs" />
+    <Compile Include="Trade.cs" />
     <Compile Include="TravelJournal.cs" />
     <Compile Include="TravelJournalEntry.cs" />
     <Compile Include="VG.cs" />

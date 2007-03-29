@@ -48,6 +48,18 @@ namespace Vanguard.ISXVG
         public event System.EventHandler<LSEventArgs> IncomingCombatText;
         public event System.EventHandler<LSEventArgs> HitObstacle;
         public event System.EventHandler<LSEventArgs> TouchPawn;
+        public event System.EventHandler<LSEventArgs> PawnStatusChange;
+        public event System.EventHandler<LSEventArgs> PawnIDChange;
+        public event System.EventHandler<LSEventArgs> TradeFinished;
+        public event System.EventHandler<LSEventArgs> TradeAcceptanceCanceled;
+        public event System.EventHandler<LSEventArgs> TradeOtherAcceptance;
+        public event System.EventHandler<LSEventArgs> TradeCanceled;
+        public event System.EventHandler<LSEventArgs> TradeOtherCoinSet;
+        public event System.EventHandler<LSEventArgs> TradeOtherItemRemoved;
+        public event System.EventHandler<LSEventArgs> TradeOtherItemAdded;
+        public event System.EventHandler<LSEventArgs> SentTradeInvitationDeclined;
+        public event System.EventHandler<LSEventArgs> SentTradeInvitationAccepted;
+        public event System.EventHandler<LSEventArgs> RecievedTradeInvintation;
         #endregion
 
         #region .Net Event Raisers
@@ -273,6 +285,78 @@ namespace Vanguard.ISXVG
             if (temp != null)
                 temp(Sender, e);
         }
+        protected virtual void OnPawnStatusChange(object Sender, LSEventArgs e)
+        {
+            System.EventHandler<LSEventArgs> temp = PawnStatusChange;
+            if (temp != null)
+                temp(Sender, e);
+        }
+        protected virtual void OnPawnIDChange(object Sender, LSEventArgs e)
+        {
+            System.EventHandler<LSEventArgs> temp = PawnIDChange;
+            if (temp != null)
+                temp(Sender, e);
+        }
+        protected virtual void OnTradeFinished(object Sender, LSEventArgs e)
+        {
+            System.EventHandler<LSEventArgs> temp = TradeFinished;
+            if (temp != null)
+                temp(Sender, e);
+        }
+        protected virtual void OnTradeAcceptanceCanceled(object Sender, LSEventArgs e)
+        {
+            System.EventHandler<LSEventArgs> temp = TradeAcceptanceCanceled;
+            if (temp != null)
+                temp(Sender, e);
+        }
+        protected virtual void OnTradeOtherAcceptance(object Sender, LSEventArgs e)
+        {
+            System.EventHandler<LSEventArgs> temp = TradeOtherAcceptance;
+            if (temp != null)
+                temp(Sender, e);
+        }
+        protected virtual void OnTradeCanceled(object Sender, LSEventArgs e)
+        {
+            System.EventHandler<LSEventArgs> temp = TradeCanceled;
+            if (temp != null)
+                temp(Sender, e);
+        }
+        protected virtual void OnTradeOtherCoinSet(object Sender, LSEventArgs e)
+        {
+            System.EventHandler<LSEventArgs> temp = TradeOtherCoinSet;
+            if (temp != null)
+                temp(Sender, e);
+        }
+        protected virtual void OnTradeOtherItemRemoved(object Sender, LSEventArgs e)
+        {
+            System.EventHandler<LSEventArgs> temp = TradeOtherItemRemoved;
+            if (temp != null)
+                temp(Sender, e);
+        }
+        protected virtual void OnTradeOtherItemAdded(object Sender, LSEventArgs e)
+        {
+            System.EventHandler<LSEventArgs> temp = TradeOtherItemAdded;
+            if (temp != null)
+                temp(Sender, e);
+        }
+        protected virtual void OnSentTradeInvintationDeclined(object Sender, LSEventArgs e)
+        {
+            System.EventHandler<LSEventArgs> temp = SentTradeInvitationDeclined;
+            if (temp != null)
+                temp(Sender, e);
+        }
+        protected virtual void OnSentTradeInvintationAccepted(object Sender, LSEventArgs e)
+        {
+            System.EventHandler<LSEventArgs> temp = SentTradeInvitationAccepted;
+            if (temp != null)
+                temp(Sender, e);
+        }
+        protected virtual void OnRecievedTradeInvintation(object Sender, LSEventArgs e)
+        {
+            System.EventHandler<LSEventArgs> temp = RecievedTradeInvintation;
+            if (temp != null)
+                temp(Sender, e);
+        }
         #endregion
 
         ~VGEvent()
@@ -314,6 +398,18 @@ namespace Vanguard.ISXVG
             LavishScript.Events.DetachEventTarget(LavishScript.Events.RegisterEvent("VG_OnIncomingCombatText"), OnIncomingCombatText);
             LavishScript.Events.DetachEventTarget(LavishScript.Events.RegisterEvent("VG_onHitObstacle"), OnHitObstacle);
             LavishScript.Events.DetachEventTarget(LavishScript.Events.RegisterEvent("VG_onTouchPawn"), OnTouchPawn);
+            LavishScript.Events.DetachEventTarget(LavishScript.Events.RegisterEvent("VG_onPawnStatusChange"), OnPawnStatusChange);
+            LavishScript.Events.DetachEventTarget(LavishScript.Events.RegisterEvent("VG_onPawnIDChange"), OnPawnIDChange);
+            LavishScript.Events.DetachEventTarget(LavishScript.Events.RegisterEvent("VG_onTradeFinished"), OnTradeFinished);
+            LavishScript.Events.DetachEventTarget(LavishScript.Events.RegisterEvent("VG_onTradeAcceptanceCanceled"), OnTradeAcceptanceCanceled);
+            LavishScript.Events.DetachEventTarget(LavishScript.Events.RegisterEvent("VG_onTradeOtherAcceptance"), OnTradeOtherAcceptance);
+            LavishScript.Events.DetachEventTarget(LavishScript.Events.RegisterEvent("VG_onTradeCanceled"), OnTradeCanceled);
+            LavishScript.Events.DetachEventTarget(LavishScript.Events.RegisterEvent("VG_onTradeOtherCoinSet"), OnTradeOtherCoinSet);
+            LavishScript.Events.DetachEventTarget(LavishScript.Events.RegisterEvent("VG_onTradeOtherItemRemoved"), OnTradeOtherItemRemoved);
+            LavishScript.Events.DetachEventTarget(LavishScript.Events.RegisterEvent("VG_onTradeOtherItemAdded"), OnTradeOtherItemAdded);
+            LavishScript.Events.DetachEventTarget(LavishScript.Events.RegisterEvent("VG_onSentTradeInvintationDeclined"), OnSentTradeInvintationDeclined);
+            LavishScript.Events.DetachEventTarget(LavishScript.Events.RegisterEvent("VG_onSentTradeInvintationAccepted"), OnSentTradeInvintationAccepted);
+            LavishScript.Events.DetachEventTarget(LavishScript.Events.RegisterEvent("VG_onRecievedTradeInvintation"), OnRecievedTradeInvintation);
         }
 
         public VGEvent()
@@ -355,6 +451,17 @@ namespace Vanguard.ISXVG
             LavishScript.Events.AttachEventTarget(LavishScript.Events.RegisterEvent("VG_OnIncomingCombatText"), OnIncomingCombatText);
             LavishScript.Events.AttachEventTarget(LavishScript.Events.RegisterEvent("VG_onHitObstacle"), OnHitObstacle);
             LavishScript.Events.AttachEventTarget(LavishScript.Events.RegisterEvent("VG_onTouchPawn"), OnTouchPawn);
+            LavishScript.Events.AttachEventTarget(LavishScript.Events.RegisterEvent("VG_onPawnIDChange"), OnPawnIDChange);
+            LavishScript.Events.AttachEventTarget(LavishScript.Events.RegisterEvent("VG_onTradeFinished"), OnTradeFinished);
+            LavishScript.Events.AttachEventTarget(LavishScript.Events.RegisterEvent("VG_onTradeAcceptanceCanceled"), OnTradeAcceptanceCanceled);
+            LavishScript.Events.AttachEventTarget(LavishScript.Events.RegisterEvent("VG_onTradeOtherAcceptnace"), OnTradeOtherAcceptance);
+            LavishScript.Events.AttachEventTarget(LavishScript.Events.RegisterEvent("VG_onTradeCanceled"), OnTradeCanceled);
+            LavishScript.Events.AttachEventTarget(LavishScript.Events.RegisterEvent("VG_onTradeOtherCoinSet"), OnTradeOtherCoinSet);
+            LavishScript.Events.AttachEventTarget(LavishScript.Events.RegisterEvent("VG_onTradeOtherItemRemoved"), OnTradeOtherItemRemoved);
+            LavishScript.Events.AttachEventTarget(LavishScript.Events.RegisterEvent("VG_onTradeOtherItemAdded"), OnTradeOtherItemAdded);
+            LavishScript.Events.AttachEventTarget(LavishScript.Events.RegisterEvent("VG_onSentTradeInvintationDeclined"), OnSentTradeInvintationDeclined);
+            LavishScript.Events.AttachEventTarget(LavishScript.Events.RegisterEvent("VG_onSentTradeInvintationAccepted"), OnSentTradeInvintationAccepted);
+            LavishScript.Events.AttachEventTarget(LavishScript.Events.RegisterEvent("VG_onRecievedTradeInvintation"), OnRecievedTradeInvintation);
         }
 
 

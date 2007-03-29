@@ -243,7 +243,33 @@ namespace Vanguard.ISXVG
             LavishScriptObject Obj = LavishScript.Objects.GetObject("TaskMaster", "Crafting");
             return new CraftingTaskMaster(Obj);
         }
+        public GV GV(params string[] Args)
+        {
+            LavishScriptObject Obj = LavishScript.Objects.GetObject("GV", Args);
+            return new GV(Obj);
+        }
+        public Trade Trade()
+        {
+            LavishScriptObject Obj = LavishScript.Objects.GetObject("Trade");
+            return new Trade(Obj);
+        }
+        public Songbook Songs()
+        {
+            LavishScriptObject Obj = LavishScript.Objects.GetObject("Songbook");
+            return new Songbook(Obj);
+        }
 
+        public Song Songs(string Name)
+        {
+            LavishScriptObject Obj = LavishScript.Objects.GetObject("Songs", Name);
+            return new Song(Obj);
+        }
+
+        public Song Songs(int Index)
+        {
+            LavishScriptObject Obj = LavishScript.Objects.GetObject("Song", Index.ToString());
+            return new Song(Obj);
+        }
         public void VGExecute(string Args)
         {
             LavishScript.ExecuteCommand("VGExecute " + Args);

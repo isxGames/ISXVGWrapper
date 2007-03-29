@@ -43,7 +43,10 @@ namespace Vanguard.ISXVG
         {
             get { return GetMember<string>("ClipBoardText"); }
         }
-
+        public bool IsReady
+        {
+            get { return GetMember<bool>("IsReady"); }
+        }
         public bool AddLoc(string Label)
         {
             return ExecuteMethod("AddLoc", Label);

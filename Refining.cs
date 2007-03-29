@@ -47,6 +47,12 @@ namespace Vanguard.ISXVG
                 return GetMember<int>("State");
             }
         }
+        
+        public CraftingStage Stage(int Arg)
+        {
+            LavishScriptObject Obj = GetMember("Stage", Arg.ToString());
+            return new CraftingStage(Obj);
+        }
 
         public CraftingStage Stage()
         {
