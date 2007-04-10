@@ -46,7 +46,7 @@ namespace Vanguard.ISXVG
         }
         public Pawn ToPawn()
         {
-            LavishScriptObject Obj = GetMember("ToPawn");
+            LavishScriptPersistentObject Obj = GetPersistentMember("ToPawn");
             return new Pawn(Obj);
         }
         public int AbilityCount

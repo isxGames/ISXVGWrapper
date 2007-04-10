@@ -616,7 +616,7 @@ namespace Vanguard.ISXVG
         {
             get
             {
-                LavishScriptObject Obj = GetMember("Target");
+                LavishScriptPersistentObject Obj = GetPersistentMember("Target");
                 return new Pawn(Obj);
             }
         }
@@ -625,7 +625,7 @@ namespace Vanguard.ISXVG
         {
             get
             {
-                LavishScriptObject Obj = GetMember("DTarget");
+                LavishScriptPersistentObject Obj = GetPersistentMember("DTarget");
                 return new Pawn(Obj);
             }
         }
@@ -634,7 +634,7 @@ namespace Vanguard.ISXVG
         {
             get
             {
-                LavishScriptObject Obj = GetMember("TargetOfTarget");
+                LavishScriptPersistentObject Obj = GetPersistentMember("TargetOfTarget");
                 return new Pawn(Obj);
             }
         }
@@ -643,7 +643,7 @@ namespace Vanguard.ISXVG
         {
             get
             {
-                LavishScriptObject Obj = GetMember("TargetOfTarget");
+                LavishScriptPersistentObject Obj = GetPersistentMember("TargetOfTarget");
                 return new Pawn(Obj);
             }
         }
@@ -652,7 +652,7 @@ namespace Vanguard.ISXVG
         {
             get
             {
-                LavishScriptObject Obj = GetMember("ToPawn");
+                LavishScriptPersistentObject Obj = GetPersistentMember("ToPawn");
                 return new Pawn(Obj);
             }
         }
@@ -691,7 +691,7 @@ namespace Vanguard.ISXVG
 
         public Pawn MinionAsPawn(int MinionNum)
         {
-            LavishScriptObject Obj = GetMember("MinionAsPawn", MinionNum.ToString());
+            LavishScriptPersistentObject Obj = GetPersistentMember("MinionAsPawn", MinionNum.ToString());
             return new Pawn(Obj);
         }
 

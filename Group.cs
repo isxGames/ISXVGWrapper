@@ -24,7 +24,7 @@ namespace Vanguard.ISXVG
         {
             get
             {
-                LavishScriptObject Obj = GetMember("GroupLeader");
+                LavishScriptPersistentObject Obj = GetPersistentMember("GroupLeader");
                 return new Pawn(Obj);
             }
         }

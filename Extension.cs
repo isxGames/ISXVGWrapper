@@ -42,19 +42,19 @@ namespace Vanguard.ISXVG
 
         public Pawn Pawn(params string[] Args)
         {
-            LavishScriptObject Obj = LavishScript.Objects.GetObject("Pawn", Args);
+            LavishScriptPersistentObject Obj = LavishScript.Objects.GetPersistentObject("Pawn", Args);
             return new Pawn(Obj);
         }
 
         public Pawn Pawn(string Arg)
         {
-            LavishScriptObject Obj = LavishScript.Objects.GetObject("Pawn", Arg);
+            LavishScriptPersistentObject Obj = LavishScript.Objects.GetPersistentObject("Pawn", Arg);
             return new Pawn(Obj);
         }
 
         public Pawn Pawn(int Arg)
         {
-            LavishScriptObject Obj = LavishScript.Objects.GetObject("Pawn", Arg.ToString());
+            LavishScriptPersistentObject Obj = LavishScript.Objects.GetPersistentObject("Pawn", Arg.ToString());
             return new Pawn(Obj);
         }
 

@@ -6,15 +6,15 @@ using LavishScriptAPI;
 
 namespace Vanguard.ISXVG
 {
-    public class Pawn : LavishScriptObject
+    public class Pawn : LavishScriptPersistentObject
     {
         public Pawn(params string[] Args)
             :
-            base(LavishScript.Objects.GetObject("Pawn",Args))
+            base(LavishScript.Objects.GetPersistentObject("Pawn",Args))
         {
         }
 
-        public Pawn(LavishScriptObject Copy)
+        public Pawn(LavishScriptPersistentObject Copy)
             :
             base(Copy)
         {
@@ -441,7 +441,7 @@ namespace Vanguard.ISXVG
         {
             get
             {
-                LavishScriptObject Obj = GetMember("Owner");
+                LavishScriptPersistentObject Obj = GetPersistentMember("Owner");
                 return new Pawn(Obj);
             }
         }
@@ -453,7 +453,7 @@ namespace Vanguard.ISXVG
         }
         public Point3f CheckCollision(float X, float Y, float Z)
         {
-                LavishScriptObject Obj = GetMember("CheckCollision",X.ToString(),Y.ToString(),Z.ToString());
+                LavishScriptObject Obj = GetMember("CheckCollision", X.ToString(), Y.ToString(), Z.ToString());
                 return new Point3f(Obj);
         }
         public bool Loot()
