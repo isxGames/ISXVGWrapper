@@ -38,7 +38,7 @@ namespace Vanguard.ISXVG
         {
             get
             {
-                LavishScriptObject Obj = GetMember("CuurentSong");
+                LavishScriptObject Obj = GetMember("CurrentSong");
                 return new Song(Obj);
             }
         }

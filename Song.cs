@@ -109,9 +109,9 @@ namespace Vanguard.ISXVG
             return new Ability(Obj);
         }
 
-        public bool Preform()
+        public bool Perform()
         {
-            return ExecuteMethod("Preform");
+            return ExecuteMethod("Perform");
         }
     }
 }
