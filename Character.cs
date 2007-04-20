@@ -506,6 +506,32 @@ namespace Vanguard.ISXVG
             }
         }
 
+        public bool Sprint()
+        {
+            return ExecuteMethod("Sprint");
+        }
+
+        public bool IsSprinting
+        {
+            get
+            {
+                return GetMember<bool>("IsSprinting");
+            }
+        }
+
+        public bool Afterburner()
+        {
+            return ExecuteMethod("Afterburner");
+        }
+
+        public bool AfterburnerReady
+        {
+            get
+            {
+                return GetMember<bool>("AfterburnerReady");
+            }
+        }
+
         public bool IsGrouped
         {
             get

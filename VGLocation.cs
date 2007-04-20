@@ -130,5 +130,9 @@ namespace Vanguard.ISXVG
            return ExecuteMethod("Delete");
         }
 
+        public bool Port()
+        {
+            return ExecuteMethod("Port");
+        }
     }
 }
