@@ -511,6 +511,11 @@ namespace Vanguard.ISXVG
             return ExecuteMethod("Sprint");
         }
 
+        public bool Sprint(int Percentage)
+        {
+            return ExecuteMethod("Sprint", Percentage.ToString());
+        }
+
         public bool IsSprinting
         {
             get

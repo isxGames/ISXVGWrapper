@@ -94,6 +94,12 @@ namespace Vanguard.ISXVG
             return new VG(Obj);
         }
 
+        public Mail Mail()
+        {
+            LavishScriptObject Obj = LavishScript.Objects.GetObject("Mail");
+            return new Mail(Obj);
+        }
+
         public Map Map()
         {
             LavishScriptObject Obj = LavishScript.Objects.GetObject("Map");

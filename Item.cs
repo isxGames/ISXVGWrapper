@@ -295,6 +295,14 @@ namespace Vanguard.ISXVG
             }
         }
 
+        public string Link
+        {
+            get
+            {
+                return GetMember<string>("Link");
+            }
+        }
+
         public ItemModifier Modifier(int ModifierNumber)
         {
             LavishScriptObject Obj = GetMember("Modifier", ModifierNumber.ToString());
@@ -388,6 +396,10 @@ namespace Vanguard.ISXVG
         public bool Sell(int QtyInAStack)
         {
             return ExecuteMethod("Sell", QtyInAStack.ToString());
+        }
+        public bool AttachToMail()
+        {
+            return ExecuteMethod("AttachToMail");
         }
     }
 }

@@ -60,6 +60,7 @@ namespace Vanguard.ISXVG
         public event System.EventHandler<LSEventArgs> SentTradeInvitationDeclined;
         public event System.EventHandler<LSEventArgs> SentTradeInvitationAccepted;
         public event System.EventHandler<LSEventArgs> RecievedTradeInvintation;
+        public event System.EventHandler<LSEventArgs> ClickItemLink;
         #endregion
 
         #region .Net Event Raisers
@@ -357,6 +358,12 @@ namespace Vanguard.ISXVG
             if (temp != null)
                 temp(Sender, e);
         }
+        protected virtual void OnClickItemLink(Object Sender, LSEventArgs e)
+        {
+            System.EventHandler<LSEventArgs> temp = ClickItemLink;
+            if (temp != null)
+                temp(Sender, e);
+        }
         #endregion
 
         ~VGEvent()
@@ -410,6 +417,7 @@ namespace Vanguard.ISXVG
             LavishScript.Events.DetachEventTarget(LavishScript.Events.RegisterEvent("VG_onSentTradeInvintationDeclined"), OnSentTradeInvintationDeclined);
             LavishScript.Events.DetachEventTarget(LavishScript.Events.RegisterEvent("VG_onSentTradeInvintationAccepted"), OnSentTradeInvintationAccepted);
             LavishScript.Events.DetachEventTarget(LavishScript.Events.RegisterEvent("VG_onRecievedTradeInvintation"), OnRecievedTradeInvintation);
+            LavishScript.Events.DetachEventTarget(LavishScript.Events.RegisterEvent("VG_onClickItemLink"), OnClickItemLink);
         }
 
         public VGEvent()
@@ -462,6 +470,7 @@ namespace Vanguard.ISXVG
             LavishScript.Events.AttachEventTarget(LavishScript.Events.RegisterEvent("VG_onSentTradeInvintationDeclined"), OnSentTradeInvintationDeclined);
             LavishScript.Events.AttachEventTarget(LavishScript.Events.RegisterEvent("VG_onSentTradeInvintationAccepted"), OnSentTradeInvintationAccepted);
             LavishScript.Events.AttachEventTarget(LavishScript.Events.RegisterEvent("VG_onRecievedTradeInvintation"), OnRecievedTradeInvintation);
+            LavishScript.Events.AttachEventTarget(LavishScript.Events.RegisterEvent("VG_onClickItemLink"), OnClickItemLink);
         }
 
 

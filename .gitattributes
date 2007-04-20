@@ -29,6 +29,8 @@
 /ItemModifier.cs -text
 /LavishScriptEventArgs.cs -text
 /Loot.cs -text
+/Mail.cs -text
+/MailMessage.cs -text
 /Map.cs -text
 /Merchant.cs -text
 /Minion.cs -text
