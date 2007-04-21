@@ -19,11 +19,11 @@ namespace Vanguard.ISXVG
         {
         }
 
-        public int ID
+        public uint ID
         {
             get
             {
-                return GetMember<int>("ID");
+                return GetMember<uint>("ID");
             }
         }
 
