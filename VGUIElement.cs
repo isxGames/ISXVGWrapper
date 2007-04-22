@@ -14,7 +14,7 @@ namespace Vanguard.ISXVG
         }
 
         public VGUIElement(params string[] Args)
-            : base(LavishScript.Objects.GetObject("VGUI", Args))
+            : base(LavishScript.Objects.GetObject("VGUIElement", Args))
         {
         }
 
