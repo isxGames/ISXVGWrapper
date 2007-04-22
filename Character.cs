@@ -537,6 +537,14 @@ namespace Vanguard.ISXVG
             }
         }
 
+        public bool CanPort
+        {
+            get
+            {
+                return GetMember<bool>("CanPort");
+            }
+        }
+
         public bool IsGrouped
         {
             get

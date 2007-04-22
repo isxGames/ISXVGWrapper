@@ -61,6 +61,11 @@ namespace Vanguard.ISXVG
         public event System.EventHandler<LSEventArgs> SentTradeInvitationAccepted;
         public event System.EventHandler<LSEventArgs> RecievedTradeInvintation;
         public event System.EventHandler<LSEventArgs> ClickItemLink;
+        public event System.EventHandler<LSEventArgs> MarketWindowOpen;
+        public event System.EventHandler<LSEventArgs> MarketWindowClose;
+        public event System.EventHandler<LSEventArgs> MarketSearchComplete;
+        public event System.EventHandler<LSEventArgs> MarketPlaceItemSuccess;
+        public event System.EventHandler<LSEventArgs> MarketRemoveItem;
         #endregion
 
         #region .Net Event Raisers
@@ -364,6 +369,36 @@ namespace Vanguard.ISXVG
             if (temp != null)
                 temp(Sender, e);
         }
+        protected virtual void onMarketWindowOpen(Object Sender, LSEventArgs e)
+        {
+            System.EventHandler<LSEventArgs> temp = MarketWindowOpen;
+            if (temp != null)
+                temp(Sender, e);
+        }
+        protected virtual void onMarketWindowClose(Object Sender, LSEventArgs e)
+        {
+            System.EventHandler<LSEventArgs> temp = MarketWindowClose;
+            if (temp != null)
+                temp(Sender, e);
+        }
+        protected virtual void onMarketSearchComplete(Object Sender, LSEventArgs e)
+        {
+            System.EventHandler<LSEventArgs> temp = MarketSearchComplete;
+            if (temp != null)
+                temp(Sender, e);
+        }
+        protected virtual void onMarketPlaceItemSuccess(Object Sender, LSEventArgs e)
+        {
+            System.EventHandler<LSEventArgs> temp = MarketPlaceItemSuccess;
+            if (temp != null)
+                temp(Sender, e);
+        }
+        protected virtual void onMarketRemoveItem(Object Sender, LSEventArgs e)
+        {
+            System.EventHandler<LSEventArgs> temp = MarketRemoveItem;
+            if (temp != null)
+                temp(Sender, e);
+        }
         #endregion
 
         ~VGEvent()
@@ -418,6 +453,11 @@ namespace Vanguard.ISXVG
             LavishScript.Events.DetachEventTarget(LavishScript.Events.RegisterEvent("VG_onSentTradeInvintationAccepted"), OnSentTradeInvintationAccepted);
             LavishScript.Events.DetachEventTarget(LavishScript.Events.RegisterEvent("VG_onRecievedTradeInvintation"), OnRecievedTradeInvintation);
             LavishScript.Events.DetachEventTarget(LavishScript.Events.RegisterEvent("VG_onClickItemLink"), OnClickItemLink);
+            LavishScript.Events.DetachEventTarget(LavishScript.Events.RegisterEvent("VG_onMarketWindowOpen"), onMarketWindowOpen);
+            LavishScript.Events.DetachEventTarget(LavishScript.Events.RegisterEvent("VG_onMarketWindowClose"), onMarketWindowClose);
+            LavishScript.Events.DetachEventTarget(LavishScript.Events.RegisterEvent("VG_onMarketSearchComplete"), onMarketSearchComplete);
+            LavishScript.Events.DetachEventTarget(LavishScript.Events.RegisterEvent("VG_onMarketPlaceItemSuccess"), onMarketPlaceItemSuccess);
+            LavishScript.Events.DetachEventTarget(LavishScript.Events.RegisterEvent("VG_onMarketRemoveItem"), onMarketRemoveItem);
         }
 
         public VGEvent()
@@ -471,6 +511,11 @@ namespace Vanguard.ISXVG
             LavishScript.Events.AttachEventTarget(LavishScript.Events.RegisterEvent("VG_onSentTradeInvintationAccepted"), OnSentTradeInvintationAccepted);
             LavishScript.Events.AttachEventTarget(LavishScript.Events.RegisterEvent("VG_onRecievedTradeInvintation"), OnRecievedTradeInvintation);
             LavishScript.Events.AttachEventTarget(LavishScript.Events.RegisterEvent("VG_onClickItemLink"), OnClickItemLink);
+            LavishScript.Events.AttachEventTarget(LavishScript.Events.RegisterEvent("VG_onMarketWindowOpen"), onMarketWindowOpen);
+            LavishScript.Events.AttachEventTarget(LavishScript.Events.RegisterEvent("VG_onMarketWindowClose"), onMarketWindowClose);
+            LavishScript.Events.AttachEventTarget(LavishScript.Events.RegisterEvent("VG_onMarketSearchComplete"), onMarketSearchComplete);
+            LavishScript.Events.AttachEventTarget(LavishScript.Events.RegisterEvent("VG_onMarketPlaceItemSuccess"), onMarketPlaceItemSuccess);
+            LavishScript.Events.AttachEventTarget(LavishScript.Events.RegisterEvent("VG_onMarketRemoveItem"), onMarketRemoveItem);
         }
 
 

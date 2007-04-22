@@ -87,16 +87,25 @@ namespace Vanguard.ISXVG
         {
             get { return GetMember<bool>("InFullScreenMode"); }
         }
-        public Point3f CheckCollision(float FromX, float FromY, float FromZ, float ToX, float ToY, float ToZ)
+        public Actor CheckCollision(float FromX, float FromY, float FromZ, float ToX, float ToY, float ToZ)
         {
             LavishScriptObject Obj = GetMember("CheckCollision", FromX.ToString(), FromY.ToString(), FromZ.ToString(), ToX.ToString(), ToY.ToString(),ToZ.ToString());
-            return new Point3f(Obj);
+            return new Actor(Obj);
         }
-        public Point3f CheckCollision(float ToX, float ToY, float ToZ)
+        public Actor CheckCollision(float ToX, float ToY, float ToZ)
         {
             LavishScriptObject Obj = GetMember("CheckCollision", ToX.ToString(), ToY.ToString(), ToZ.ToString());
-            return new Point3f(Obj);
+            return new Actor(Obj);
         }
+        public string InstallDirectory
+        {
+            get
+            {
+                return GetMember<string>("InstallDirectory");
+            }
+        }
+
+
         public bool ToggleFullScreenMode()
         {
             return ExecuteMethod("ToggleFullScreenMode");

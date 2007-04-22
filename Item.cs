@@ -295,6 +295,9 @@ namespace Vanguard.ISXVG
             }
         }
 
+        /// <summary>
+        /// This will produce a string similar to "452977:1902723122::0,0,1".  You can then use that with the vg command "/itemlinkrequest".  
+        /// </summary>
         public string Link
         {
             get
@@ -400,6 +403,10 @@ namespace Vanguard.ISXVG
         public bool AttachToMail()
         {
             return ExecuteMethod("AttachToMail");
+        }
+        public bool AddToConsignment()
+        {
+            return ExecuteMethod("AddToConsignment");
         }
     }
 }

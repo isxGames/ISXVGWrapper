@@ -58,6 +58,29 @@ namespace Vanguard.ISXVG
             return new Pawn(Obj);
         }
 
+        /// </summary>
+        /// <returns>number of actors in the array</returns>
+        public int Actor()
+        {
+            return LavishScript.Objects.GetObject("Actor").GetValue<int>();
+        }
+        /// <param name="Arg">between 1 and the number of actors in the array</param>
+        public Actor Actor(int Arg)
+        {
+            LavishScriptObject Obj = LavishScript.Objects.GetObject("Actor", Arg.ToString());
+            return new Actor(Obj);
+        }
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="Args">See http://vg.isxgames.com/wiki/index.php?title=Actor_Search_Parameters for possible parameters</param>
+        /// <returns></returns>
+        public Actor Actor(params string[] Args)
+        {
+            LavishScriptObject Obj = LavishScript.Objects.GetObject("Actor", Args);
+            return new Actor(Obj);
+        }
+
         public Radar Radar(int Index)
         {
             LavishScriptObject Obj = LavishScript.Objects.GetObject("Radar", Index.ToString());
@@ -74,6 +97,37 @@ namespace Vanguard.ISXVG
         {
             LavishScriptObject Obj = LavishScript.Objects.GetObject("Radar");
             return new Radar(Obj);
+        }
+
+        /// <summary>
+        /// This TLO only works when the "Your Remains" window is open and populated.
+        /// </summary>
+        /// <param name="Argument">At this point (4.18.2007) the only parameter accepted is "Corpse"</param>
+        /// <returns>Number of corpses available for summoning</returns> 
+        public int Altar(string Argument)
+        {
+            if (Argument.Contains("Corpse") || Argument.Contains("corpse"))
+            {
+                return LavishScript.Objects.GetObject("Altar").GetValue<int>();
+            }
+            else
+                return 0;
+        }
+
+        /// <summary>
+        /// This TLO only works when the "Your Remains" window is open and populated.
+        /// </summary>
+        /// <param name="Argument">At this point (4.18.2007) the only parameter accepted is "Corpse"</param>
+        /// <param name="Index">between 1 and the number of corpses available for summoning</param>
+        public SCorpse Altar(string Argument, int Index)
+        {
+            if (Argument.Contains("Corpse") || Argument.Contains("corpse"))
+            {
+                LavishScriptObject Obj = LavishScript.Objects.GetObject("Altar","Corpse",Index.ToString());
+                return new SCorpse(Obj);
+            }
+            else
+                return null;
         }
 
         public ISXVG ISXVG()
@@ -122,6 +176,20 @@ namespace Vanguard.ISXVG
         {
             LavishScriptObject Obj = LavishScript.Objects.GetObject("VGLoc", Arg.ToString());
             return new VGLocation(Obj);
+        }
+
+        /// <param name="SearchKey">'searchkeys' are found within the windows xml files in /vanguard/VGUIAssets/Shells/Default/Windows.</param>
+        /// <returns></returns>
+        public VGUIElement VGUI(string SearchKey)
+        {
+            LavishScriptObject Obj = LavishScript.Objects.GetObject("VGUI", SearchKey);
+            return new VGUIElement(Obj);
+        }
+
+        public Market Market()
+        {
+            LavishScriptObject Obj = LavishScript.Objects.GetObject("Market");
+            return new Market(Obj);
         }
 
         /// <summary>

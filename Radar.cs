@@ -238,6 +238,51 @@ namespace Vanguard.ISXVG
             }
         }
 
+        public bool ShowingMailboxes
+        {
+            get
+            {
+                return GetMember<bool>("ShowingMailboxes");
+            }
+        }
+        public bool ShowingAssemblyStations
+        {
+            get
+            {
+                return GetMember<bool>("ShowingAssemblyStations");
+            }
+        }
+        public bool ShowingTaskmasters
+        {
+            get
+            {
+                return GetMember<bool>("ShowingTaskmasters");
+            }
+        }
+        public bool ShowingBankers
+        {
+            get
+            {
+                return GetMember<bool>("ShowingBankers");
+            }
+        }
+        public bool ShowingBrokers
+        {
+            get
+            {
+                return GetMember<bool>("ShowingBrokers");
+            }
+        }
+        public bool ShowingAltars
+        {
+            get
+            {
+                return GetMember<bool>("ShowingAltars");
+            }
+        }
+
+
+
         public bool FilterMe()
         {
            return ExecuteMethod("FilterMe");
@@ -361,6 +406,36 @@ namespace Vanguard.ISXVG
         public bool FilterQuestNPCs()
         {
            return ExecuteMethod("FilterQuestNPCs");
+        }
+
+        public bool FilterMailboxes()
+        {
+            return ExecuteMethod("FilterMailboxes");
+        }
+
+        public bool FilterAssemblyStations()
+        {
+            return ExecuteMethod("FilterAssemblyStations");
+        }
+
+        public bool FilterTaskmasters()
+        {
+            return ExecuteMethod("FilterTaskmasters");
+        }
+
+        public bool FilterBankers()
+        {
+            return ExecuteMethod("FilterBankers");
+        }
+
+        public bool FilterBrokers()
+        {
+            return ExecuteMethod("FilterBrokers");
+        }
+
+        public bool FilterAltars()
+        {
+            return ExecuteMethod("FilterAltars");
         }
     }
 }

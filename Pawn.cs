@@ -437,6 +437,14 @@ namespace Vanguard.ISXVG
                 return GetMember<bool>("IsStunned");
             }
         }
+        public bool IsReady
+        {
+            get
+            {
+                return GetMember<bool>("IsReady");
+            }
+        }
+
         public Pawn Owner
         {
             get
@@ -445,17 +453,26 @@ namespace Vanguard.ISXVG
                 return new Pawn(Obj);
             }
         }
-        public Point3f CheckCollision()
+        public Actor CheckCollision()
         {
                 LavishScriptObject Obj = GetMember("CheckCollision");
-                return new Point3f(Obj);
+                return new Actor(Obj);
 
         }
-        public Point3f CheckCollision(float X, float Y, float Z)
+        public Actor CheckCollision(float X, float Y, float Z)
         {
                 LavishScriptObject Obj = GetMember("CheckCollision", X.ToString(), Y.ToString(), Z.ToString());
-                return new Point3f(Obj);
+                return new Actor(Obj);
         }
+        public Actor ToActor
+        {
+            get
+            {
+                return GetMember<Actor>("ToActor");
+            }
+        }
+
+
         public bool Loot()
         {
             return ExecuteMethod("Loot");
@@ -474,6 +491,16 @@ namespace Vanguard.ISXVG
         public bool Face()
         {
             return ExecuteMethod("Face");
+        }
+
+        /// <summary>
+        /// As of 3.31.2007, this method works for the following pawn types:  Banker, Broker, Taskmaster, Merchant, Trainer, QuestNPC, 
+        /// Corpse, Mailbox, Crafting Station, and Resource.
+        /// </summary>
+        /// <returns></returns>
+        public bool DoubleClick()
+        {
+            return ExecuteMethod("DoubleClick");
         }
 
     }

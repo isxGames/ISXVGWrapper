@@ -51,6 +51,21 @@ namespace Vanguard.ISXVG
                 return GetMember<bool>("Visible");
             }
         }
+        public int ChunkX
+        {
+            get
+            {
+                return GetMember<int>("ChunkX");
+            }
+        }
+        public int ChunkY
+        {
+            get
+            {
+                return GetMember<int>("ChunkY");
+            }
+        }
+
         public bool Hide()
         {
             return ExecuteMethod("Hide");

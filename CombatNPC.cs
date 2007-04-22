@@ -37,11 +37,11 @@ namespace Vanguard.ISXVG
         /// <summary>
         /// alias for PctHealth
         /// </summary>
-        public float Health
+        public int Health
         {
             get
             {
-                return GetMember<float>("Health");
+                return GetMember<int>("Health");
             }
         }
         public float Distance
