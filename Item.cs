@@ -119,6 +119,15 @@ namespace Vanguard.ISXVG
             }
         }
 
+        public Item InContainer
+        {
+            get
+            {
+                LavishScriptObject Obj = GetMember("InContainer");
+                return new Item(Obj);
+            }
+        }
+
         public string Type
         {
             get
