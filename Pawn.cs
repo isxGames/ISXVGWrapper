@@ -383,6 +383,14 @@ namespace Vanguard.ISXVG
             }
         }
 
+        public bool IsHarvestable
+        {
+            get
+            {
+                return GetMember<bool>("IsHarvestable");
+            }
+        }
+
         public string Title
         {
             get

@@ -61,6 +61,14 @@ namespace Vanguard.ISXVG
             }
         }
 
+        public int Durability
+        {
+            get
+            {
+                return GetMember<int>("Durability");
+            }
+        }
+
         public int Level
         {
             get
