@@ -18,9 +18,14 @@ namespace Vanguard.ISXVG
         {
         }
 
-        public MailMessage Message()
+        public int Message()
         {
-            LavishScriptObject Obj = GetMember("Message");
+            return GetMember<int>("NumMessages");
+        }
+
+        public MailMessage Message(int Index)
+        {
+            LavishScriptObject Obj = GetMember("Message",Index.ToString());
             return new MailMessage(Obj);
         }
         public int NumMessages
