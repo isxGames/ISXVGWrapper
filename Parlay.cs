@@ -88,9 +88,9 @@ namespace Vanguard.ISXVG
             get { return GetMember<int>("Demand"); }
         }
 
-        public bool OpponentDemand
+        public int OpponentDemand
         {
-            get { return GetMember<bool>("OpponentDemand"); }
+            get { return GetMember<int>("OpponentDemand"); }
         }
 
         public bool InspireDisabled
