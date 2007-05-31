@@ -350,11 +350,6 @@ namespace Vanguard.ISXVG
             return ExecuteMethod("Use");
         }
 
-        public bool Delete()
-        {
-            return ExecuteMethod("Delete");
-        }
-
         public bool Equip()
         {
             return ExecuteMethod("Equip");
@@ -378,6 +373,21 @@ namespace Vanguard.ISXVG
         public bool StartConvert()
         {
             return ExecuteMethod("StartConvert");
+        }
+
+        public bool Split(int Quantity)
+        {
+            return ExecuteMethod("Split", Quantity.ToString());
+        }
+
+        public bool Delete()
+        {
+            return ExecuteMethod("Delete");
+        }
+
+        public bool Delete(string all)
+        {
+            return ExecuteMethod("Delete",all.ToString());
         }
 
         public bool StackWith(int StackWith)
