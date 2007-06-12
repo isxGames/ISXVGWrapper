@@ -251,6 +251,38 @@ namespace Vanguard.ISXVG
             }
         }
 
+        public string School
+        {
+            get
+            {
+                return GetMember<string>("School");
+            }
+        }
+
+        public int BloodUnionRequired
+        {
+            get
+            {
+                return GetMember<int>("BloodUnionRequired");
+            }
+        }
+
+        public string Requirements
+        {
+            get
+            {
+                return GetMember<string>("Requirements");
+            }
+        }
+
+        public string Restrictions
+        {
+            get
+            {
+                return GetMember<string>("Restrictions");
+            }
+        }
+
         public bool Use()
         {
             return ExecuteMethod("Use"); 

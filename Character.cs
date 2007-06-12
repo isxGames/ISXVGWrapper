@@ -905,5 +905,21 @@ namespace Vanguard.ISXVG
                 return new Form(Obj);
             }
         }
+
+        public string TargetCasting
+        {
+            get
+            {
+                return GetMember<string>("TargetCasting");
+            }
+        }
+
+        public int BloodUnion
+        {
+            get
+            {
+                return GetMember<int>("BloodUnion");
+            }
+        }
     }
 }
