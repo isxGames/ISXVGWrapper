@@ -921,50 +921,5 @@ namespace Vanguard.ISXVG
                 return GetMember<int>("BloodUnion");
             }
         }
-
-        public System.Collections.Generic.List<Item> GetInventory()
-        {
-            LavishVMAPI.Frame.Lock();
-            try
-            {
-                LavishScriptObject Index = LavishScript.Objects.NewObject("index:item");
-                if (Index == null)
-                    return null;
-
-                int Count = GetMember<int>("GetInventory", Index.GetLSReference());
-                if (Count <= 0)
-                    return null;
-                System.Collections.Generic.List<Item> List = new System.Collections.Generic.List<Item>(Count);
-                for (int i = 1; i < Count; i++)
-                    List.Add(new Item(Index.GetIndex(i.ToString()).GetMember("Item")));
-                return List;
-            }
-            finally
-            {
-                LavishVMAPI.Frame.Unlock();
-            }
-        }
-        public System.Collections.Generic.List<Item> GetInventory(string Args)
-        {
-            LavishVMAPI.Frame.Lock();
-            try
-            {
-                LavishScriptObject Index = LavishScript.Objects.NewObject("index:item");
-                if (Index == null)
-                    return null;
-
-                int Count = GetMember<int>("GetInventory", Index.GetLSReference(), Args);
-                if (Count <= 0)
-                    return null;
-                System.Collections.Generic.List<Item> List = new System.Collections.Generic.List<Item>(Count);
-                for (int i = 1; i < Count; i++)
-                    List.Add(new Item(Index.GetIndex(i.ToString()).GetMember("Item")));
-                return List;
-            }
-            finally
-            {
-                LavishVMAPI.Frame.Unlock();
-            }
-        }
     }
 }
