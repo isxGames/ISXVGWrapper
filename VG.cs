@@ -134,5 +134,49 @@ namespace Vanguard.ISXVG
                 return ExecuteMethod("ExecBinding", Action);
         }
 
+        public System.Collections.Generic.List<Pawn> GetPawns()
+        {
+            Frame.Lock();
+            try
+            {
+                LavishScriptObject Index = LavishScript.Objects.NewObject("index:pawn");
+                if (Index == null)
+                    return null;
+
+                int Count = GetMember<int>("GetPawns", Index.GetLSReference());
+                if (Count <= 0)
+                    return null;
+                System.Collections.Generic.List<Pawn> List = new System.Collections.Generic.List<Pawn>(Count);
+                for (int i = 1; i < Count; i++)
+                    List.Add(new Pawn(Index.GetIndex(i.ToString()).GetPersistentMember("Pawn")));
+                return List;
+            }
+            finally
+            {
+                Frame.Unlock();
+            }
+        }
+        public System.Collections.Generic.List<Pawn> GetPawns(string Args)
+        {
+            Frame.Lock();
+            try
+            {
+                LavishScriptObject Index = LavishScript.Objects.NewObject("index:pawn");
+                if (Index == null)
+                    return null;
+
+                int Count = GetMember<int>("GetPawns", Index.GetLSReference(), Args);
+                if (Count <= 0)
+                    return null;
+                System.Collections.Generic.List<Pawn> List = new System.Collections.Generic.List<Pawn>(Count);
+                for (int i = 1; i < Count; i++)
+                    List.Add(new Pawn(Index.GetIndex(i.ToString()).GetPersistentMember("Pawn")));
+                return List;
+            }
+            finally
+            {
+                Frame.Unlock();
+            }
+        }
     }
 }
