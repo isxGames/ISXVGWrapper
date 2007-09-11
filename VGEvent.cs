@@ -66,6 +66,7 @@ namespace Vanguard.ISXVG
         public event System.EventHandler<LSEventArgs> MarketSearchComplete;
         public event System.EventHandler<LSEventArgs> MarketPlaceItemSuccess;
         public event System.EventHandler<LSEventArgs> MarketRemoveItem;
+        public event System.EventHandler<LSEventArgs> AlertText;
         #endregion
 
         #region .Net Event Raisers
@@ -399,6 +400,12 @@ namespace Vanguard.ISXVG
             if (temp != null)
                 temp(Sender, e);
         }
+        protected virtual void onAlertText(Object Sender, LSEventArgs e)
+        {
+            System.EventHandler<LSEventArgs> temp = AlertText;
+            if (temp != null)
+                temp(Sender, e);
+        }
         #endregion
 
         ~VGEvent()
@@ -458,6 +465,7 @@ namespace Vanguard.ISXVG
             LavishScript.Events.DetachEventTarget(LavishScript.Events.RegisterEvent("VG_onMarketSearchComplete"), onMarketSearchComplete);
             LavishScript.Events.DetachEventTarget(LavishScript.Events.RegisterEvent("VG_onMarketPlaceItemSuccess"), onMarketPlaceItemSuccess);
             LavishScript.Events.DetachEventTarget(LavishScript.Events.RegisterEvent("VG_onMarketRemoveItem"), onMarketRemoveItem);
+            LavishScript.Events.DetachEventTarget(LavishScript.Events.RegisterEvent("VG_onAlertText"), onAlertText);
         }
 
         public VGEvent()
@@ -516,6 +524,7 @@ namespace Vanguard.ISXVG
             LavishScript.Events.AttachEventTarget(LavishScript.Events.RegisterEvent("VG_onMarketSearchComplete"), onMarketSearchComplete);
             LavishScript.Events.AttachEventTarget(LavishScript.Events.RegisterEvent("VG_onMarketPlaceItemSuccess"), onMarketPlaceItemSuccess);
             LavishScript.Events.AttachEventTarget(LavishScript.Events.RegisterEvent("VG_onMarketRemoveItem"), onMarketRemoveItem);
+            LavishScript.Events.AttachEventTarget(LavishScript.Events.RegisterEvent("VG_onAlertText"), onAlertText);
         }
 
 
