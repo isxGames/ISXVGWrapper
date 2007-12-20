@@ -258,14 +258,6 @@ namespace Vanguard.ISXVG
             }
         }
 
-        public Int64 ID
-        {
-            get 
-            { 
-                return GetMember<Int64>("ID"); 
-            }
-        }
-
         public string Casting 
         {
             get 
