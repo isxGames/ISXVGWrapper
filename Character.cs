@@ -786,25 +786,65 @@ namespace Vanguard.ISXVG
         }
 
         /// <summary>
-        ///Number of effects on your current target 
+        ///Number of debuffs on your current target 
         /// </summary>
-        public int TargetEffectCount
+        public int TargetDebuffCount
         {
             get
             {
-                return GetMember<int>("TargetEffect");
+                return GetMember<int>("TargetDebuff");
             }
         }
 
-        public TargetEffect TargetEffect(int TargetEffectNum)
+        public int TargetMyDebuffCount
         {
-            LavishScriptObject Obj = GetMember("TargetEffect", TargetEffectNum.ToString());
+            get
+            {
+                return GetMember<int>("TargetMyDebuff");
+            }
+        }
+
+        public int TargetBuffCount
+        {
+            get
+            {
+                return GetMember<int>("TargetBuff");
+            }
+        }
+
+        public TargetEffect TargetDebuff(int TargetDebuffNum)
+        {
+            LavishScriptObject Obj = GetMember("TargetDebuff", TargetDebuffNum.ToString());
             return new TargetEffect(Obj);
         }
 
-        public TargetEffect TargetEffect(string TargetEffectName)
+        public TargetEffect TargetDebuff(string TargetDebuffName)
         {
-            LavishScriptObject Obj = GetMember("TargetEffect", TargetEffectName);
+            LavishScriptObject Obj = GetMember("TargetDebuff", TargetDebuffName);
+            return new TargetEffect(Obj);
+        }
+
+        public TargetEffect TargetMyDebuff(int TargetMyDebuffNum)
+        {
+            LavishScriptObject Obj = GetMember("TargetMyDebuff", TargetMyDebuffNum.ToString());
+            return new TargetEffect(Obj);
+        }
+
+        public TargetEffect TargetMyDebuff(string TargetMyDebuffName)
+        {
+            LavishScriptObject Obj = GetMember("TargetMyDebuff", TargetMyDebuffName);
+            return new TargetEffect(Obj);
+        }
+
+        public TargetEffect TargetBuff(int TargetBuffNum)
+        {
+            LavishScriptObject Obj = GetMember("TargetBuff", TargetBuffNum.ToString());
+            return new TargetEffect(Obj);
+        }
+
+        public TargetEffect TargetBuff(string TargetBuffName)
+        {
+            LavishScriptObject Obj = GetMember("TargetBuff", TargetBuffName);
             return new TargetEffect(Obj);
         }
 
