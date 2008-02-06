@@ -44,6 +44,30 @@ namespace Vanguard.ISXVG
             }
         }
 
+        public Point3f Location
+        {
+            get
+            {
+                return GetMember<Point3f>("Location");
+            }
+        }
+
+        public Point3f Velocity
+        {
+            get
+            {
+                return GetMember<Point3f>("Velocity");
+            }
+        }
+
+        public bool IsMoving
+        {
+            get
+            {
+                return GetMember<bool>("IsMoving");
+            }
+        }
+
         public float X
         {
             get

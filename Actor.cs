@@ -28,6 +28,15 @@ namespace Vanguard.ISXVG
                 return GetMember<string>("Name");
             }
         }
+
+        public Point3f Location
+        {
+            get
+            {
+                return GetMember<Point3f>("Location");
+            }
+        }
+
         public float X
         {
             get
