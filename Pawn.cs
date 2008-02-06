@@ -173,6 +173,14 @@ namespace Vanguard.ISXVG
             }
         }
 
+        public int RaceID
+        {
+            get
+            {
+                return GetMember<int>("RaceID");
+            }
+        }
+
         public string Race
         {
             get
