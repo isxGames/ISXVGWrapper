@@ -105,6 +105,14 @@ namespace Vanguard.ISXVG
             }
         }
 
+        public bool IsConverting
+        {
+            get
+            {
+                return GetMember<bool>("IsConverting");
+            }
+        }
+
 
         public bool ToggleFullScreenMode()
         {
@@ -132,6 +140,16 @@ namespace Vanguard.ISXVG
             }
             else
                 return ExecuteMethod("ExecBinding", Action);
+        }
+
+        public bool ConvertItem(int Option)
+        {
+            return ExecuteMethod("ConvertItem", Option.ToString());
+        }
+
+        public bool ConvertItem()
+        {
+            return ExecuteMethod("ConvertItem");
         }
     }
 }

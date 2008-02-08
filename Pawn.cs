@@ -181,6 +181,14 @@ namespace Vanguard.ISXVG
             }
         }
 
+        public bool IsMounted
+        {
+            get
+            {
+                return GetMember<bool>("IsMounted");
+            }
+        }
+
         public string Race
         {
             get
