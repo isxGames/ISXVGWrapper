@@ -6,16 +6,16 @@ using LavishScriptAPI;
 
 namespace Vanguard.ISXVG
 {
-    public class ISXVG : LavishScriptObject
+    public class ISXVG : LavishScriptPersistentObject
     {
-        
-        public ISXVG(LavishScriptObject Copy)
+
+        public ISXVG(LavishScriptPersistentObject Copy)
             : base(Copy)
         {
         }
 
-        public ISXVG() 
-            : base(LavishScript.Objects.GetObject("ISXVG"))
+        public ISXVG()
+            : base(LavishScript.Objects.GetPersistentObject("ISXVG"))
         {
         }
 

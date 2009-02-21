@@ -7,15 +7,15 @@ using LavishScriptAPI;
 
 namespace Vanguard.ISXVG
 {
-    public class VG : LavishScriptObject
+    public class VG : LavishScriptPersistentObject
     {
         public VG()
             :
-            base(LavishScript.Objects.GetObject("VG"))
+            base(LavishScript.Objects.GetPersistentObject("VG"))
         {
         }
 
-        public VG(LavishScriptObject Copy)
+        public VG(LavishScriptPersistentObject Copy)
             :
             base(Copy)
         {
