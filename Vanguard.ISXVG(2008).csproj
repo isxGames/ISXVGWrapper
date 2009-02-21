@@ -1,0 +1,119 @@
+﻿<Project DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003" ToolsVersion="3.5">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>8.0.50727</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{FAAFB01C-C8F3-4AD7-A4A6-6F4FCA7CBA71}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>Vanguard.ISXVG</RootNamespace>
+    <AssemblyName>ISXVGWrapper</AssemblyName>
+    <FileUpgradeFlags>
+    </FileUpgradeFlags>
+    <UpgradeBackupLocation>
+    </UpgradeBackupLocation>
+    <OldToolsVersion>2.0</OldToolsVersion>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Lavish.InnerSpace, Version=1.0.0.0, Culture=neutral, PublicKeyToken=9029a3ab4cbe108d, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\Lavish.InnerSpace.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Actor.cs" />
+    <Compile Include="Assembly.cs" />
+    <Compile Include="AssemblyRecipe.cs" />
+    <Compile Include="Complication.cs" />
+    <Compile Include="Correction.cs" />
+    <Compile Include="CraftingAction.cs" />
+    <Compile Include="CraftingStage.cs" />
+    <Compile Include="CraftingStep.cs" />
+    <Compile Include="CraftingTableItem.cs" />
+    <Compile Include="CraftingTaskMaster.cs" />
+    <Compile Include="CraftingWorkOrder.cs" />
+    <Compile Include="CurrentDisplayedQuest.cs" />
+    <Compile Include="Dialog.cs" />
+    <Compile Include="DialogResponse.cs" />
+    <Compile Include="EffectsManager.cs" />
+    <Compile Include="Extension.cs" />
+    <Compile Include="Ability.cs" />
+    <Compile Include="Chunk.cs" />
+    <Compile Include="Character.cs" />
+    <Compile Include="Effect.cs" />
+    <Compile Include="CombatNPC.cs" />
+    <Compile Include="Form.cs" />
+    <Compile Include="Group.cs" />
+    <Compile Include="GroupMember.cs" />
+    <Compile Include="GV.cs" />
+    <Compile Include="ISXVG.cs" />
+    <Compile Include="Item.cs" />
+    <Compile Include="ItemModifier.cs" />
+    <Compile Include="Loot.cs" />
+    <Compile Include="Mail.cs" />
+    <Compile Include="MailMessage.cs" />
+    <Compile Include="Map.cs" />
+    <Compile Include="Market.cs" />
+    <Compile Include="MarketItem.cs" />
+    <Compile Include="Merchant.cs" />
+    <Compile Include="Minion.cs" />
+    <Compile Include="Parlay.cs" />
+    <Compile Include="ParlayCard.cs" />
+    <Compile Include="Pawn.cs" />
+    <Compile Include="Pet.cs" />
+    <Compile Include="PetAbility.cs" />
+    <Compile Include="PoI.cs" />
+    <Compile Include="QuestJournal.cs" />
+    <Compile Include="QuestJournalEntry.cs" />
+    <Compile Include="QuestReward.cs" />
+    <Compile Include="QuestRewardGroup.cs" />
+    <Compile Include="Radar.cs" />
+    <Compile Include="Refining.cs" />
+    <Compile Include="RefiningRecipe.cs" />
+    <Compile Include="RepairItem.cs" />
+    <Compile Include="SCorpse.cs" />
+    <Compile Include="Song.cs" />
+    <Compile Include="SongBook.cs" />
+    <Compile Include="TargetEffect.cs" />
+    <Compile Include="Trade.cs" />
+    <Compile Include="TravelJournal.cs" />
+    <Compile Include="TravelJournalEntry.cs" />
+    <Compile Include="VG.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="VGEvent.cs" />
+    <Compile Include="VGLocation.cs" />
+    <Compile Include="VGUIElement.cs" />
+  </ItemGroup>
+  <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+  <PropertyGroup>
+    <PostBuildEvent>"$(TargetDir)PostBuild"</PostBuildEvent>
+  </PropertyGroup>
+</Project>
