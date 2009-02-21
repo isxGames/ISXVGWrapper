@@ -20,6 +20,7 @@ namespace Vanguard.ISXVG
             base(Copy)
         {
         }
+
         public int LanguageID
         {
             get { return GetMember<int>("LanguageID"); }
