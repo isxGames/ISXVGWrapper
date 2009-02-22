@@ -20,6 +20,7 @@
 /Effect.cs -text
 /EffectsManager.cs -text
 /Encounter.cs -text
+Events/Vanguard[!!-~]Event[!!-~]Args.cs -text
 /Extension.cs -text
 /Form.cs -text
 /GV.cs -text
@@ -39,6 +40,7 @@
 /Minion.cs -text
 /Parlay.cs -text
 /ParlayCard.cs -text
+/ParlayDeck.cs -text
 /Pawn.cs -text
 /Pet.cs -text
 /PetAbility.cs -text

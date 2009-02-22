@@ -18,6 +18,7 @@
     <DefineConstants>DEBUG;TRACE</DefineConstants>
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
+    <DocumentationFile>bin\Debug\ISXVGWrapper.XML</DocumentationFile>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
     <DebugType>pdbonly</DebugType>
@@ -26,6 +27,7 @@
     <DefineConstants>TRACE</DefineConstants>
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
+    <DocumentationFile>bin\Release\ISXVGWrapper.XML</DocumentationFile>
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="Lavish.InnerSpace, Version=1.0.0.0, Culture=neutral, PublicKeyToken=9029a3ab4cbe108d, processorArchitecture=MSIL">
@@ -52,6 +54,7 @@
     <Compile Include="Dialog.cs" />
     <Compile Include="DialogResponse.cs" />
     <Compile Include="EffectsManager.cs" />
+    <Compile Include="Events\Vanguard Event Args.cs" />
     <Compile Include="Extension.cs" />
     <Compile Include="Ability.cs" />
     <Compile Include="Chunk.cs" />
@@ -75,6 +78,7 @@
     <Compile Include="Minion.cs" />
     <Compile Include="Parlay.cs" />
     <Compile Include="ParlayCard.cs" />
+    <Compile Include="ParlayDeck.cs" />
     <Compile Include="Pawn.cs" />
     <Compile Include="Pet.cs" />
     <Compile Include="PetAbility.cs" />
