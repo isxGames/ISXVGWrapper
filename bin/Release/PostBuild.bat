@@ -4,3 +4,4 @@ FOR /F "tokens=2* delims=	 " %%A IN ('REG QUERY "HKLM\SOFTWARE\Microsoft\Windows
 
 
 copy ISXVGWrapper.dll "%InnerSpacePath%\.NET Programs"
+copy ISXVGWrapper.XML "%InnerSpacePath%\.NET Programs"
