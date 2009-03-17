@@ -3,7 +3,7 @@ using LavishScriptAPI;
 namespace Vanguard.ISXVG
 {
     /// <summary>
-    // This DataType includes all of the data available to ISXVG that is related to the in-game map. 
+    /// This DataType includes all of the data available to ISXVG that is related to the in-game map. 
     /// </summary>
     public class Map : LavishScriptObject
     {

@@ -85,6 +85,7 @@
     <Compile Include="ParlayCard.cs" />
     <Compile Include="ParlayDeck.cs" />
     <Compile Include="Pawn.cs" />
+    <Compile Include="PawnList.cs" />
     <Compile Include="Pet.cs" />
     <Compile Include="PetAbility.cs" />
     <Compile Include="PoI.cs" />

@@ -86,7 +86,7 @@ namespace Vanguard.ISXVG
             EventHandler<ParlayDialogEventArgs> temp = ParlayDialog;
             if (temp != null)
             {
-                temp(Sender, new ParlayDialogEventArgs());
+                temp(Sender, new ParlayDialogEventArgs(e.Args));
             }
         }
 
@@ -221,7 +221,7 @@ namespace Vanguard.ISXVG
             EventHandler<GroupMemberAddedEventArgs> temp = GroupMemberAdded;
             if (temp != null)
             {
-                temp(Sender, (GroupMemberAddedEventArgs) e);
+                temp(Sender, new GroupMemberAddedEventArgs(e.Args));
             }
         }
 
@@ -230,7 +230,7 @@ namespace Vanguard.ISXVG
             EventHandler<GroupMemberBootedEventArgs> temp = GroupMemberBooted;
             if (temp != null)
             {
-                temp(Sender, (GroupMemberBootedEventArgs) e);
+                temp(Sender, new GroupMemberBootedEventArgs(e.Args));
             }
         }
 
@@ -239,7 +239,7 @@ namespace Vanguard.ISXVG
             EventHandler<GroupMemberDeathEventArgs> temp = GroupMemberDeath;
             if (temp != null)
             {
-                temp(Sender, (GroupMemberDeathEventArgs) e);
+                temp(Sender, new GroupMemberDeathEventArgs(e.Args));
             }
         }
 
@@ -257,7 +257,7 @@ namespace Vanguard.ISXVG
             EventHandler<CraftingStepCompleteEventArgs> temp = CraftingStepComplete;
             if (temp != null)
             {
-                temp(Sender, (CraftingStepCompleteEventArgs) e);
+                temp(Sender, new CraftingStepCompleteEventArgs(e.Args));
             }
         }
 
@@ -266,7 +266,7 @@ namespace Vanguard.ISXVG
             EventHandler<CraftingAlertEventArgs> temp = CraftingAlert;
             if (temp != null)
             {
-                temp(Sender, (CraftingAlertEventArgs) e);
+                temp(Sender, new CraftingAlertEventArgs(e.Args));
             }
         }
 
@@ -275,7 +275,7 @@ namespace Vanguard.ISXVG
             EventHandler<ChangeChunkEventArgs> temp = ChangeChunk;
             if (temp != null)
             {
-                temp(Sender, (ChangeChunkEventArgs) e);
+                temp(Sender, new ChangeChunkEventArgs(e.Args));
             }
         }
 
@@ -311,7 +311,7 @@ namespace Vanguard.ISXVG
             EventHandler<PawnSpawnedEventArgs> temp = PawnSpawned;
             if (temp != null)
             {
-                temp(Sender, (PawnSpawnedEventArgs) e);
+                temp(Sender, new PawnSpawnedEventArgs(e.Args));
             }
         }
 
@@ -320,7 +320,7 @@ namespace Vanguard.ISXVG
             EventHandler<PawnDespawnedEventArgs> temp = PawnDespawned;
             if (temp != null)
             {
-                temp(Sender, (PawnDespawnedEventArgs) e);
+                temp(Sender, new PawnDespawnedEventArgs(e.Args));
             }
         }
 
@@ -329,7 +329,7 @@ namespace Vanguard.ISXVG
             EventHandler<IncomingTextEventArgs> temp = IncomingText;
             if (temp != null)
             {
-                temp(Sender, (IncomingTextEventArgs) e);
+                temp(Sender, new IncomingTextEventArgs(e.Args));
             }
         }
 
@@ -338,7 +338,7 @@ namespace Vanguard.ISXVG
             EventHandler<WeightUpdateEventArgs> temp = WeightUpdate;
             if (temp != null)
             {
-                temp(Sender, (WeightUpdateEventArgs) e);
+                temp(Sender, new WeightUpdateEventArgs(e.Args));
             }
         }
 
@@ -347,7 +347,7 @@ namespace Vanguard.ISXVG
             EventHandler<AddInventoryItemEventArgs> temp = AddInventoryItem;
             if (temp != null)
             {
-                temp(Sender, (AddInventoryItemEventArgs) e);
+                temp(Sender, new AddInventoryItemEventArgs(e.Args));
             }
         }
 
@@ -356,7 +356,7 @@ namespace Vanguard.ISXVG
             EventHandler<CoinUpdateEventArgs> temp = CoinUpdate;
             if (temp != null)
             {
-                temp(Sender, (CoinUpdateEventArgs) e);
+                temp(Sender, new CoinUpdateEventArgs(e.Args));
             }
         }
 
@@ -365,7 +365,7 @@ namespace Vanguard.ISXVG
             EventHandler<StackCountChangeEventArgs> temp = ItemStackCountChange;
             if (temp != null)
             {
-                temp(Sender, (StackCountChangeEventArgs) e);
+                temp(Sender, new StackCountChangeEventArgs(e.Args));
             }
         }
 
@@ -374,7 +374,7 @@ namespace Vanguard.ISXVG
             EventHandler<CanUseUpdatedEventArgs> temp = ItemCanUseUpdated;
             if (temp != null)
             {
-                temp(Sender, (CanUseUpdatedEventArgs) e);
+                temp(Sender, new CanUseUpdatedEventArgs(e.Args));
             }
         }
 
@@ -383,7 +383,7 @@ namespace Vanguard.ISXVG
             EventHandler<IncomingCombatTextEventArgs> temp = IncomingCombatText;
             if (temp != null)
             {
-                temp(Sender, (IncomingCombatTextEventArgs) e);
+                temp(Sender, new IncomingCombatTextEventArgs(e.Args));
             }
         }
 
@@ -392,7 +392,7 @@ namespace Vanguard.ISXVG
             EventHandler<HitObstactleEventArgs> temp = HitObstacle;
             if (temp != null)
             {
-                temp(Sender, (HitObstactleEventArgs) e);
+                temp(Sender, new HitObstactleEventArgs(e.Args));
             }
         }
 
@@ -401,7 +401,7 @@ namespace Vanguard.ISXVG
             EventHandler<TouchPawnEventArgs> temp = TouchPawn;
             if (temp != null)
             {
-                temp(Sender, (TouchPawnEventArgs) e);
+                temp(Sender, new TouchPawnEventArgs(e.Args));
             }
         }
 
@@ -410,7 +410,7 @@ namespace Vanguard.ISXVG
             EventHandler<PawnStatusChangedEventArgs> temp = PawnStatusChange;
             if (temp != null)
             {
-                temp(Sender, (PawnStatusChangedEventArgs) e);
+                temp(Sender, new PawnStatusChangedEventArgs(e.Args));
             }
         }
 
@@ -419,7 +419,7 @@ namespace Vanguard.ISXVG
             EventHandler<PawnIDChangedEventArgs> temp = PawnIDChange;
             if (temp != null)
             {
-                temp(Sender, (PawnIDChangedEventArgs) e);
+                temp(Sender, new PawnIDChangedEventArgs(e.Args));
             }
         }
 
@@ -500,7 +500,7 @@ namespace Vanguard.ISXVG
             EventHandler<SentTradeInvitationEventArgs> temp = SentTradeInvitationAccepted;
             if (temp != null)
             {
-                temp(Sender, (SentTradeInvitationEventArgs) e);
+                temp(Sender, new SentTradeInvitationEventArgs(e.Args));
             }
         }
 
@@ -509,7 +509,7 @@ namespace Vanguard.ISXVG
             EventHandler<ReceivedTradeInvitationEventArgs> temp = RecievedTradeInvintation;
             if (temp != null)
             {
-                temp(Sender, (ReceivedTradeInvitationEventArgs) e);
+                temp(Sender, new ReceivedTradeInvitationEventArgs(e.Args));
             }
         }
 
@@ -572,7 +572,7 @@ namespace Vanguard.ISXVG
             EventHandler<AlertTextEventArgs> temp = AlertText;
             if (temp != null)
             {
-                temp(Sender, (AlertTextEventArgs) e);
+                temp(Sender, new AlertTextEventArgs(e.Args));
             }
         }
 

@@ -42,6 +42,7 @@ Events/Vanguard[!!-~]Event[!!-~]Args.cs -text
 /ParlayCard.cs -text
 /ParlayDeck.cs -text
 /Pawn.cs -text
+/PawnList.cs -text
 /Pet.cs -text
 /PetAbility.cs -text
 /PoI.cs -text

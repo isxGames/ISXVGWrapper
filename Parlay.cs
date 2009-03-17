@@ -2,6 +2,8 @@ using LavishScriptAPI;
 
 namespace Vanguard.ISXVG
 {
+    ///<summary>
+    ///</summary>
     public class Parlay : LavishScriptObject
     {
         /// <summary>
