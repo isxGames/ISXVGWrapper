@@ -64,7 +64,11 @@ namespace Vanguard.ISXVG
             // Especially since we have the params string[] override above. :\
             // If you want to remove this, just remove it. It is interchangeable with the above
             // override anyway.
-            return Pawn(Arg);
+
+            // Ok, so using the params string[] Args method causes shit to crash.
+            // No idea why.
+            LavishScriptPersistentObject Obj = LavishScript.Objects.GetPersistentObject("Pawn", Arg);
+            return new Pawn(Obj);
         }
 
         /// <summary>

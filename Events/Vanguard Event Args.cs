@@ -19,7 +19,7 @@ namespace Vanguard.ISXVG.Events
 
         /// <summary>
         /// Gets the name of the item.
-        /// </summary>
+        /// </summary>Al
         /// <value>The name of the item.</value>
         public string ItemName { get { return Args[0]; } }
 
@@ -196,7 +196,6 @@ namespace Vanguard.ISXVG.Events
         /// </summary>
         /// <param name="args"></param>
         internal HitObstactleEventArgs(params string[] args) : base(args) {}
-
         public string ObstacleActorName { get { return Args[0]; } }
         public float X { get { return float.Parse(Args[1]); } }
         public float Y { get { return float.Parse(Args[2]); } }
@@ -406,16 +405,7 @@ namespace Vanguard.ISXVG.Events
 
     #region Group Related
 
-    public class GroupMemberAddedEventArgs : LSEventArgs
-    {
-        /// <summary>
-        ///             Construct an LSEventArgs object with the given args
-        /// </summary>
-        /// <param name="args"></param>
-        internal GroupMemberAddedEventArgs(params string[] args) : base(args) {}
-
-        public string MemberName { get { return Args[0]; } }
-    }
+    public class GroupMemberAddedEventArgs : LSEventArgs { internal GroupMemberAddedEventArgs(params string[] args) : base(args) {}  public string MemberName { get { return Args[0]; } } }
 
     public class GroupMemberBootedEventArgs : GroupMemberAddedEventArgs
     {
