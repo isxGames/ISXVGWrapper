@@ -60,10 +60,8 @@ namespace Vanguard.ISXVG
         /// <returns></returns>
         public Pawn Pawn(string Arg)
         {
-            // Do we really need this anymore? It's fairly useless.
-            // Especially since we have the params string[] override above. :\
-            // If you want to remove this, just remove it. It is interchangeable with the above
-            // override anyway.
+            // The line below was causing the crash.
+            // return Pawn(Arg);
 
             // Ok, so using the params string[] Args method causes shit to crash.
             // No idea why.

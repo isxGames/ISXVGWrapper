@@ -1,4 +1,5 @@
 using System;
+using System.Collections.Generic;
 using LavishScriptAPI;
 using Vanguard.ISXVG.Events;
 
@@ -12,7 +13,7 @@ namespace Vanguard.ISXVG
         #region .Net Events
 
         public event EventHandler<LSEventArgs> ParlayBegin;
-        public event EventHandler<ParlayDialogEventArgs> ParlayDialog;
+        public event EventHandler<LSEventArgs> ParlayDialog;
         public event EventHandler<LSEventArgs> ParlayUpdate;
         public event EventHandler<LSEventArgs> ParlayOppTurnBegin;
         public event EventHandler<LSEventArgs> ParlayOppTurnEnd;
@@ -27,29 +28,28 @@ namespace Vanguard.ISXVG
         public event EventHandler<LSEventArgs> GroupLootNotify;
         public event EventHandler<LSEventArgs> GroupLootRandomStarted;
         public event EventHandler<LSEventArgs> GroupLootRandomEnded;
-        public event EventHandler<GroupMemberAddedEventArgs> GroupMemberAdded;
-        public event EventHandler<GroupMemberBootedEventArgs> GroupMemberBooted;
-        public event EventHandler<GroupMemberDeathEventArgs> GroupMemberDeath;
+        public event EventHandler<LSEventArgs> GroupMemberAdded;
+        public event EventHandler<LSEventArgs> GroupMemberBooted;
+        public event EventHandler<LSEventArgs> GroupMemberDeath;
         public event EventHandler<LSEventArgs> GroupMemberCountChange;
-        public event EventHandler<CraftingStepCompleteEventArgs> CraftingStepComplete;
-        public event EventHandler<CraftingAlertEventArgs> CraftingAlert;
-        public event EventHandler<ChangeChunkEventArgs> ChangeChunk;
+        public event EventHandler<LSEventArgs> CraftingAlert;
+        public event EventHandler<LSEventArgs> ChangeChunk;
         public event EventHandler<LSEventArgs> StartSwimming;
         public event EventHandler<LSEventArgs> StopSwimming;
         public event EventHandler<LSEventArgs> ConnectionStateChange;
-        public event EventHandler<PawnSpawnedEventArgs> PawnSpawned;
-        public event EventHandler<PawnDespawnedEventArgs> PawnDespawned;
-        public event EventHandler<IncomingTextEventArgs> IncomingText;
-        public event EventHandler<WeightUpdateEventArgs> WeightUpdate;
-        public event EventHandler<AddInventoryItemEventArgs> AddInventoryItem;
-        public event EventHandler<CoinUpdateEventArgs> CoinUpdate;
-        public event EventHandler<StackCountChangeEventArgs> ItemStackCountChange;
-        public event EventHandler<CanUseUpdatedEventArgs> ItemCanUseUpdated;
-        public event EventHandler<IncomingCombatTextEventArgs> IncomingCombatText;
-        public event EventHandler<HitObstactleEventArgs> HitObstacle;
-        public event EventHandler<TouchPawnEventArgs> TouchPawn;
-        public event EventHandler<PawnStatusChangedEventArgs> PawnStatusChange;
-        public event EventHandler<PawnIDChangedEventArgs> PawnIDChange;
+        public event EventHandler<LSEventArgs> PawnSpawned;
+        public event EventHandler<LSEventArgs> PawnDespawned;
+        public event EventHandler<LSEventArgs> IncomingText;
+        public event EventHandler<LSEventArgs> WeightUpdate;
+        public event EventHandler<LSEventArgs> AddInventoryItem;
+        public event EventHandler<LSEventArgs> CoinUpdate;
+        public event EventHandler<LSEventArgs> ItemStackCountChange;
+        public event EventHandler<LSEventArgs> ItemCanUseUpdated;
+        public event EventHandler<LSEventArgs> IncomingCombatText;
+        public event EventHandler<LSEventArgs> HitObstacle;
+        public event EventHandler<LSEventArgs> TouchPawn;
+        public event EventHandler<LSEventArgs> PawnStatusChange;
+        public event EventHandler<LSEventArgs> PawnIDChange;
         public event EventHandler<LSEventArgs> TradeFinished;
         public event EventHandler<LSEventArgs> TradeAcceptanceCanceled;
         public event EventHandler<LSEventArgs> TradeOtherAcceptance;
@@ -58,15 +58,40 @@ namespace Vanguard.ISXVG
         public event EventHandler<LSEventArgs> TradeOtherItemRemoved;
         public event EventHandler<LSEventArgs> TradeOtherItemAdded;
         public event EventHandler<LSEventArgs> SentTradeInvitationDeclined;
-        public event EventHandler<SentTradeInvitationEventArgs> SentTradeInvitationAccepted;
-        public event EventHandler<ReceivedTradeInvitationEventArgs> RecievedTradeInvintation;
+        public event EventHandler<LSEventArgs> SentTradeInvitationAccepted;
+        public event EventHandler<LSEventArgs> RecievedTradeInvintation;
         public event EventHandler<LSEventArgs> ClickItemLink;
         public event EventHandler<LSEventArgs> MarketWindowOpen;
         public event EventHandler<LSEventArgs> MarketWindowClose;
         public event EventHandler<LSEventArgs> MarketSearchComplete;
         public event EventHandler<LSEventArgs> MarketPlaceItemSuccess;
         public event EventHandler<LSEventArgs> MarketRemoveItem;
-        public event EventHandler<AlertTextEventArgs> AlertText;
+        public event EventHandler<LSEventArgs> AlertText;
+        public event EventHandler<LSEventArgs> CraftingStepComplete;
+
+        public event EventHandler<AlertTextEventArgs> AlertTextNew;
+        public event EventHandler<GroupMemberAddedEventArgs> GroupMemberAddedNew;
+        public event EventHandler<GroupMemberBootedEventArgs> GroupMemberBootedNew;
+        public event EventHandler<GroupMemberDeathEventArgs> GroupMemberDeathNew;
+        public event EventHandler<CraftingStepCompleteEventArgs> CraftingStepCompleteNew;
+        public event EventHandler<CraftingAlertEventArgs> CraftingAlertNew;
+        public event EventHandler<ChangeChunkEventArgs> ChangeChunkNew;
+        public event EventHandler<PawnSpawnedEventArgs> PawnSpawnedNew;
+        public event EventHandler<PawnDespawnedEventArgs> PawnDespawnedNew;
+        public event EventHandler<ParlayDialogEventArgs> ParlayDialogNew;
+        public event EventHandler<IncomingTextEventArgs> IncomingTextNew;
+        public event EventHandler<WeightUpdateEventArgs> WeightUpdateNew;
+        public event EventHandler<AddInventoryItemEventArgs> AddInventoryItemNew;
+        public event EventHandler<CoinUpdateEventArgs> CoinUpdateNew;
+        public event EventHandler<StackCountChangeEventArgs> ItemStackCountChangeNew;
+        public event EventHandler<CanUseUpdatedEventArgs> ItemCanUseUpdatedNew;
+        public event EventHandler<IncomingCombatTextEventArgs> IncomingCombatTextNew;
+        public event EventHandler<HitObstactleEventArgs> HitObstacleNew;
+        public event EventHandler<TouchPawnEventArgs> TouchPawnNew;
+        public event EventHandler<PawnStatusChangedEventArgs> PawnStatusChangeNew;
+        public event EventHandler<PawnIDChangedEventArgs> PawnIDChangeNew;
+        public event EventHandler<SentTradeInvitationEventArgs> SentTradeInvitationAcceptedNew;
+        public event EventHandler<ReceivedTradeInvitationEventArgs> RecievedTradeInvintationNew;
 
         #endregion
 
@@ -83,7 +108,15 @@ namespace Vanguard.ISXVG
 
         protected virtual void OnParlayDialog(object Sender, LSEventArgs e)
         {
-            EventHandler<ParlayDialogEventArgs> temp = ParlayDialog;
+            EventHandler<LSEventArgs> temp = ParlayDialog;
+            if (temp != null)
+            {
+                temp(Sender, e);
+            }
+        }
+        protected virtual void OnParlayDialogNew(object Sender, LSEventArgs e)
+        {
+            EventHandler<ParlayDialogEventArgs> temp = ParlayDialogNew;
             if (temp != null)
             {
                 temp(Sender, new ParlayDialogEventArgs(e.Args));
@@ -218,7 +251,16 @@ namespace Vanguard.ISXVG
 
         protected virtual void OnGroupMemberAdded(object Sender, LSEventArgs e)
         {
-            EventHandler<GroupMemberAddedEventArgs> temp = GroupMemberAdded;
+            EventHandler<LSEventArgs> temp = GroupMemberAdded;
+            if (temp != null)
+            {
+                temp(Sender, e);
+            }
+        }
+
+        protected virtual void OnGroupMemberAddedNew(object Sender, LSEventArgs e)
+        {
+            EventHandler<GroupMemberAddedEventArgs> temp = GroupMemberAddedNew;
             if (temp != null)
             {
                 temp(Sender, new GroupMemberAddedEventArgs(e.Args));
@@ -227,7 +269,16 @@ namespace Vanguard.ISXVG
 
         protected virtual void OnGroupMemberBooted(object Sender, LSEventArgs e)
         {
-            EventHandler<GroupMemberBootedEventArgs> temp = GroupMemberBooted;
+            EventHandler<LSEventArgs> temp = GroupMemberBooted;
+            if (temp != null)
+            {
+                temp(Sender, e);
+            }
+        }
+
+        protected virtual void OnGroupMemberBootedNew(object Sender, LSEventArgs e)
+        {
+            EventHandler<GroupMemberBootedEventArgs> temp = GroupMemberBootedNew;
             if (temp != null)
             {
                 temp(Sender, new GroupMemberBootedEventArgs(e.Args));
@@ -236,7 +287,16 @@ namespace Vanguard.ISXVG
 
         protected virtual void OnGroupMemberDeath(object Sender, LSEventArgs e)
         {
-            EventHandler<GroupMemberDeathEventArgs> temp = GroupMemberDeath;
+            EventHandler<LSEventArgs> temp = GroupMemberDeath;
+            if (temp != null)
+            {
+                temp(Sender, e);
+            }
+        }
+
+        protected virtual void OnGroupMemberDeathNew(object Sender, LSEventArgs e)
+        {
+            EventHandler<GroupMemberDeathEventArgs> temp = GroupMemberDeathNew;
             if (temp != null)
             {
                 temp(Sender, new GroupMemberDeathEventArgs(e.Args));
@@ -254,7 +314,15 @@ namespace Vanguard.ISXVG
 
         protected virtual void OnCraftingStepComplete(object Sender, LSEventArgs e)
         {
-            EventHandler<CraftingStepCompleteEventArgs> temp = CraftingStepComplete;
+            EventHandler<LSEventArgs> temp = CraftingStepComplete;
+            if (temp != null)
+            {
+                temp(Sender,e);
+            }
+        }
+        protected virtual void OnCraftingStepCompleteNew(object Sender, LSEventArgs e)
+        {
+            EventHandler<CraftingStepCompleteEventArgs> temp = CraftingStepCompleteNew;
             if (temp != null)
             {
                 temp(Sender, new CraftingStepCompleteEventArgs(e.Args));
@@ -263,7 +331,15 @@ namespace Vanguard.ISXVG
 
         protected virtual void OnCraftingAlert(object Sender, LSEventArgs e)
         {
-            EventHandler<CraftingAlertEventArgs> temp = CraftingAlert;
+            EventHandler<LSEventArgs> temp = CraftingAlert;
+            if (temp != null)
+            {
+                temp(Sender, e);
+            }
+        }
+        protected virtual void OnCraftingAlertNew(object Sender, LSEventArgs e)
+        {
+            EventHandler<CraftingAlertEventArgs> temp = CraftingAlertNew;
             if (temp != null)
             {
                 temp(Sender, new CraftingAlertEventArgs(e.Args));
@@ -272,7 +348,15 @@ namespace Vanguard.ISXVG
 
         protected virtual void OnChangeChunk(object Sender, LSEventArgs e)
         {
-            EventHandler<ChangeChunkEventArgs> temp = ChangeChunk;
+            EventHandler<LSEventArgs> temp = ChangeChunk;
+            if (temp != null)
+            {
+                temp(Sender, e);
+            }
+        }
+        protected virtual void OnChangeChunkNew(object Sender, LSEventArgs e)
+        {
+            EventHandler<ChangeChunkEventArgs> temp = ChangeChunkNew;
             if (temp != null)
             {
                 temp(Sender, new ChangeChunkEventArgs(e.Args));
@@ -308,115 +392,232 @@ namespace Vanguard.ISXVG
 
         protected virtual void OnPawnSpawned(object Sender, LSEventArgs e)
         {
-            EventHandler<PawnSpawnedEventArgs> temp = PawnSpawned;
+            EventHandler<LSEventArgs> temp = PawnSpawned;
+            if (temp != null)
+            {
+                temp(Sender, e);
+            }
+        }
+
+        protected virtual void OnPawnDespawned(object Sender, LSEventArgs e)
+        {
+            EventHandler<LSEventArgs> temp = PawnDespawned;
+            if (temp != null)
+            {
+                temp(Sender, e);
+            }
+        }
+
+        protected virtual void OnIncomingText(object Sender, LSEventArgs e)
+        {
+            EventHandler<LSEventArgs> temp = IncomingText;
+            if (temp != null)
+            {
+                temp(Sender, e);
+            }
+        }
+
+        protected virtual void OnWeightUpdate(object Sender, LSEventArgs e)
+        {
+            EventHandler<LSEventArgs> temp = WeightUpdate;
+            if (temp != null)
+            {
+                temp(Sender, e);
+            }
+        }
+
+        protected virtual void OnAddInventoryItem(object Sender, LSEventArgs e)
+        {
+            EventHandler<LSEventArgs> temp = AddInventoryItem;
+            if (temp != null)
+            {
+                temp(Sender, e);
+            }
+        }
+
+        protected virtual void OnCoinUpdate(object Sender, LSEventArgs e)
+        {
+            EventHandler<LSEventArgs> temp = CoinUpdate;
+            if (temp != null)
+            {
+                temp(Sender, e);
+            }
+        }
+
+        protected virtual void OnItemStackCountChange(object Sender, LSEventArgs e)
+        {
+            EventHandler<LSEventArgs> temp = ItemStackCountChange;
+            if (temp != null)
+            {
+                temp(Sender, e);
+            }
+        }
+
+        protected virtual void OnItemCanUseUpdated(object Sender, LSEventArgs e)
+        {
+            EventHandler<LSEventArgs> temp = ItemCanUseUpdated;
+            if (temp != null)
+            {
+                temp(Sender, e);
+            }
+        }
+
+        protected virtual void OnIncomingCombatText(object Sender, LSEventArgs e)
+        {
+            EventHandler<LSEventArgs> temp = IncomingCombatText;
+            if (temp != null)
+            {
+                temp(Sender, e);
+            }
+        }
+
+        protected virtual void OnHitObstacle(object Sender, LSEventArgs e)
+        {
+            EventHandler<LSEventArgs> temp = HitObstacle;
+            if (temp != null)
+            {
+                temp(Sender, e);
+            }
+        }
+
+        protected virtual void OnTouchPawn(object Sender, LSEventArgs e)
+        {
+            EventHandler<LSEventArgs> temp = TouchPawn;
+            if (temp != null)
+            {
+                temp(Sender, e);
+            }
+        }
+
+        protected virtual void OnPawnStatusChange(object Sender, LSEventArgs e)
+        {
+            EventHandler<LSEventArgs> temp = PawnStatusChange;
+            if (temp != null)
+            {
+                temp(Sender, e);
+            }
+        }
+
+        protected virtual void OnPawnIDChange(object Sender, LSEventArgs e)
+        {
+            EventHandler<LSEventArgs> temp = PawnIDChange;
+            if (temp != null)
+            {
+                temp(Sender, e);
+            }
+        }
+
+        protected virtual void OnPawnSpawnedNew(object Sender, LSEventArgs e)
+        {
+            EventHandler<PawnSpawnedEventArgs> temp = PawnSpawnedNew;
             if (temp != null)
             {
                 temp(Sender, new PawnSpawnedEventArgs(e.Args));
             }
         }
 
-        protected virtual void OnPawnDespawned(object Sender, LSEventArgs e)
+        protected virtual void OnPawnDespawnedNew(object Sender, LSEventArgs e)
         {
-            EventHandler<PawnDespawnedEventArgs> temp = PawnDespawned;
+            EventHandler<PawnDespawnedEventArgs> temp = PawnDespawnedNew;
             if (temp != null)
             {
                 temp(Sender, new PawnDespawnedEventArgs(e.Args));
             }
         }
 
-        protected virtual void OnIncomingText(object Sender, LSEventArgs e)
+        protected virtual void OnIncomingTextNew(object Sender, LSEventArgs e)
         {
-            EventHandler<IncomingTextEventArgs> temp = IncomingText;
+            EventHandler<IncomingTextEventArgs> temp = IncomingTextNew;
             if (temp != null)
             {
                 temp(Sender, new IncomingTextEventArgs(e.Args));
             }
         }
 
-        protected virtual void OnWeightUpdate(object Sender, LSEventArgs e)
+        protected virtual void OnWeightUpdateNew(object Sender, LSEventArgs e)
         {
-            EventHandler<WeightUpdateEventArgs> temp = WeightUpdate;
+            EventHandler<WeightUpdateEventArgs> temp = WeightUpdateNew;
             if (temp != null)
             {
                 temp(Sender, new WeightUpdateEventArgs(e.Args));
             }
         }
 
-        protected virtual void OnAddInventoryItem(object Sender, LSEventArgs e)
+        protected virtual void OnAddInventoryItemNew(object Sender, LSEventArgs e)
         {
-            EventHandler<AddInventoryItemEventArgs> temp = AddInventoryItem;
+            EventHandler<AddInventoryItemEventArgs> temp = AddInventoryItemNew;
             if (temp != null)
             {
                 temp(Sender, new AddInventoryItemEventArgs(e.Args));
             }
         }
 
-        protected virtual void OnCoinUpdate(object Sender, LSEventArgs e)
+        protected virtual void OnCoinUpdateNew(object Sender, LSEventArgs e)
         {
-            EventHandler<CoinUpdateEventArgs> temp = CoinUpdate;
+            EventHandler<CoinUpdateEventArgs> temp = CoinUpdateNew;
             if (temp != null)
             {
                 temp(Sender, new CoinUpdateEventArgs(e.Args));
             }
         }
 
-        protected virtual void OnItemStackCountChange(object Sender, LSEventArgs e)
+        protected virtual void OnItemStackCountChangeNew(object Sender, LSEventArgs e)
         {
-            EventHandler<StackCountChangeEventArgs> temp = ItemStackCountChange;
+            EventHandler<StackCountChangeEventArgs> temp = ItemStackCountChangeNew;
             if (temp != null)
             {
                 temp(Sender, new StackCountChangeEventArgs(e.Args));
             }
         }
 
-        protected virtual void OnItemCanUseUpdated(object Sender, LSEventArgs e)
+        protected virtual void OnItemCanUseUpdatedNew(object Sender, LSEventArgs e)
         {
-            EventHandler<CanUseUpdatedEventArgs> temp = ItemCanUseUpdated;
+            EventHandler<CanUseUpdatedEventArgs> temp = ItemCanUseUpdatedNew;
             if (temp != null)
             {
                 temp(Sender, new CanUseUpdatedEventArgs(e.Args));
             }
         }
 
-        protected virtual void OnIncomingCombatText(object Sender, LSEventArgs e)
+        protected virtual void OnIncomingCombatTextNew(object Sender, LSEventArgs e)
         {
-            EventHandler<IncomingCombatTextEventArgs> temp = IncomingCombatText;
+            EventHandler<IncomingCombatTextEventArgs> temp = IncomingCombatTextNew;
             if (temp != null)
             {
                 temp(Sender, new IncomingCombatTextEventArgs(e.Args));
             }
         }
 
-        protected virtual void OnHitObstacle(object Sender, LSEventArgs e)
+        protected virtual void OnHitObstacleNew(object Sender, LSEventArgs e)
         {
-            EventHandler<HitObstactleEventArgs> temp = HitObstacle;
+            EventHandler<HitObstactleEventArgs> temp = HitObstacleNew;
             if (temp != null)
             {
                 temp(Sender, new HitObstactleEventArgs(e.Args));
             }
         }
 
-        protected virtual void OnTouchPawn(object Sender, LSEventArgs e)
+        protected virtual void OnTouchPawnNew(object Sender, LSEventArgs e)
         {
-            EventHandler<TouchPawnEventArgs> temp = TouchPawn;
+            EventHandler<TouchPawnEventArgs> temp = TouchPawnNew;
             if (temp != null)
             {
                 temp(Sender, new TouchPawnEventArgs(e.Args));
             }
         }
 
-        protected virtual void OnPawnStatusChange(object Sender, LSEventArgs e)
+        protected virtual void OnPawnStatusChangeNew(object Sender, LSEventArgs e)
         {
-            EventHandler<PawnStatusChangedEventArgs> temp = PawnStatusChange;
+            EventHandler<PawnStatusChangedEventArgs> temp = PawnStatusChangeNew;
             if (temp != null)
             {
                 temp(Sender, new PawnStatusChangedEventArgs(e.Args));
             }
         }
 
-        protected virtual void OnPawnIDChange(object Sender, LSEventArgs e)
+        protected virtual void OnPawnIDChangeNew(object Sender, LSEventArgs e)
         {
-            EventHandler<PawnIDChangedEventArgs> temp = PawnIDChange;
+            EventHandler<PawnIDChangedEventArgs> temp = PawnIDChangeNew;
             if (temp != null)
             {
                 temp(Sender, new PawnIDChangedEventArgs(e.Args));
@@ -497,16 +698,34 @@ namespace Vanguard.ISXVG
 
         protected virtual void OnSentTradeInvintationAccepted(object Sender, LSEventArgs e)
         {
-            EventHandler<SentTradeInvitationEventArgs> temp = SentTradeInvitationAccepted;
+            EventHandler<LSEventArgs> temp = SentTradeInvitationAccepted;
+            if (temp != null)
+            {
+                temp(Sender, e);
+            }
+        }
+
+        protected virtual void OnRecievedTradeInvintation(object Sender, LSEventArgs e)
+        {
+            EventHandler<LSEventArgs> temp = RecievedTradeInvintation;
+            if (temp != null)
+            {
+                temp(Sender, e);
+            }
+        }
+
+        protected virtual void OnSentTradeInvintationAcceptedNew(object Sender, LSEventArgs e)
+        {
+            EventHandler<SentTradeInvitationEventArgs> temp = SentTradeInvitationAcceptedNew;
             if (temp != null)
             {
                 temp(Sender, new SentTradeInvitationEventArgs(e.Args));
             }
         }
 
-        protected virtual void OnRecievedTradeInvintation(object Sender, LSEventArgs e)
+        protected virtual void OnRecievedTradeInvintationNew(object Sender, LSEventArgs e)
         {
-            EventHandler<ReceivedTradeInvitationEventArgs> temp = RecievedTradeInvintation;
+            EventHandler<ReceivedTradeInvitationEventArgs> temp = RecievedTradeInvintationNew;
             if (temp != null)
             {
                 temp(Sender, new ReceivedTradeInvitationEventArgs(e.Args));
@@ -567,12 +786,21 @@ namespace Vanguard.ISXVG
             }
         }
 
-        protected virtual void onAlertText(Object Sender, LSEventArgs e)
+        protected virtual void onAlertTextNew(Object Sender, LSEventArgs e)
         {
-            EventHandler<AlertTextEventArgs> temp = AlertText;
+            EventHandler<AlertTextEventArgs> temp = AlertTextNew;
             if (temp != null)
             {
                 temp(Sender, new AlertTextEventArgs(e.Args));
+            }
+        }
+
+        protected virtual void onAlertText(Object Sender, LSEventArgs e)
+        {
+            EventHandler<LSEventArgs> temp = AlertText;
+            if (temp != null)
+            {
+                temp(Sender, e);
             }
         }
 
@@ -638,10 +866,39 @@ namespace Vanguard.ISXVG
             Attach("VG_onMarketPlaceItemSuccess", onMarketPlaceItemSuccess);
             Attach("VG_onMarketRemoveItem", onMarketRemoveItem);
             Attach("VG_onAlertText", onAlertText);
+            Attach("VG_onPawnStatusChange", OnPawnStatusChange);
+
+
+
+            Attach("VG_onAlertText", onAlertTextNew);
+            Attach("VG_onParlayDialog", OnParlayDialogNew);
+            Attach("VG_onGroupMemberAdded", OnGroupMemberAddedNew);
+            Attach("VG_onGroupMemberBooted", OnGroupMemberBootedNew);
+            Attach("VG_onGroupMemberDeath", OnGroupMemberDeathNew);
+            Attach("VG_onCraftingStepComplete", OnCraftingStepCompleteNew);
+            Attach("VG_onCraftingAlert", OnCraftingAlertNew);
+            Attach("VG_onChangeChunk", OnChangeChunkNew);
+            Attach("VG_OnPawnSpawned", OnPawnSpawnedNew);
+            Attach("VG_OnPawnDespawned", OnPawnDespawnedNew);
+            Attach("VG_OnIncomingText", OnIncomingTextNew);
+            Attach("VG_onWeightUpdate", OnWeightUpdateNew);
+            Attach("VG_onAddInventoryItem", OnAddInventoryItemNew);
+            Attach("VG_onCoinUpdate", OnCoinUpdateNew);
+            Attach("VG_onItemStackCountChange", OnItemStackCountChangeNew);
+            Attach("VG_onItemCanUseUpdated", OnItemCanUseUpdatedNew);
+            Attach("VG_OnIncomingCombatText", OnIncomingCombatTextNew);
+            Attach("VG_onHitObstacle", OnHitObstacleNew);
+            Attach("VG_onTouchPawn", OnTouchPawnNew);
+            Attach("VG_onPawnIDChange", OnPawnIDChangeNew);
+            Attach("VG_onSentTradeInvintationAccepted", OnSentTradeInvintationAcceptedNew);
+            Attach("VG_onRecievedTradeInvintation", OnRecievedTradeInvintationNew);
+            Attach("VG_onPawnStatusChange", OnPawnStatusChangeNew);
         }
 
         ~VGEvent()
         {
+            #region Old Detach nuisance.
+            Detach("VG_onParlayDialog", OnParlayDialogNew);
             Detach("VG_onParlayBegin", OnParlayBegin);
             Detach("VG_onParlayDialog", OnParlayDialog);
             Detach("VG_onParlayUpdate", OnParlayUpdate);
@@ -698,7 +955,33 @@ namespace Vanguard.ISXVG
             Detach("VG_onMarketPlaceItemSuccess", onMarketPlaceItemSuccess);
             Detach("VG_onMarketRemoveItem", onMarketRemoveItem);
             Detach("VG_onAlertText", onAlertText);
+
+            Detach("VG_onAlertText", onAlertTextNew);
+            Detach("VG_onParlayDialog", OnParlayDialogNew);
+            Detach("VG_onGroupMemberAdded", OnGroupMemberAddedNew);
+            Detach("VG_onGroupMemberBooted", OnGroupMemberBootedNew);
+            Detach("VG_onGroupMemberDeath", OnGroupMemberDeathNew);
+            Detach("VG_onCraftingStepComplete", OnCraftingStepCompleteNew);
+            Detach("VG_onCraftingAlert", OnCraftingAlertNew);
+            Detach("VG_onChangeChunk", OnChangeChunkNew);
+            Detach("VG_OnPawnSpawned", OnPawnSpawnedNew);
+            Detach("VG_OnPawnDespawned", OnPawnDespawnedNew);
+            Detach("VG_OnIncomingText", OnIncomingTextNew);
+            Detach("VG_onWeightUpdate", OnWeightUpdateNew);
+            Detach("VG_onAddInventoryItem", OnAddInventoryItemNew);
+            Detach("VG_onCoinUpdate", OnCoinUpdateNew);
+            Detach("VG_onItemStackCountChange", OnItemStackCountChangeNew);
+            Detach("VG_onItemCanUseUpdated", OnItemCanUseUpdatedNew);
+            Detach("VG_OnIncomingCombatText", OnIncomingCombatTextNew);
+            Detach("VG_onHitObstacle", OnHitObstacleNew);
+            Detach("VG_onTouchPawn", OnTouchPawnNew);
+            Detach("VG_onPawnIDChange", OnPawnIDChangeNew);
+            Detach("VG_onSentTradeInvintationAccepted", OnSentTradeInvintationAcceptedNew);
+            Detach("VG_onRecievedTradeInvintation", OnRecievedTradeInvintationNew);
+            Detach("VG_onPawnStatusChange", OnPawnStatusChangeNew);
+            #endregion
         }
+
 
         #region Smaller footprint attach/detach methods
 

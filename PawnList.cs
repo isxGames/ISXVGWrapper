@@ -724,13 +724,6 @@ namespace Vanguard.ISXVG
                         Merchant = !not;
                     }
                         #endregion
-                        #region 'mypet'
-
-                    else if (toCheck.StartsWith("mypet"))
-                    {
-                        MyPet = !not;
-                    }
-                        #endregion
                         #region Radius checks
 
                     else if (toCheck.StartsWith("radius"))
