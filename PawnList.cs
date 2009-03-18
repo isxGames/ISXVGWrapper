@@ -887,16 +887,4 @@ namespace Vanguard.ISXVG
 
         #endregion
     }
-
-    public class TestPawnList
-    {
-        public void Foo()
-        {
-            PawnList plist = new PawnList(true, "-level 1-20", "-distance 20", "nottrainer", "notpet");
-            foreach (Pawn pawn in plist)
-            {
-                Console.WriteLine(pawn.Name);
-            }
-        }
-    }
 }
