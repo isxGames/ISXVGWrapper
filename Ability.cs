@@ -344,5 +344,13 @@ namespace Vanguard.ISXVG
         {
             return ExecuteMethod("Use");
         }
+
+        /// <summary>
+        /// </summary>
+        public string WeaknessCreate { get { return GetMember<string>("WeaknessCreate"); } }
+
+        /// <summary>
+        /// </summary>
+        public string WeaknessExploit { get { return GetMember<string>("WeaknessExploit"); } }
     }
 }

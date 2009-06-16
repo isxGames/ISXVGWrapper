@@ -96,5 +96,10 @@ namespace Vanguard.ISXVG
         {
             return ExecuteMethod("Complete");
         }
+
+        public bool GetRequestedItems()
+        {
+            return ExecuteMethod("GetRequestedItems");
+        }
     }
 }

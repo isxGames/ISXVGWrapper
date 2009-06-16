@@ -101,5 +101,10 @@ namespace Vanguard.ISXVG
         {
             return ExecuteMethod("End");
         }
+
+        public bool RepairAll()
+        {
+            return ExecuteMethod("RepairAll");
+        }
     }
 }

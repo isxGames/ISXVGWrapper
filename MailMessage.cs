@@ -44,12 +44,6 @@ namespace Vanguard.ISXVG
         public Item AttachedItem { get { return GetMember<Item>("AttachedItem"); } }
 
         /// <summary>
-        /// Gets the attached coin of this <see cref="MailMessage"/>.
-        /// </summary>
-        /// <value>The attached coin.</value>
-        public int AttachedCoin { get { return GetMember<int>("AttachedCoin"); } }
-
-        /// <summary>
         /// Gets the shipping fee of this <see cref="MailMessage"/>.
         /// </summary>
         /// <value>The shipping fee.</value>

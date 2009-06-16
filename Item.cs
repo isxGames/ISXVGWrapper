@@ -116,12 +116,6 @@ namespace Vanguard.ISXVG
         public string Type { get { return GetMember<string>("Type"); } }
 
         /// <summary>
-        /// Gets the rarity of this <see cref="Item"/>.
-        /// </summary>
-        /// <value>The rarity.</value>
-        public string Rarity { get { return GetMember<string>("Rarity"); } }
-
-        /// <summary>
         /// Gets the current equip slot of this <see cref="Item"/>.
         /// </summary>
         /// <value>The current equip slot.</value>
@@ -132,12 +126,6 @@ namespace Vanguard.ISXVG
         /// </summary>
         /// <value>The default equip slot.</value>
         public string DefaultEquipSlot { get { return GetMember<string>("DefaultEquipSlot"); } }
-
-        /// <summary>
-        /// Gets the weight of this <see cref="Item"/>.
-        /// </summary>
-        /// <value>The weight.</value>
-        public float Weight { get { return GetMember<float>("Weight"); } }
 
         /// <summary>
         /// Gets the num slots of this <see cref="Item"/>.
@@ -172,16 +160,16 @@ namespace Vanguard.ISXVG
         public string Keyword2 { get { return GetMember<string>("Keyword2"); } }
 
         /// <summary>
-        /// Gets the current DMG of this <see cref="Item"/>.
+        /// Gets the minimum DMG of this <see cref="Item"/>.
         /// </summary>
         /// <value>The current DMG.</value>
-        public int CurrentDmg { get { return GetMember<int>("CurrentDmg"); } }
+        public int MinDmg { get { return GetMember<int>("MinDmg"); } }
 
         /// <summary>
-        /// Gets the default DMG of this <see cref="Item"/>.
+        /// Gets the maximum DMG of this <see cref="Item"/>.
         /// </summary>
         /// <value>The default DMG.</value>
-        public int DefaultDmg { get { return GetMember<int>("DefaultDmg"); } }
+        public int MaxDmg { get { return GetMember<int>("MaxDmg"); } }
 
         /// <summary>
         /// Gets the speed of this <see cref="Item"/>.
@@ -247,6 +235,28 @@ namespace Vanguard.ISXVG
         /// This will produce a string similar to "452977:1902723122::0,0,1".  You can then use that with the vg command "/itemlinkrequest".  
         /// </summary>
         public string Link { get { return GetMember<string>("Link"); } }
+
+        /// <summary>
+        /// Is the item currently 'hotkeyed'
+        /// </summary>
+        public bool IsHotkeyed { get { return GetMember<bool>("IsHotkeyed"); } } 
+
+        /// <summary>
+        /// how long it takes for the item to refresh...in seconds
+        /// </summary>
+        public float RefreshTime { get { return GetMember<float>("RefreshTime"); } } 
+
+        /// <summary>
+        /// time remaining until refreshed...in seconds
+        /// </summary>
+        public float TimeUntilRefreshed { get { return GetMember<float>("TimeUntilRefreshed"); } }
+
+        /// <summary>
+        /// will be FALSE if "TimeUntilRefreshed" (exists)
+        /// </summary>
+        public bool IsReady { get { return GetMember<bool>("IsReady"); } }
+
+        public int RequiredLevel { get { return GetMember<int>("RequiredLevel"); } } 
 
         /// <summary>
         /// Gets this <see cref="Item"/> as a link.
@@ -497,6 +507,33 @@ namespace Vanguard.ISXVG
         public bool AddToConsignment()
         {
             return ExecuteMethod("AddToConsignment");
+        }
+
+        /// <summary>
+        /// Right-Click on the Item
+        /// </summary>
+        /// <returns></returns>
+        public bool RightClick()
+        {
+            return ExecuteMethod("RightClick");
+        }
+
+        /// <summary>
+        /// Deconstruct the item to 'dust' (Note:  To use this method you will first need to use your deconstruction kit.)
+        /// </summary>
+        /// <returns></returns>
+        public bool DeconstructToDust()
+        {
+            return ExecuteMethod("DeconstructToDust");
+        }
+
+        /// <summary>
+        /// Deconstruct the item to a 'resource' (Note:  To use this method you will first need to use your deconstruction kit.)
+        /// </summary>
+        /// <returns></returns>
+        public bool DeconstructToResource()
+        {
+            return ExecuteMethod("DeconstructToResource");
         }
     }
 }

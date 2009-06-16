@@ -40,7 +40,6 @@ namespace Vanguard.ISXVG
         public event EventHandler<LSEventArgs> PawnSpawned;
         public event EventHandler<LSEventArgs> PawnDespawned;
         public event EventHandler<LSEventArgs> IncomingText;
-        public event EventHandler<LSEventArgs> WeightUpdate;
         public event EventHandler<LSEventArgs> AddInventoryItem;
         public event EventHandler<LSEventArgs> CoinUpdate;
         public event EventHandler<LSEventArgs> ItemStackCountChange;
@@ -67,6 +66,7 @@ namespace Vanguard.ISXVG
         public event EventHandler<LSEventArgs> MarketPlaceItemSuccess;
         public event EventHandler<LSEventArgs> MarketRemoveItem;
         public event EventHandler<LSEventArgs> AlertText;
+        public event EventHandler<LSEventArgs> CombatReaction;
         public event EventHandler<LSEventArgs> CraftingStepComplete;
 
         public event EventHandler<AlertTextEventArgs> AlertTextNew;
@@ -80,7 +80,6 @@ namespace Vanguard.ISXVG
         public event EventHandler<PawnDespawnedEventArgs> PawnDespawnedNew;
         public event EventHandler<ParlayDialogEventArgs> ParlayDialogNew;
         public event EventHandler<IncomingTextEventArgs> IncomingTextNew;
-        public event EventHandler<WeightUpdateEventArgs> WeightUpdateNew;
         public event EventHandler<AddInventoryItemEventArgs> AddInventoryItemNew;
         public event EventHandler<CoinUpdateEventArgs> CoinUpdateNew;
         public event EventHandler<StackCountChangeEventArgs> ItemStackCountChangeNew;
@@ -417,15 +416,6 @@ namespace Vanguard.ISXVG
             }
         }
 
-        protected virtual void OnWeightUpdate(object Sender, LSEventArgs e)
-        {
-            EventHandler<LSEventArgs> temp = WeightUpdate;
-            if (temp != null)
-            {
-                temp(Sender, e);
-            }
-        }
-
         protected virtual void OnAddInventoryItem(object Sender, LSEventArgs e)
         {
             EventHandler<LSEventArgs> temp = AddInventoryItem;
@@ -531,15 +521,6 @@ namespace Vanguard.ISXVG
             if (temp != null)
             {
                 temp(Sender, new IncomingTextEventArgs(e.Args));
-            }
-        }
-
-        protected virtual void OnWeightUpdateNew(object Sender, LSEventArgs e)
-        {
-            EventHandler<WeightUpdateEventArgs> temp = WeightUpdateNew;
-            if (temp != null)
-            {
-                temp(Sender, new WeightUpdateEventArgs(e.Args));
             }
         }
 
@@ -804,6 +785,15 @@ namespace Vanguard.ISXVG
             }
         }
 
+        protected virtual void onCombatReaction(Object Sender, LSEventArgs e)
+        {
+            EventHandler<LSEventArgs> temp = CombatReaction;
+            if (temp != null)
+            {
+                temp(Sender, e);
+            }
+        }
+
         #endregion
 
         /// <summary>
@@ -840,7 +830,6 @@ namespace Vanguard.ISXVG
             Attach("VG_OnPawnSpawned", OnPawnSpawned);
             Attach("VG_OnPawnDespawned", OnPawnDespawned);
             Attach("VG_OnIncomingText", OnIncomingText);
-            Attach("VG_onWeightUpdate", OnWeightUpdate);
             Attach("VG_onAddInventoryItem", OnAddInventoryItem);
             Attach("VG_onCoinUpdate", OnCoinUpdate);
             Attach("VG_onItemStackCountChange", OnItemStackCountChange);
@@ -867,6 +856,7 @@ namespace Vanguard.ISXVG
             Attach("VG_onMarketRemoveItem", onMarketRemoveItem);
             Attach("VG_onAlertText", onAlertText);
             Attach("VG_onPawnStatusChange", OnPawnStatusChange);
+            Attach("VG_onCombatReaction", onCombatReaction);
 
 
 
@@ -881,7 +871,6 @@ namespace Vanguard.ISXVG
             Attach("VG_OnPawnSpawned", OnPawnSpawnedNew);
             Attach("VG_OnPawnDespawned", OnPawnDespawnedNew);
             Attach("VG_OnIncomingText", OnIncomingTextNew);
-            Attach("VG_onWeightUpdate", OnWeightUpdateNew);
             Attach("VG_onAddInventoryItem", OnAddInventoryItemNew);
             Attach("VG_onCoinUpdate", OnCoinUpdateNew);
             Attach("VG_onItemStackCountChange", OnItemStackCountChangeNew);
@@ -928,7 +917,6 @@ namespace Vanguard.ISXVG
             Detach("VG_OnPawnSpawned", OnPawnSpawned);
             Detach("VG_OnPawnDespawned", OnPawnDespawned);
             Detach("VG_OnIncomingText", OnIncomingText);
-            Detach("VG_onWeightUpdate", OnWeightUpdate);
             Detach("VG_onAddInventoryItem", OnAddInventoryItem);
             Detach("VG_onCoinUpdate", OnCoinUpdate);
             Detach("VG_onItemStackCountChange", OnItemStackCountChange);
@@ -967,7 +955,6 @@ namespace Vanguard.ISXVG
             Detach("VG_OnPawnSpawned", OnPawnSpawnedNew);
             Detach("VG_OnPawnDespawned", OnPawnDespawnedNew);
             Detach("VG_OnIncomingText", OnIncomingTextNew);
-            Detach("VG_onWeightUpdate", OnWeightUpdateNew);
             Detach("VG_onAddInventoryItem", OnAddInventoryItemNew);
             Detach("VG_onCoinUpdate", OnCoinUpdateNew);
             Detach("VG_onItemStackCountChange", OnItemStackCountChangeNew);

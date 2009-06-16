@@ -254,12 +254,6 @@ namespace Vanguard.ISXVG
         public bool IsDrowning { get { return GetMember<bool>("IsDrowning"); } }
 
         /// <summary>
-        /// Gets a value indicating whether [auto attack on].
-        /// </summary>
-        /// <value><c>true</c> if [auto attack on]; otherwise, <c>false</c>.</value>
-        public bool AutoAttackOn { get { return GetMember<bool>("AutoAttackOn"); } }
-
-        /// <summary>
         /// Gets a value indicating whether this <seealso cref="Character"/> is camping.
         /// </summary>
         /// <value>
@@ -832,6 +826,38 @@ namespace Vanguard.ISXVG
             LavishScriptObject Obj = GetMember("Maintained", MaintainedName);
             return new Effect(Obj);
         }
+
+        /// <summary>
+        /// The number of weaknesses on a target
+        /// </summary>
+        /// <returns>int</returns>
+        public int TargetWeakness()
+        {
+            return GetMember<int>("TargetWeakness");
+        }
+
+        /// <summary>
+        /// The target's weakness
+        /// </summary>
+        /// <param name="TargetDebuffNum">The target weakness num.</param>
+        /// <returns></returns>
+        public TargetEffect TargetWeakness(int TargetWeaknessNum)
+        {
+            LavishScriptObject Obj = GetMember("TargetWeakness", TargetWeaknessNum.ToString());
+            return new TargetEffect(Obj);
+        }
+
+        /// <summary>
+        /// The target's weakness
+        /// </summary>
+        /// <param name="TargetDebuffName">Name of the weakness name.</param>
+        /// <returns></returns>
+        public TargetEffect TargetWeakness(string TargetWeaknessName)
+        {
+            LavishScriptObject Obj = GetMember("TargetWeakness", TargetWeaknessName);
+            return new TargetEffect(Obj);
+        }
+
 
         /// <summary>
         /// Targets the debuff.

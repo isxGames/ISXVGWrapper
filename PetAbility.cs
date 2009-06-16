@@ -58,6 +58,19 @@ namespace Vanguard.ISXVG
         /// <value>The type.</value>
         public int Type { get { return GetMember<int>("Type"); } }
 
+
+        /// <summary>
+        /// Gets this as an Ability datatype.
+        /// </summary>
+        public Ability ToAbility
+        {
+            get
+            {
+                LavishScriptObject Obj = GetMember("ToAbility");
+                return new Ability(Obj);
+            }
+        }
+
         /// <summary>
         /// Uses this <see cref="PetAbility"/>.
         /// </summary>

@@ -22,14 +22,6 @@ namespace Vanguard.ISXVG
             : base(LavishScript.Objects.GetObject("VGUIElement", Args)) {}
 
         /// <summary>
-        /// Gets a value indicating whether this <seealso cref="VGUIElement"/> is drawn.
-        /// </summary>
-        /// <value>
-        /// 	<c>true</c> if this <seealso cref="VGUIElement"/> is drawn; otherwise, <c>false</c>.
-        /// </value>
-        public bool IsDrawn { get { return GetMember<bool>("IsDrawn"); } }
-
-        /// <summary>
         /// Gets a value indicating whether this <seealso cref="VGUIElement"/> is visible.
         /// </summary>
         /// <value>
