@@ -5,13 +5,13 @@ namespace Vanguard.ISXVG
     /// <summary>
     /// 
     /// </summary>
-    public class Radar : LavishScriptPersistentObject
+    public class Radar : LavishScriptObject
     {
         /// <summary>
         /// Initializes a new instance of the <see cref="Radar"/> class.
         /// </summary>
         /// <param name="Obj">The obj.</param>
-        public Radar(LavishScriptPersistentObject Obj)
+        public Radar(LavishScriptObject Obj)
             : base(Obj) {}
 
         /// <summary>
@@ -19,20 +19,20 @@ namespace Vanguard.ISXVG
         /// </summary>
         /// <param name="Args">The args.</param>
         public Radar(params string[] Args)
-            : base(LavishScript.Objects.GetPersistentObject("Radar", Args)) {}
+            : base(LavishScript.Objects.GetObject("Radar", Args)) {}
 
         /// <summary>
         /// Initializes a new instance of the <see cref="Radar"/> class.
         /// </summary>
         /// <param name="Index">The index.</param>
         public Radar(int Index)
-            : base(LavishScript.Objects.GetPersistentObject("Radar", Index.ToString())) {}
+            : base(LavishScript.Objects.GetObject("Radar", Index.ToString())) {}
 
         /// <summary>
         /// Initializes a new instance of the <see cref="Radar"/> class.
         /// </summary>
         public Radar()
-            : base(LavishScript.Objects.GetPersistentObject("Radar", "1")) {}
+            : base(LavishScript.Objects.GetObject("Radar", "1")) {}
 
         /// <summary>
         /// Gets a value indicating whether [showing me].

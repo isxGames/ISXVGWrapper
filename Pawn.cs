@@ -101,19 +101,19 @@ namespace Vanguard.ISXVG
     /// <summary>
     /// This DataType includes all of the data available to ISXVG that is related to entities within the world. 
     /// </summary>
-    public class Pawn : LavishScriptPersistentObject
+    public class Pawn : LavishScriptObject
     {
         /// <summary>
         /// Initializes a new instance of the <see cref="Pawn"/> class.
         /// </summary>
         /// <param name="Args">The args.</param>
-        public Pawn(params string[] Args) : base(LavishScript.Objects.GetPersistentObject("Pawn", Args)) {}
+        public Pawn(params string[] Args) : base(LavishScript.Objects.GetObject("Pawn", Args)) {}
 
         /// <summary>
         /// Initializes a new instance of the <see cref="Pawn"/> class.
         /// </summary>
         /// <param name="Copy"></param>
-        public Pawn(LavishScriptPersistentObject Copy) : base(Copy) {}
+        public Pawn(LavishScriptObject Copy) : base(Copy) {}
 
         /// <summary>
         /// Initializes a new instance of the <see cref="Pawn"/> class.
@@ -584,7 +584,7 @@ namespace Vanguard.ISXVG
         {
             get
             {
-                LavishScriptPersistentObject Obj = GetPersistentMember("Owner");
+                LavishScriptObject Obj = GetMember("Owner");
                 return new Pawn(Obj);
             }
         }

@@ -34,18 +34,18 @@ namespace Vanguard.ISXVG
         Unset
     }
 
-    public class ISXVG : LavishScriptPersistentObject
+    public class ISXVG : LavishScriptObject
     {
         /// <summary>
         /// Initializes a new instance of the <see cref="ISXVG"/> class.
         /// </summary>
         /// <param name="Copy"></param>
-        public ISXVG(LavishScriptPersistentObject Copy) : base(Copy) {}
+        public ISXVG(LavishScriptObject Copy) : base(Copy) {}
 
         /// <summary>
         /// Initializes a new instance of the <see cref="ISXVG"/> class.
         /// </summary>
-        public ISXVG() : base(LavishScript.Objects.GetPersistentObject("ISXVG")) {}
+        public ISXVG() : base(LavishScript.Objects.GetObject("ISXVG")) {}
 
         /// <summary>
         /// Gets the number of radars of this <see cref="ISXVG"/>.

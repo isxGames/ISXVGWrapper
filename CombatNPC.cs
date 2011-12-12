@@ -57,7 +57,7 @@ namespace Vanguard.ISXVG
         /// Gets the <see cref="Pawn"/> object representing this <see cref="CombatNPC"/>
         /// </summary>
         /// <value>To pawn.</value>
-        public Pawn ToPawn { get { return new Pawn(GetPersistentMember("ToPawn")); } }
+        public Pawn ToPawn { get { return new Pawn(GetMember("ToPawn")); } }
 
         /// <summary>
         /// Gets the target of this <see cref="CombatNPC"/>.

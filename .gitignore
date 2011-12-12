@@ -7,4 +7,7 @@ bin/Debug/ISXVGWrapper.dll
 bin/Debug/ISXVGWrapper.pdb
 bin/Debug/Lavish.InnerSpace.dll
 bin/Debug/Lavish.InnerSpace.xml
+bin/Release/ISXVGWrapper.XML
+bin/Release/ISXVGWrapper.dll
+bin/Release/ISXVGWrapper.pdb
 /obj

@@ -28,6 +28,6 @@ namespace Vanguard.ISXVG
         /// Gets the NPC talking with of this <see cref="Dialog"/>.
         /// </summary>
         /// <value>The NPC talking with.</value>
-        public Pawn NPCTalkingWith { get { return new Pawn(GetPersistentMember("NPCTalkingWith")); } }
+        public Pawn NPCTalkingWith { get { return new Pawn(GetMember("NPCTalkingWith")); } }
     }
 }

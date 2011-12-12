@@ -38,7 +38,7 @@ namespace Vanguard.ISXVG
         /// <returns></returns>
         public Character Me()
         {
-            LavishScriptPersistentObject Obj = LavishScript.Objects.GetPersistentObject("Me");
+            LavishScriptObject Obj = LavishScript.Objects.GetObject("Me");
             return new Character(Obj);
         }
 
@@ -49,7 +49,7 @@ namespace Vanguard.ISXVG
         /// <returns></returns>
         public Pawn Pawn(params string[] Args)
         {
-            LavishScriptPersistentObject Obj = LavishScript.Objects.GetPersistentObject("Pawn", Args);
+            LavishScriptObject Obj = LavishScript.Objects.GetObject("Pawn", Args);
             return new Pawn(Obj);
         }
 
@@ -65,7 +65,7 @@ namespace Vanguard.ISXVG
 
             // Ok, so using the params string[] Args method causes shit to crash.
             // No idea why.
-            LavishScriptPersistentObject Obj = LavishScript.Objects.GetPersistentObject("Pawn", Arg);
+            LavishScriptObject Obj = LavishScript.Objects.GetObject("Pawn", Arg);
             return new Pawn(Obj);
         }
 
@@ -119,7 +119,7 @@ namespace Vanguard.ISXVG
         /// <returns></returns>
         public Radar Radar(int Index)
         {
-            LavishScriptPersistentObject Obj = LavishScript.Objects.GetPersistentObject("Radar", Index.ToString());
+            LavishScriptObject Obj = LavishScript.Objects.GetObject("Radar", Index.ToString());
             return new Radar(Obj);
         }
 
@@ -130,7 +130,7 @@ namespace Vanguard.ISXVG
         /// <returns></returns>
         public Radar Radar(string Name)
         {
-            LavishScriptPersistentObject Obj = LavishScript.Objects.GetPersistentObject("Radar", Name);
+            LavishScriptObject Obj = LavishScript.Objects.GetObject("Radar", Name);
             return new Radar(Obj);
         }
 
@@ -140,7 +140,7 @@ namespace Vanguard.ISXVG
         /// <returns></returns>
         public Radar Radar()
         {
-            LavishScriptPersistentObject Obj = LavishScript.Objects.GetPersistentObject("Radar");
+            LavishScriptObject Obj = LavishScript.Objects.GetObject("Radar");
             return new Radar(Obj);
         }
 
@@ -179,7 +179,7 @@ namespace Vanguard.ISXVG
         /// <returns></returns>
         public ISXVG ISXVG()
         {
-            LavishScriptPersistentObject Obj = LavishScript.Objects.GetPersistentObject("ISXVG");
+            LavishScriptObject Obj = LavishScript.Objects.GetObject("ISXVG");
             return new ISXVG(Obj);
         }
 
@@ -199,7 +199,7 @@ namespace Vanguard.ISXVG
         /// <returns></returns>
         public VG VG()
         {
-            LavishScriptPersistentObject Obj = LavishScript.Objects.GetPersistentObject("VG");
+            LavishScriptObject Obj = LavishScript.Objects.GetObject("VG");
             return new VG(Obj);
         }
 

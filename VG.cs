@@ -4,20 +4,20 @@ using LavishScriptAPI;
 
 namespace Vanguard.ISXVG
 {
-    public class VG : LavishScriptPersistentObject
+    public class VG : LavishScriptObject
     {
         /// <summary>
         /// Initializes a new instance of the <see cref="VG"/> class.
         /// </summary>
         public VG()
             :
-                base(LavishScript.Objects.GetPersistentObject("VG")) {}
+                base(LavishScript.Objects.GetObject("VG")) {}
 
         /// <summary>
         /// Initializes a new instance of the <see cref="VG"/> class.
         /// </summary>
         /// <param name="Copy"></param>
-        public VG(LavishScriptPersistentObject Copy)
+        public VG(LavishScriptObject Copy)
             :
                 base(Copy) {}
 
