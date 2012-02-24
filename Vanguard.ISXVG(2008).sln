@@ -1,6 +1,6 @@
 ﻿
-Microsoft Visual Studio Solution File, Format Version 10.00
-# Visual Studio 2008
+Microsoft Visual Studio Solution File, Format Version 11.00
+# Visual Studio 2010
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Vanguard.ISXVG(2008)", "Vanguard.ISXVG(2008).csproj", "{FAAFB01C-C8F3-4AD7-A4A6-6F4FCA7CBA71}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "VG Tester", "..\VG Tester\VG Tester.csproj", "{72E688F6-2228-424F-8F57-EE5CEB5A975D}"
