@@ -66,9 +66,5 @@ Properties/AssemblyInfo.cs -text
 /VGEvent.cs -text
 /VGLocation.cs -text
 /VGUIElement.cs -text
-/Vanguard.ISXVG(2005).csproj -text
-/Vanguard.ISXVG(2005).sln -text
-/Vanguard.ISXVG(2008).csproj -text
-/Vanguard.ISXVG(2008).sln -text
 bin/Debug/PostBuild.bat -text
 bin/Release/PostBuild.bat -text
